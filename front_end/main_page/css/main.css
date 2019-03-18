@@ -1,0 +1,84 @@
+/* 主页背景图片样式 */
+body
+{
+    background: url("../image/body_bg.jpg");
+}
+
+/* 导航栏 css 样式*/
+.nav_bar
+{
+    background: url(../image/header_bg.jpg) no-repeat;
+	padding:3em 0 0;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+/* icon 图片居中效果*/
+#main_icon
+{
+	text-align: center;
+}
+
+/* 主页面 css 样式*/
+.main .container .main_disp
+{
+	margin-top: 20px;
+	background: rgba(0,0,0,0.5);
+	height: 400px;
+}
+
+/* 搜索框 css 样式 */
+.search_box
+{
+	margin-top: 20px;
+	margin-left: 25%;
+	height: 50px;
+	width: 50%;
+	background: rgba(0,0,255,0.5);
+}
+
+/* 主显示界面样式 */
+.main_disp
+{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+/* 左端白色背景为竖直导航栏 */
+.left_select_panel
+{
+	float: left;
+	width: 18%;
+	height: 100%;
+	background: white;
+}
+
+/* 中间红色背景为产品显示界面 */
+.mid_main_panel
+{	
+	float: left;
+	margin-left: 2%;
+	width: 60%;
+	height: 100%;
+	background: rgba(255,0,0,0.5);
+}
+
+/* 右侧绿色为产品显示界面 */
+.right_info_panel
+{
+	float: right;
+	width: 18%;
+	height: 100%;
+	background: rgba(0,255,0,0.5);
+}
+
+/* 脚注 css 样式*/
+.foot
+{
+	height: 200px;
+	width: 100%;
+	padding: 2em 0 0 0;
+	margin-top: 20px;
+	overflow: hidden;
+	background: url("../image/footer_bg.png");
+}
