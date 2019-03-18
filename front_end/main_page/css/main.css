@@ -1,0 +1,13 @@
+/* 主页背景图片样式 */
+body
+{
+    background: url("../image/body_bg.jpg")
+}
+
+.nav_bar
+{
+    background: url(../image/header_bg.jpg) no-repeat;
+	padding:3em 0 0;
+	background-size: 100% 100%;
+	position:relative;
+}
