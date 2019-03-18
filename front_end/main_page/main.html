@@ -2,11 +2,58 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>主页</title>
+        <title>易吧，开创新的生活</title>
     </head>
+    <link rel="stylesheet" href="css/main.css" type = "text/css">
     <body style = "height:100%">
-        <div class = "main_disp">
-            
+        <div class = "nav_bar">
+            <!-- 这里是导航栏，使用 css 进行修改 -->
+            <div class="nav_bar_left_pic">
+                <!-- 左侧的图片，可以添加点击事件 -->
+                我可以在这里添加文字吧，应该会让图片变得更高
+                <div id = "main_icon">
+                    <a href="https://github.com/yanguojun123/YB" target="_blank">
+                        <!-- 点击链接，不知道跳到哪里 -->
+                    <img src = "image/logo2.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class = "main">
+            <div class = "container">
+                <!-- 容器，用于承载所有需要显示的元件 -->
+                <div class = "search_box"><!-- 搜索框 --></div>
+                <div class = "main_disp">
+                    <!-- 界面显示的主体，分为左中右三个 -->
+                    <div class = "left_select_panel">
+                        <!-- 
+                            左边的导航栏，用于显示二手书和失物招领
+                        -->
+                        左边，这里采用模板的样式，尽量与背景和主体契合，不要选择太深的颜色和太扁平化的侧边栏
+                    </div>
+                    <div class = "mid_main_panel">
+                        <!-- 
+                            中间的显示，内容根据左边的选择进行变动
+                        -->
+                        中间，我觉得左右两边的夹缝可以再窄一点
+                    </div>
+                    <div class = "right_info_panel">
+                        <!--  
+                        右边的显示，内容根据左边的选择进行变动；
+                        当左侧选择的是二手书相关，右侧显示最火热的二手书；
+                        当左侧选择的是失物招领相关，右侧显示（不知道显示什么，说不定可以关掉？估计关掉很难看）
+                        -->
+                        右边可以直接使用bootstrap中的panel样式，但是注意宽度。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "foot">
+            <!-- 角注，呈现版权信息、公司团队信息等 -->
+            奇了怪了这图片怎么不能平铺啊
+            <p>
+                插入一个段落试试？
+            </p>
         </div>
     </body>
 </html>
