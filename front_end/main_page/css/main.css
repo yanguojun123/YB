@@ -16,11 +16,10 @@ body
 }
 
 /* 对图片做出的限制 */
-.navbar-left img
+.logo
 {
-	width: 90px;
+	width: 80px;
 	height: 100%;
-	margin-bottom: 10px;
 }
 
 .navbar-left
@@ -28,13 +27,33 @@ body
 	padding: 0px;
 	line-height: 50px;
 	margin-left: 15px;
+	margin-bottom: 8px;
 }
 
-.loginandout
+.navbar-right
 {
-	margin-top: 10px;
-	font-family: "黑体";
+	padding-right: 45px;
 }
+
+.loginandreg img
+{
+	height: 40px;
+}
+
+.loginandreg a
+{
+	text-align: center;
+	color: black;
+}
+
+.loginandreg a:hover
+{
+	-webkit-transition: 0.5s all;
+	text-transform: uppercase;
+	color: #fff !important;
+	text-decoration: none;
+}
+
 
 /* 主页面 css 样式*/
 .main .main_disp
@@ -47,7 +66,6 @@ body
 /* 搜索框 css 样式 */
 .search_box
 {
-	margin-top: 20px;
 	height: 50px;
 	background: rgba(0,0,255,0.5);
 }
