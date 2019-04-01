@@ -1,0 +1,110 @@
+/* 主页背景图片样式 */
+body
+{
+    background: url("../image/body_bg.jpg");
+}
+
+/* 导航栏 css 样式*/
+.nav_bar
+{
+    background: url(../image/header_bg.jpg) no-repeat;
+	padding:3em 0 0;
+	background-size: 100% 100%;
+	position: relative;
+	/* 加入 overflow 以并排三个子容器 */
+	overflow: hidden;
+}
+
+/* 对图片做出的限制 */
+.logo
+{
+	width: 80px;
+	height: 100%;
+}
+
+.navbar-left
+{
+	padding: 0px;
+	line-height: 50px;
+	margin-left: 15px;
+	margin-bottom: 8px;
+}
+
+.navbar-right
+{
+	padding-right: 45px;
+}
+
+.loginandreg img
+{
+	height: 40px;
+}
+
+.loginandreg a
+{
+	text-align: center;
+	color: black;
+}
+
+.loginandreg a:hover
+{
+	-webkit-transition: 0.5s all;
+	text-transform: uppercase;
+	color: #fff !important;
+	text-decoration: none;
+}
+
+
+/* 主页面 css 样式*/
+.main .main_disp
+{
+	margin-top: 20px;
+	background: rgba(0,0,0,0.5);
+	height: 400px;
+}
+
+/* 搜索框 css 样式 */
+.search_box
+{
+	height: 50px;
+	background: rgba(0,0,255,0.5);
+}
+
+/* 主显示界面样式 */
+.main_disp
+{
+	margin-left: 3%;
+	margin-right: 3%;
+}
+
+/* 左端白色背景为竖直导航栏 */
+.left_select_panel
+{
+	height: 100%;
+	background: white;
+}
+
+/* 中间红色背景为产品显示界面 */
+.mid_main_panel
+{	
+	height: 100%;
+	background: rgba(255,0,0,0.5);
+}
+
+/* 右侧绿色为产品显示界面 */
+.right_info_panel
+{
+	height: 100%;
+	background: rgba(0,255,0,0.5);
+}
+
+/* 脚注 css 样式*/
+.foot
+{
+	height: 200px;
+	width: 100%;
+	padding: 2em 0 0 0;
+	margin-top: 20px;
+	overflow: hidden;
+	background: url("../image/footer_bg.png");
+}
