@@ -15,22 +15,6 @@
                         <img class = "logo" alt="Brand" src="image/logo_main.png" height="20">
                     </a>
                 </div>
-                <div class="nav navbar-nav button_menu">
-                    <ul class="nav navbar-nav buttons">
-                        <li class="active">
-                            <a href="#">水果蔬菜????</a>
-                        </li>
-                        <li>
-                            <a href="#">浏览历史</a>
-                        </li>
-                        <li>
-                            <a href="#">我的购物车</a>
-                        </li>
-                        <li>
-                            <a href="#">个人主页</a>
-                        </li>
-                    </ul>
-                </div>
                 <div class="nav navbar-nav navbar-right loginandreg">
                     <a href="#">
                         <li>
@@ -41,13 +25,40 @@
                         </p>
                     </a>
                 </div>
+                <div class="nav navbar-nav navbar-right button_menu">
+                    <ul class="nav navbar-nav buttons">
+                        <li class="active">
+                            <a href="#">水果蔬菜</a>
+                        </li>
+                        <li>
+                            <a href="#">浏览历史</a>
+                        </li>
+                        <li>
+                            <a href="#">我的购物车</a>
+                        </li>
+                        <li>
+                            <a href="#">个人主页</a>
+                        </li>
+                        <li>
+                            <a href="#">聊天记录</a>
+                        </li>
+                        <li>
+                            <a href="#">关注我们</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </nav>
         <div class = "main">
             <div class = "container-fluid contain">
                 <!-- 容器，用于承载所有需要显示的元件 -->
                 <div class = "row main_disp_above">
-                        <div class = "col-md-6 col-md-offset-3 search_box"><!-- 搜索框 --></div>
+                        <div class = "col-md-6 col-md-offset-3 search_box">
+                            <!-- 搜索框 -->
+                            <input type = "text" class="search_input" value="请输入想要查询的内容" onfocus="this.value = '';" onblur="if(this.value == ''){this.value = '请输入想要查询的内容';}">
+                            <input type="submit" value="Search" class="search_button">
+                        </div>
                 </div>
                 <div class="row main_disp_below">
                     <!-- 主窗体 -->
