@@ -59,6 +59,7 @@ body
 	text-decoration: none;
 }
 
+/* 菜单栏浮动样式 */
 .button_menu li
 {
 	margin-top: 6px;
@@ -101,27 +102,58 @@ body
 	height: 400px;
 }
 
-/* 搜索框 css 样式 */
+/* 搜索框背景 css 样式 */
+.main_disp_above
+{
+	
+}
+
+/**/
 .search_box
 {
 	height: 50px;
 	background: rgba(0,0,255,0.5);
-	padding-top: 5px;
+	text-align: center;
 }
 
+/* 搜索框输入文本样式 */
 .search_input
 {
 	width: 70%;
-	height: 40px;
-	margin-left: 5%;
+	height: 35px;
+	margin-top: 7.5px;
+	border-color:white;
+	border-style: solid;
+	border-width: 2px;
+	font-size: 15px;
+	padding-top: 0;
 }
 
-.search_button
+/* 搜索框按钮样式 */
+.search_btn
 {
 	width: 15%;
-	height: 40px;
-	margin-left: 0;
+	height: 35px;
+	margin-top: 7.5px;
+	background: none;
+	border-color: white;
+	border-style: solid;
+	border-width: 2px;
+	color: greenyellow;
 }
+
+/* 
+	搜索款按钮悬停动画
+	样式之后再加
+*/
+.search_btn:hover
+{
+	-webkit-transition: 0.2s all;
+	font-size: 18px;
+	border-style: dashed;
+	border-color: orange;
+}
+
 
 /* 主显示界面样式 */
 .main_disp
@@ -135,6 +167,10 @@ body
 {
 	height: 100%;
 	background: white;
+	border-radius: 10px;
+	border-width: 1.5px;
+	border-style: solid;
+	border-color: olive;
 }
 
 /* 中间红色背景为产品显示界面 */
