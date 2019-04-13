@@ -22,6 +22,7 @@ body
 	height: 100%;
 }
 
+/* logo 容器样式 */
 .navbar-left
 {
 	padding: 0px;
@@ -30,30 +31,68 @@ body
 	margin-bottom: 8px;
 }
 
+/* 登录注册容器 css 样式*/
 .navbar-right
 {
 	padding-right: 45px;
 }
 
+/* 登录注册图片 */
 .loginandreg img
 {
 	height: 40px;
 }
 
+/* 登录注册 css 样式*/
 .loginandreg a
 {
 	text-align: center;
 	color: black;
 }
 
+/* 登录注册 css 样式*/
 .loginandreg a:hover
 {
-	-webkit-transition: 0.5s all;
+	-webkit-transition: 0.2s all;
 	text-transform: uppercase;
 	color: #fff !important;
 	text-decoration: none;
 }
 
+/* 菜单栏浮动样式 */
+.button_menu li
+{
+	margin-top: 6px;
+}
+
+/* 导航栏按钮样式 */
+.button_menu li a
+{
+	color: #fff;
+	padding: 8px 8px;
+	font-size: 1em;
+	margin:0 10px;
+}
+
+/* 导航栏按钮悬停样式 */
+.buttons > li > a:hover, .buttons > li > a:focus {
+	-webkit-transition: 0.2s all;
+	background: rgba(2, 113, 113, 0.35) !important;
+	color: #FFF !important;
+	border-radius: .5em;
+	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2), 
+		0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 导航栏按钮初始化样式 */
+.buttons > .active > a, .buttons > .active > a:hover, .buttons > .active > a:focus {
+	background:rgba(2, 113, 113, 0.35) !important;
+	color:#fff !important;
+	border-radius: .5em;
+	box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1);
+}
 
 /* 主页面 css 样式*/
 .main .main_disp
@@ -63,12 +102,58 @@ body
 	height: 400px;
 }
 
-/* 搜索框 css 样式 */
+/* 搜索框背景 css 样式 */
+.main_disp_above
+{
+	
+}
+
+/**/
 .search_box
 {
 	height: 50px;
 	background: rgba(0,0,255,0.5);
+	text-align: center;
 }
+
+/* 搜索框输入文本样式 */
+.search_input
+{
+	width: 70%;
+	height: 35px;
+	margin-top: 7.5px;
+	border-color:white;
+	border-style: solid;
+	border-width: 2px;
+	font-size: 15px;
+	padding-top: 0;
+}
+
+/* 搜索框按钮样式 */
+.search_btn
+{
+	width: 15%;
+	height: 35px;
+	margin-top: 7.5px;
+	background: none;
+	border-color: white;
+	border-style: solid;
+	border-width: 2px;
+	color: greenyellow;
+}
+
+/* 
+	搜索款按钮悬停动画
+	样式之后再加
+*/
+.search_btn:hover
+{
+	-webkit-transition: 0.2s all;
+	font-size: 18px;
+	border-style: dashed;
+	border-color: orange;
+}
+
 
 /* 主显示界面样式 */
 .main_disp
@@ -82,6 +167,10 @@ body
 {
 	height: 100%;
 	background: white;
+	border-radius: 10px;
+	border-width: 1.5px;
+	border-style: solid;
+	border-color: olive;
 }
 
 /* 中间红色背景为产品显示界面 */
