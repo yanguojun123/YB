@@ -6,6 +6,27 @@
     </head>
     <link rel="stylesheet" href="css/main.css" type = "text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap-paginator.min.js"></script>
+	
+
+	<style>
+		.content{
+			margin-top:1%;
+			height: 82%;
+			width:100%;
+			background-color:antiquewhite;
+		}
+		.subcontent{
+			margin-top:2%;
+			margin-left:1.5%;
+			height: 40%;
+			width:23%;	
+			float:left;
+			background-color: aliceblue;
+		}
+	
+	</style>
     <body style = "height:100%">
         <nav class = "navbar nav_bar" role = "navigation">
             <!-- 导航栏样式 bootstrap 实现-->
@@ -18,13 +39,10 @@
                 <div class="nav navbar-nav button_menu">
                     <ul class="nav navbar-nav buttons">
                         <li class="active">
-                            <a href="#">水果蔬菜????</a>
+                            <a href="#">二手交易</a>
                         </li>
                         <li>
-                            <a href="#">浏览历史</a>
-                        </li>
-                        <li>
-                            <a href="#">我的购物车</a>
+                            <a href="#">失物招领</a>
                         </li>
                         <li>
                             <a href="#">个人主页</a>
@@ -40,12 +58,14 @@
                             登录
                         </p>
                     </a>
+					
                 </div>
             </div>
         </nav>
         <div class = "main">
             <div class = "container-fluid contain">
                 <!-- 容器，用于承载所有需要显示的元件 -->
+
                 <div class = "row main_disp_above">
                         <div class = "col-md-6 col-md-offset-3 search_box"><!-- 搜索框 --></div>
                 </div>
@@ -63,7 +83,20 @@
                             <!-- 
                                 中间的显示，内容根据左边的选择进行变动
                             -->
-                            中间，我觉得左右两边的夹缝可以再窄一点
+							<div id="content" class="content">
+								<div class="subcontent"></div>
+								<div class="subcontent"></div>
+								<div class="subcontent"></div>
+								<div class="subcontent"></div>
+								<div class="subcontent"></div>
+							</div>
+							<div style="text-align: center">
+<!--							<ul class="pagination"></ul>-->
+								<ul id="example"></ul>
+								
+							</div>
+
+
                         </div>
                         <div class = "col-md-3 right_info_panel">
                             <!--  
@@ -85,4 +118,36 @@
             </p>
         </div>
     </body>
+	<script>
+
+
+
+$(document).ready(function(){
+	var options={
+	    bootstrapMajorVersion:3,
+		currentPage: 4,
+		totalPages: 10,
+		numberOfPages: 5,
+		itemTexts : function(type, page, current) {
+			switch (type) {
+				case "first":
+					return "首页";
+				case "prev":
+					return "上一页";
+				case "next":
+					return "下一页";
+				case "last":
+					return "末页";
+				case "page":
+					return page;
+			}
+		},
+	};
+	$("#example").bootstrapPaginator(options);		
+});
+	 
+
+
+
+	</script>
 </html>
