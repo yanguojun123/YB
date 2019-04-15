@@ -11,54 +11,171 @@ body
 	padding:3em 0 0;
 	background-size: 100% 100%;
 	position: relative;
+	/* 加入 overflow 以并排三个子容器 */
+	overflow: hidden;
 }
 
-/* icon 图片居中效果*/
-#main_icon
+/* 对图片做出的限制 */
+.logo
+{
+	width: 80px;
+	height: 100%;
+}
+
+/* logo 容器样式 */
+.navbar-left
+{
+	padding: 0px;
+	line-height: 50px;
+	margin-left: 15px;
+	margin-bottom: 8px;
+}
+
+/* 登录注册容器 css 样式*/
+.navbar-right
+{
+	padding-right: 45px;
+}
+
+/* 登录注册图片 */
+.loginandreg img
+{
+	height: 40px;
+}
+
+/* 登录注册 css 样式*/
+.loginandreg a
 {
 	text-align: center;
+	color: black;
+}
+
+/* 登录注册 css 样式*/
+.loginandreg a:hover
+{
+	-webkit-transition: 0.2s all;
+	text-transform: uppercase;
+	color: #fff !important;
+	text-decoration: none;
+}
+
+/* 菜单栏浮动样式 */
+.button_menu li
+{
+	margin-top: 6px;
+}
+
+/* 导航栏按钮样式 */
+.button_menu li a
+{
+	color: #fff;
+	padding: 8px 8px;
+	font-size: 1em;
+	margin:0 10px;
+}
+
+/* 导航栏按钮悬停样式 */
+.buttons > li > a:hover, .buttons > li > a:focus {
+	-webkit-transition: 0.2s all;
+	background: rgba(2, 113, 113, 0.35) !important;
+	color: #FFF !important;
+	border-radius: .5em;
+	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2), 
+		0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 导航栏按钮初始化样式 */
+.buttons > .active > a, .buttons > .active > a:hover, .buttons > .active > a:focus {
+	background:rgba(2, 113, 113, 0.35) !important;
+	color:#fff !important;
+	border-radius: .5em;
+	box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1);
 }
 
 /* 主页面 css 样式*/
-.main .container .main_disp
+.main .main_disp
 {
 	margin-top: 20px;
 	background: rgba(0,0,0,0.5);
 	height: 400px;
 }
 
-/* 搜索框 css 样式 */
+/* 搜索框背景 css 样式 */
+.main_disp_above
+{
+	
+}
+
+/**/
 .search_box
 {
-	margin-top: 20px;
-	margin-left: 25%;
 	height: 50px;
-	width: 50%;
 	background: rgba(0,0,255,0.5);
+	text-align: center;
 }
+
+/* 搜索框输入文本样式 */
+.search_input
+{
+	width: 70%;
+	height: 35px;
+	margin-top: 7.5px;
+	border-color:white;
+	border-style: solid;
+	border-width: 2px;
+	font-size: 15px;
+	padding-top: 0;
+}
+
+/* 搜索框按钮样式 */
+.search_btn
+{
+	width: 15%;
+	height: 35px;
+	margin-top: 7.5px;
+	background: none;
+	border-color: white;
+	border-style: solid;
+	border-width: 2px;
+	color: greenyellow;
+}
+
+/* 
+	搜索款按钮悬停动画
+	样式之后再加
+*/
+.search_btn:hover
+{
+	-webkit-transition: 0.2s all;
+	font-size: 18px;
+	border-style: dashed;
+	border-color: orange;
+}
+
 
 /* 主显示界面样式 */
 .main_disp
 {
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 3%;
+	margin-right: 3%;
 }
 
 /* 左端白色背景为竖直导航栏 */
 .left_select_panel
 {
-	float: left;
-	width: 18%;
 	height: 100%;
 	background: white;
+	border-radius: 10px;
+	border-width: 1.5px;
+	border-style: solid;
+	border-color: olive;
 }
 
 /* 中间红色背景为产品显示界面 */
 .mid_main_panel
 {	
-	float: left;
-	margin-left: 2%;
-	width: 60%;
 	height: 100%;
 	background: rgba(255,0,0,0.5);
 }
@@ -66,8 +183,6 @@ body
 /* 右侧绿色为产品显示界面 */
 .right_info_panel
 {
-	float: right;
-	width: 18%;
 	height: 100%;
 	background: rgba(0,255,0,0.5);
 }
