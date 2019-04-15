@@ -15,10 +15,17 @@ body
 	overflow: hidden;
 }
 
+.logo_container
+{
+	margin-left: 50px !important;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
 /* 对图片做出的限制 */
 .logo
 {
-	width: 80px;
+	width: 120px;
 	height: 100%;
 }
 
@@ -99,29 +106,35 @@ body
 {
 	margin-top: 20px;
 	background: rgba(0,0,0,0.5);
-	height: 400px;
 }
 
-/* 搜索框背景 css 样式 */
-.main_disp_above
+.main_disp_header
 {
-	
+	text-align: center;
+	font-size: 2em;
 }
 
-/**/
+/* 搜索框样式 */
 .search_box
 {
-	height: 50px;
-	background: rgba(0,0,255,0.5);
+	float: right !important;
+	margin-right: 25px !important;
+	margin-top: -72px;
+	height: 40px;
+	background: url('../image/body_bg.jpg');
 	text-align: center;
+	border-radius: 5px 5px 0 0 ;
+	box-shadow: inset 0 2px 0 rgba(4, 52, 212, 0.486), 
+	0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 搜索框输入文本样式 */
 .search_input
 {
-	width: 70%;
+	width: 80%;
 	height: 35px;
 	margin-top: 7.5px;
+	margin-bottom: 8px;
 	border-color:white;
 	border-style: solid;
 	border-width: 2px;
@@ -135,7 +148,7 @@ body
 	width: 15%;
 	height: 35px;
 	margin-top: 7.5px;
-	background: none;
+	background: rgba(255,255,255, 0.5);
 	border-color: white;
 	border-style: solid;
 	border-width: 2px;
@@ -152,8 +165,9 @@ body
 	font-size: 18px;
 	border-style: dashed;
 	border-color: orange;
+	background: white;
+	color: black;
 }
-
 
 /* 主显示界面样式 */
 .main_disp
@@ -166,11 +180,64 @@ body
 .left_select_panel
 {
 	height: 100%;
-	background: white;
+	background: rgb(250, 250, 250);
 	border-radius: 10px;
-	border-width: 1.5px;
+	border-width: 3px;
 	border-style: solid;
-	border-color: olive;
+	border-color: rgba(204, 221, 0, 0.5);
+
+	padding-left: 0 !important; 
+	padding-right: 0 !important;
+}
+
+/* 二手书导航栏 */
+.bookClassHeader
+{
+	background: url('../image/category_bg.png');
+	background-size: cover;
+
+	text-align: center;
+	color: white;
+	font-family: 'Microsoft YaHei';
+	font-size: 19px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* 失物招领导航栏 */
+.swapClassHeader
+{
+	background: url('../image/category_bg.png');
+	background-size: cover;
+
+	text-align: center;
+	color: white;
+	font-family: 'Microsoft YaHei';
+	font-size: 19px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* 设置 list 样式 */
+.left_select_panel li
+{
+	list-style-image: url('../image/marker.gif');
+	margin: auto 0 auto 10%;
+}
+
+/* 设置链接样式 */
+.left_select_panel li a
+{
+	text-decoration: none;
+	color: black;
+}
+
+/* 设置悬停样式 */
+.left_select_panel li a:hover
+{
+	cursor: pointer;
+	-webkit-transition: 0.2s all;
+	color: orangered;
 }
 
 /* 中间红色背景为产品显示界面 */
@@ -178,6 +245,7 @@ body
 {	
 	height: 100%;
 	background: rgba(255,0,0,0.5);
+	height: 400px;
 }
 
 /* 右侧绿色为产品显示界面 */
@@ -185,6 +253,7 @@ body
 {
 	height: 100%;
 	background: rgba(0,255,0,0.5);
+	height: 400px;
 }
 
 /* 脚注 css 样式*/
