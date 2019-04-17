@@ -19,6 +19,7 @@ npm install nodejs-websocket
     <meta charset="utf-8" />
     <title>Webscoket</title>
     <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <!-- echo 把接受到的数据返回过去 -->
@@ -137,6 +138,8 @@ npm install nodejs-websocket
   
         websocket.send(JSON.stringify(user));
         // 这里是把发起会话的人的信息告诉服务器
+        //显示历史消息
+         show();
 
         // 发送消息
         document.getElementById("sendBtn").onclick = function() {
@@ -147,6 +150,9 @@ npm install nodejs-websocket
                 user.data = txt;
                 websocket.send(JSON.stringify(user));
                 createChatNode(user,true);
+                //alert('baocun');
+                insert(txt,user.name,user.toname);
+                
             }
         }
     }
@@ -201,6 +207,83 @@ npm install nodejs-websocket
     window.onbeforeunload = function() {
         websocket.close();
     }
+
+    function insert(contents,users,toUsers)
+{
+	var time=new Date();
+    var times=time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+    //alert(times);
+	$.ajax({ url: 'insert.php',
+		type: 'post',
+		data:{"content":contents,"time":times,"user":users,"toUser":toUsers}, 
+		dataType:'text',
+		success: function()
+		{	
+			///alert('保存成功');										  
+					}});
+}
+
+  //显示历史信息
+  function show(){
+      
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		     xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+        xmlhttp.onreadystatechange=function ff()
+         {
+           if (xmlhttp.readyState==4 && xmlhttp.status==200)
+           {
+            
+             var xmlDoc = xmlhttp.responseXML; 
+              //这里把返回的数据以XML的格式存到变量中。
+             //还有一种返回式以字符串的形式返回，responseText，这个可以用下标法逐个输出，但是注意，逐个输出的是字符，
+             //也就是说，你想要的一个字符串会被拆成几份
+            
+             //这里的 getElementsByTagName("time")[0].childNodes[0].nodeValue; 是采用遍历数的方法逐个输出数据
+               //getElementsByTagName 是通有的（"  "）这里写的是你链接的文件里面的标签名，等下介绍再详说，[0]也是要写的
+             //.childNodes[0].nodeValue;  这块也是通有的，意思是获取值
+             var number = xmlDoc.getElementsByTagName("number")[0].childNodes[0].nodeValue;
+             //var number1 = xmlDoc.getElementsByTagName("number1")[0].childNodes[0].nodeValue;
+            //进行插入
+            //alert(user.name);
+		     //var time=new Date();
+		    // alert(order1);
+                //var times=order[number]['time'];
+               
+		     for (var i=0;i<number;i++)
+		        {   
+		        	var temp=xmlDoc.getElementsByTagName("content")[i].childNodes[0].nodeValue;
+                    var times=xmlDoc.getElementsByTagName("time")[i].childNodes[0].nodeValue;
+                    var users=xmlDoc.getElementsByTagName("user")[i].childNodes[0].nodeValue;
+                    var toUsers=xmlDoc.getElementsByTagName("touser")[i].childNodes[0].nodeValue;
+                    var userTemp={};
+                    userTemp.type="message";
+                    userTemp.data=temp;
+                    userTemp.name=users;
+                    userTemp.toname=toUsers;
+                    if(users==user.name)
+                    {
+                        createChatNode(userTemp,true);
+                    }
+                    else
+                    {
+                        createChatNode(userTemp,false);
+                    }
+			      
+				    
+                }
+                
+            }
+         }
+	xmlhttp.open("GET","selMessage.php?user="+user.name,true);
+	xmlhttp.send();
+}
     </script>
 </body>
 
