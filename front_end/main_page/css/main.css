@@ -4,44 +4,119 @@ body
     background: url("../image/body_bg.jpg");
 }
 
+/* 网站信息容器 */
+.webset_info
+{
+	height: 3em;
+	margin-top: -30px;
+	padding: 0 6% 0 6%;
+	position: absolute;
+}
+
+/* 网站信息列表 */
+.webset_info ul li
+{
+	list-style: none;
+}
+
+/* 联系方式 */
+.contact_phone
+{
+	float: left;
+	margin-top: 5px;
+	color: #f8f5c6;
+	padding: 0 0 0 0;
+}
+
+/* 电话列表 */
+.contact_phone li
+{
+	display: inline-block;
+}
+
+/* 电话图标 */
+.phone_icon
+{
+	width: 20px;
+	height: 25px;
+	background: url(../image/img-sprite.png)no-repeat -5px -7px;
+	float: left;
+	margin-right: 4px;
+	margin-top: -3px;
+}
+
+/* 打折说明？ */
+.phone_append
+{
+	color: #B7C9E0;
+	text-shadow: -1px 0px 1px #073E7F;
+	font-size: 0.85em;
+	display: inline-block;
+	margin-left: 80px;
+}
+
+/* 社交媒体 */
+.media
+{
+	padding-left: 0;
+	float: left;
+	margin-left: 100px;
+	margin-top: 5px !important;
+	text-align: center;
+}
+
+.media li
+{
+	display: inline-block;
+}
+
+.media li a i
+{
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 1em;
+	background: url(../image/img-sprite.png)#486283 no-repeat;
+}
+
 /* 导航栏 css 样式*/
 .nav_bar
 {
-    background: url(../image/header_bg.jpg) no-repeat;
-	padding:3em 0 0;
+	background: url(../image/header_bg.jpg) no-repeat;
 	background-size: 100% 100%;
+	padding-top: 3em;
 	position: relative;
 	/* 加入 overflow 以并排三个子容器 */
 	overflow: hidden;
 }
 
+/* 图片容器样式 */
 .logo_container
 {
 	margin-left: 50px !important;
-	margin-top: 15px;
+	margin-top: 8px;
 	margin-bottom: 15px;
 }
 
 /* 对图片做出的限制 */
 .logo
 {
-	width: 120px;
+	width: 130px;
 	height: 100%;
 }
 
 /* logo 容器样式 */
 .navbar-left
 {
-	padding: 0px;
+	padding-bottom: 0px !important;
 	line-height: 50px;
 	margin-left: 15px;
-	margin-bottom: 8px;
 }
 
 /* 登录注册容器 css 样式*/
 .navbar-right
 {
-	padding-right: 45px;
+	padding-right: 6%;
 }
 
 /* 登录注册图片 */
@@ -119,7 +194,7 @@ body
 .search_box
 {
 	float: right !important;
-	margin-right: 25px !important;
+	margin-right: 3% !important;
 	margin-top: -72px;
 	height: 40px;
 	background: url('../image/body_bg.jpg');
@@ -260,10 +335,76 @@ body
 /* 脚注 css 样式*/
 .foot
 {
-	height: 200px;
 	width: 100%;
-	padding: 2em 0 0 0;
+	padding: 1em 0 2em 0;
 	margin-top: 20px;
-	overflow: hidden;
 	background: url("../image/footer_bg.png");
+	background-size: 100% 100%;
+}
+
+/* 脚注栏目容器 */
+.foot_container
+{
+	margin-left: 3% !important;
+	margin-right: 3% !important;
+	padding-left: 0 !important; 
+	padding-right: 0 !important;
+}
+
+/* 脚注栏目样式 */
+.shrink
+{
+	width: 17%;
+	float: left;
+	padding-left: 0 !important; 
+	padding-right: 0 !important;
+	margin-left: 2.5%;
+}
+
+/* 脚注栏目标题样式 */
+.shrink h3
+{
+	color: #f8f5c6;
+	margin-bottom: 0.8em;
+	font-size: 1.3em;
+}
+
+/* 脚注栏目条目 */
+.foot_list
+{
+	color: white;
+	padding-left: 0;
+}
+
+/* 脚注栏目条目自定义样式 */
+.foot_list li
+{
+	line-height: 1.6em;
+	list-style: none;
+}
+
+/* 脚注栏目条目链接样式 */
+.foot_list li a
+{
+	color: #cbd0d7;
+	text-decoration: none;
+}
+
+/* 脚注栏目条目鼠标悬停 */
+.foot_list li a:hover
+{
+	
+	-webkit-transition: 0.2s all;
+	cursor: pointer;
+	color: #1B242F;
+	text-decoration: none;
+}
+
+/* 脚注许可 */
+.foot_license
+{
+	margin-left: 5.2%;
+	margin-right: 3%;
+	margin-top: 10px;
+	color: #cbd0d7;
 }
