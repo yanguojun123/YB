@@ -88,7 +88,7 @@ body
 	color: #FFF !important;
 	border-radius: .5em;
 	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2), 
-		0 0 4px rgba(0, 0, 0, 0.1);
+		0 0 4px rgba(0, 0, 0, 0);
 }
 
 /* 导航栏按钮初始化样式 */
@@ -97,8 +97,8 @@ body
 	color:#fff !important;
 	border-radius: .5em;
 	box-shadow: 
-    inset 0 2px 0 rgba(0,0,0,.2), 
-    0 0 4px rgba(0,0,0,0.1);
+    inset 0 2px 0 rgba(0, 0, 0, 0.2), 
+    0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 主页面 css 样式*/
@@ -108,6 +108,7 @@ body
 	background: rgba(0,0,0,0.5);
 }
 
+/* 扯皮占位 */
 .main_disp_header
 {
 	text-align: center;
@@ -148,11 +149,11 @@ body
 	width: 15%;
 	height: 35px;
 	margin-top: 7.5px;
-	background: rgba(255,255,255, 0.5);
+	background: rgba(255,69,0, 0.5);
 	border-color: white;
 	border-style: solid;
 	border-width: 2px;
-	color: greenyellow;
+	color: white;
 }
 
 /* 
