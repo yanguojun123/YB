@@ -1,0 +1,132 @@
+/* CSS Document */
+@font-face{
+	font-family: "a";
+	src:url(../fonts/AaMangoBrother.ttf);
+}
+.subcon_photo img {
+    height: 100%;
+}
+.content{
+	font-family: "a";
+	margin-top:1%;
+	height: 82%;
+	width:100%;
+	background-color:antiquewhite;
+}
+.content .subcontent{
+	margin-top:2%;
+	margin-left:1.5%;
+	height: 60%;
+	width:23%;	
+	float:left;
+	background-color: aliceblue;
+}
+.content .subcon_photo{
+	text-align: center;
+	height:65%;
+	weight:100%;
+}
+.content .subcon_photo span{
+	display:none;
+}
+.content .subcon_photo:hover span{
+	display:none;
+}
+
+
+.subcon_photo .social {
+    padding: 0;
+    margin: 0;
+	margin-top:10%;
+    list-style: none;
+ 	transform: translateY(-150%);
+/*   position: absolute;
+   top: 50%;
+    left: 10px;*/
+	
+    z-index: 4;
+/*	background-color:aqua;*/
+}
+.subcon_photo .social li {
+
+    margin:0;
+	margin-right:80%;
+    opacity: 0;
+    transition: transform .3s ease-out 0s;
+
+}
+.subcon_photo:hover .social li {
+    opacity: 1;
+    transform: translateX(50%);
+}
+.subcon_photo:hover .social li:nth-child(2){ transition-delay: 0.1s; }
+.subcon_photo:hover .social li:nth-child(3){ transition-delay: 0.2s; }
+.subcon_photo:hover .social li:nth-child(4){ transition-delay: 0.3s; }
+.subcon_photo .social li a {
+    color:#60A6F9;
+    font-size: 22px;
+    transition: all 0.3s;
+}
+.subcon_photo .social li a:hover { color:#E43F00; }
+.subcon_photo .social li a:before,
+.subcon_photo .social li a:after{
+    content: attr(data-tip);
+    color: #000;
+    background: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    display: none;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 33px;
+    top: 50%;
+    transition: all 0.3s;
+}
+.subcon_photo .social li a:after{
+    content: '';
+    background: linear-gradient(-45deg, #fff 49%, transparent 50%);
+    width: 10px;
+    height: 10px;
+    top: 40%;
+    left: 20px;
+}
+.subcon_photo .social li a:hover:before,
+.subcon_photo .social li a:hover:after{
+      display: block;
+}
+
+
+
+
+.subcon_name,.subcon_author,.subcon_price{
+	margin-left:5%;
+}
+.subcon_name a,a:link,a:hover {
+	color:black;
+    text-decoration: none;
+}
+.subcon_seller a,a:link,a:hover {
+	color:black;
+    text-decoration: none;
+}
+.content .subcon_name{
+	font-size:20px;
+	font-weight: 1000;
+	weight:100%;
+}
+
+.content .subcon_price{
+	float:left;
+	weight:100%;
+	color:#F5AF00;
+}
+.content .subcon_author{
+	font-size:5px;
+	weight:100%;
+}
+.content .subcon_seller{
+	margin-left:10%;
+	float:left;
+	weight:100%;
+}
