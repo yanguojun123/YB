@@ -12,8 +12,25 @@
 	<script src="js/bootstrap-paginator.min.js"></script>
 	
 
+    <script src="js/main.js"></script>
+
     <body style = "height:100%">
         <nav class = "navbar nav_bar" role = "navigation">
+            <div class="webset_info">
+                <ul class="contact_phone">
+                    <li class="phone_ego">
+                        <i class="phone_icon"></i>
+                        <span>CONTACT: XXX-XXXX-XXXX</span>
+                    </li>
+                    <li class="phone_append">不知道写啥，二手书今天半价？</li>
+                </ul>
+                <ul class="media">
+                    <li><a href="#"><i class="github"></i></a></li>
+                    <li><a href="#"><i class="weibo"></i></a></li>
+                    <li><a href="#"><i class="twitter"></i></a></li>
+                    <li><a href="#"><i class="google"></i></a></li>
+                </ul>
+            </div>
             <!-- 导航栏样式 bootstrap 实现-->
             <div class = "container-fluid" style="margin-top: 20px;">
                 <div class="navbar-header logo_container">
@@ -31,29 +48,20 @@
                 </div>
                 <div class="nav navbar-nav navbar-right button_menu">
                     <ul class="nav navbar-nav buttons">
-                        <li class="active">
-                            <a href="#">二手交易</a>
 
-                        </li>
-                        <li>
-                            <a href="#">失物招领</a>
-                        </li>
-                        <li>
-                            <a href="#">个人主页</a>
-                        </li>
-                        <li>
-                            <a href="#">聊天记录</a>
-                        </li>
+                        <li class="active"><a href="#">水果蔬菜</a></li>
+                        <li><a href="#">浏览历史</a></li>
+                        <li><a href="#">我的购物车</a></li>
+                        <li><a href="#">个人主页</a></li>
+                        <li><a href="#">聊天记录</a></li>
+                        <li><a href="#">关注我们</a></li>
 
-                        <li>
-                            <a href="#">关注我们</a>
-                        </li>
                     </ul>
                 </div>
             </div>
 
         </nav>            
-        <div class = "input-group col-md-3 col-md-offset-8 search_box">
+        <div class = "input-group col-md-3 search_box">
             <!-- 搜索框 -->
             <input type = "text" class="search_input" value="请输入想要查询的内容" onfocus="this.value = '';" onblur="if(this.value == ''){this.value = '请输入想要查询的内容';}">
             <input type="submit" class="search_btn" value="搜索">
@@ -163,10 +171,54 @@
         </div>
         <div class = "foot">
             <!-- 角注，呈现版权信息、公司团队信息等 -->
-            奇了怪了这图片怎么不能平铺啊
-            <p>
-                插入一个段落试试？
-            </p>
+            <div class="container-fluid foot_container">
+                <div class="footer-grid foot_panel_1 shrink">
+                    <h3>完全不知道应该写什么</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                        <li><a href="#">项目三</a></li>
+                        <li><a href="#">项目四</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid foot_panel_2 shrink">
+                    <h3>第二栏的标题</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                        <li><a href="#">项目三</a></li>
+                        <li><a href="#">项目四</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid foot_panel_3 shrink">
+                    <h3>第三栏的标题</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                        <li><a href="#">项目三</a></li>
+                        <li><a href="#">项目四</a></li>
+                        <li><a href="#">项目五</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid foot_panel_4 shrink">
+                    <h3>第四栏的标题</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid foot_panel_5 shrink">
+                    <h3>第五栏的标题</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                        <li><a href="#">项目三</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot_license">
+                Copyright © 2019.Company name All rights reserved.More Templates 模板之家 - Collect from 网页模板(没错我故意的，嘿嘿)
+            </div>
         </div>
     </body>
 	<script>
