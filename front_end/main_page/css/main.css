@@ -4,37 +4,119 @@ body
     background: url("../image/body_bg.jpg");
 }
 
+/* 网站信息容器 */
+.webset_info
+{
+	height: 3em;
+	margin-top: -30px;
+	padding: 0 6% 0 6%;
+	position: absolute;
+}
+
+/* 网站信息列表 */
+.webset_info ul li
+{
+	list-style: none;
+}
+
+/* 联系方式 */
+.contact_phone
+{
+	float: left;
+	margin-top: 5px;
+	color: #f8f5c6;
+	padding: 0 0 0 0;
+}
+
+/* 电话列表 */
+.contact_phone li
+{
+	display: inline-block;
+}
+
+/* 电话图标 */
+.phone_icon
+{
+	width: 20px;
+	height: 25px;
+	background: url(../image/img-sprite.png)no-repeat -5px -7px;
+	float: left;
+	margin-right: 4px;
+	margin-top: -3px;
+}
+
+/* 打折说明？ */
+.phone_append
+{
+	color: #B7C9E0;
+	text-shadow: -1px 0px 1px #073E7F;
+	font-size: 0.85em;
+	display: inline-block;
+	margin-left: 80px;
+}
+
+/* 社交媒体 */
+.media
+{
+	padding-left: 0;
+	float: left;
+	margin-left: 100px;
+	margin-top: 5px !important;
+	text-align: center;
+}
+
+.media li
+{
+	display: inline-block;
+}
+
+.media li a i
+{
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 1em;
+	background: url(../image/img-sprite.png)#486283 no-repeat;
+}
+
 /* 导航栏 css 样式*/
 .nav_bar
 {
-    background: url(../image/header_bg.jpg) no-repeat;
-	padding:3em 0 0;
+	background: url(../image/header_bg.jpg) no-repeat;
 	background-size: 100% 100%;
+	padding-top: 3em;
 	position: relative;
 	/* 加入 overflow 以并排三个子容器 */
 	overflow: hidden;
 }
 
+/* 图片容器样式 */
+.logo_container
+{
+	margin-left: 50px !important;
+	margin-top: 8px;
+	margin-bottom: 15px;
+}
+
 /* 对图片做出的限制 */
 .logo
 {
-	width: 80px;
+	width: 130px;
 	height: 100%;
 }
 
 /* logo 容器样式 */
 .navbar-left
 {
-	padding: 0px;
+	padding-bottom: 0px !important;
 	line-height: 50px;
 	margin-left: 15px;
-	margin-bottom: 8px;
 }
 
 /* 登录注册容器 css 样式*/
 .navbar-right
 {
-	padding-right: 45px;
+	padding-right: 6%;
 }
 
 /* 登录注册图片 */
@@ -81,7 +163,7 @@ body
 	color: #FFF !important;
 	border-radius: .5em;
 	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2), 
-		0 0 4px rgba(0, 0, 0, 0.1);
+		0 0 4px rgba(0, 0, 0, 0);
 }
 
 /* 导航栏按钮初始化样式 */
@@ -90,8 +172,8 @@ body
 	color:#fff !important;
 	border-radius: .5em;
 	box-shadow: 
-    inset 0 2px 0 rgba(0,0,0,.2), 
-    0 0 4px rgba(0,0,0,0.1);
+    inset 0 2px 0 rgba(0, 0, 0, 0.2), 
+    0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 主页面 css 样式*/
@@ -99,29 +181,36 @@ body
 {
 	margin-top: 20px;
 	background: rgba(0,0,0,0.5);
-	height: 400px;
 }
 
-/* 搜索框背景 css 样式 */
-.main_disp_above
+/* 扯皮占位 */
+.main_disp_header
 {
-	
+	text-align: center;
+	font-size: 2em;
 }
 
-/**/
+/* 搜索框样式 */
 .search_box
 {
-	height: 50px;
-	background: rgba(0,0,255,0.5);
+	float: right !important;
+	margin-right: 3% !important;
+	margin-top: -72px;
+	height: 40px;
+	background: url('../image/body_bg.jpg');
 	text-align: center;
+	border-radius: 5px 5px 0 0 ;
+	box-shadow: inset 0 2px 0 rgba(4, 52, 212, 0.486), 
+	0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 搜索框输入文本样式 */
 .search_input
 {
-	width: 70%;
+	width: 80%;
 	height: 35px;
 	margin-top: 7.5px;
+	margin-bottom: 8px;
 	border-color:white;
 	border-style: solid;
 	border-width: 2px;
@@ -135,11 +224,11 @@ body
 	width: 15%;
 	height: 35px;
 	margin-top: 7.5px;
-	background: none;
+	background: rgba(255,69,0, 0.5);
 	border-color: white;
 	border-style: solid;
 	border-width: 2px;
-	color: greenyellow;
+	color: white;
 }
 
 /* 
@@ -152,8 +241,9 @@ body
 	font-size: 18px;
 	border-style: dashed;
 	border-color: orange;
+	background: white;
+	color: black;
 }
-
 
 /* 主显示界面样式 */
 .main_disp
@@ -166,11 +256,64 @@ body
 .left_select_panel
 {
 	height: 100%;
-	background: white;
+	background: rgb(250, 250, 250);
 	border-radius: 10px;
-	border-width: 1.5px;
+	border-width: 3px;
 	border-style: solid;
-	border-color: olive;
+	border-color: rgba(204, 221, 0, 0.5);
+
+	padding-left: 0 !important; 
+	padding-right: 0 !important;
+}
+
+/* 二手书导航栏 */
+.bookClassHeader
+{
+	background: url('../image/category_bg.png');
+	background-size: cover;
+
+	text-align: center;
+	color: white;
+	font-family: 'Microsoft YaHei';
+	font-size: 19px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* 失物招领导航栏 */
+.swapClassHeader
+{
+	background: url('../image/category_bg.png');
+	background-size: cover;
+
+	text-align: center;
+	color: white;
+	font-family: 'Microsoft YaHei';
+	font-size: 19px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* 设置 list 样式 */
+.left_select_panel li
+{
+	list-style-image: url('../image/marker.gif');
+	margin: auto 0 auto 10%;
+}
+
+/* 设置链接样式 */
+.left_select_panel li a
+{
+	text-decoration: none;
+	color: black;
+}
+
+/* 设置悬停样式 */
+.left_select_panel li a:hover
+{
+	cursor: pointer;
+	-webkit-transition: 0.2s all;
+	color: orangered;
 }
 
 /* 中间红色背景为产品显示界面 */
@@ -178,6 +321,7 @@ body
 {	
 	height: 100%;
 	background: rgba(255,0,0,0.5);
+	height: 400px;
 }
 
 /* 右侧绿色为产品显示界面 */
@@ -185,15 +329,82 @@ body
 {
 	height: 100%;
 	background: rgba(0,255,0,0.5);
+	height: 400px;
 }
 
 /* 脚注 css 样式*/
 .foot
 {
-	height: 200px;
 	width: 100%;
-	padding: 2em 0 0 0;
+	padding: 1em 0 2em 0;
 	margin-top: 20px;
-	overflow: hidden;
 	background: url("../image/footer_bg.png");
+	background-size: 100% 100%;
+}
+
+/* 脚注栏目容器 */
+.foot_container
+{
+	margin-left: 3% !important;
+	margin-right: 3% !important;
+	padding-left: 0 !important; 
+	padding-right: 0 !important;
+}
+
+/* 脚注栏目样式 */
+.shrink
+{
+	width: 17%;
+	float: left;
+	padding-left: 0 !important; 
+	padding-right: 0 !important;
+	margin-left: 2.5%;
+}
+
+/* 脚注栏目标题样式 */
+.shrink h3
+{
+	color: #f8f5c6;
+	margin-bottom: 0.8em;
+	font-size: 1.3em;
+}
+
+/* 脚注栏目条目 */
+.foot_list
+{
+	color: white;
+	padding-left: 0;
+}
+
+/* 脚注栏目条目自定义样式 */
+.foot_list li
+{
+	line-height: 1.6em;
+	list-style: none;
+}
+
+/* 脚注栏目条目链接样式 */
+.foot_list li a
+{
+	color: #cbd0d7;
+	text-decoration: none;
+}
+
+/* 脚注栏目条目鼠标悬停 */
+.foot_list li a:hover
+{
+	
+	-webkit-transition: 0.2s all;
+	cursor: pointer;
+	color: #1B242F;
+	text-decoration: none;
+}
+
+/* 脚注许可 */
+.foot_license
+{
+	margin-left: 5.2%;
+	margin-right: 3%;
+	margin-top: 10px;
+	color: #cbd0d7;
 }
