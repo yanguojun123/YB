@@ -61,7 +61,7 @@ body
 	padding-left: 0;
 	float: left;
 	margin-left: 100px;
-	margin-top: 5px !important;
+	margin-top: 0px !important;
 	text-align: center;
 }
 
@@ -407,4 +407,48 @@ body
 	margin-right: 3%;
 	margin-top: 10px;
 	color: #cbd0d7;
+}
+
+/* 弹出框样式 */
+#login_window
+{
+	display: none;
+	width: 200px;
+	height: 150px;
+	position: fixed;
+	text-align: center;
+	background-color: rgba(250, 250, 250, 1);
+	border-radius: 5px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgba(204, 221, 0, 0.5);
+}
+
+/* 输入框样式 */
+.login_input input
+{
+	width: 80%;
+	height: 30px;
+	margin-top: 15px;
+}
+
+/* 按钮样式 */
+#btns button
+{
+	width: 35%;
+	height: 30px;
+	margin-top: 15px;
+	background: none;
+	border-width: 1px;
+	border-color: #37474f;
+	color: #37474f;
+	text-align: center;
+}
+
+/* 按钮动画样式 */
+#btns button:hover
+{
+	-webkit-transition: 0.2s all;
+	background-color: #37474f;
+	color: white;
 }
