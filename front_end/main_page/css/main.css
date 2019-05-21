@@ -412,14 +412,14 @@ body
 /* 弹出框样式 */
 #login_window
 {
-	display: none;
+	/* display: none; */
 	width: 200px;
 	height: 150px;
-	position: fixed;
+	position: absolute;
 	text-align: center;
 	background-color: rgba(250, 250, 250, 1);
 	border-radius: 5px;
-	border-width: 2px;
+	border-width: 2.5px;
 	border-style: solid;
 	border-color: rgba(204, 221, 0, 0.5);
 }
