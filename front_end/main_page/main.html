@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="css/div.css" type="text/css">
 	<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css" />
-	<script src="js/jquery-1.9.1.min.js"></script>
-	<script src="js/bootstrap-paginator.min.js"></script>
-	
-
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquerysession.js"></script>
+    <script src="js/bootstrap-paginator.min.js"></script>
     <script src="js/main.js"></script>
 
     <body style = "height:100%">
@@ -24,12 +23,12 @@
                     </li>
                     <li class="phone_append">不知道写啥，二手书今天半价？</li>
                 </ul>
-                <ul class="media">
+                <!-- <ul class="media">
                     <li><a href="#"><i class="github"></i></a></li>
                     <li><a href="#"><i class="weibo"></i></a></li>
                     <li><a href="#"><i class="twitter"></i></a></li>
                     <li><a href="#"><i class="google"></i></a></li>
-                </ul>
+                </ul> -->
             </div>
             <!-- 导航栏样式 bootstrap 实现-->
             <div class = "container-fluid" style="margin-top: 20px;">
@@ -38,14 +37,16 @@
                         <img class = "logo" alt="Brand" src="image/logo_main.png" height="20">
                     </a>
                 </div>
-                <div class="nav navbar-nav navbar-right loginandreg">
-                    <a href="#">
+                <div class="nav navbar-nav navbar-right loginandreg"  >
+                    <a style="cursor: pointer"  >
                         <li>
                             <img src="../main_page/image/un_logged.png">
                         </li>
-                        <p>登录</p>
+                        <p id="loginandreg_pos">登录</p>
                     </a>
                 </div>
+                <!-- 这里添加登录的弹出框 -->
+                
                 <div class="nav navbar-nav navbar-right button_menu">
                     <ul class="nav navbar-nav buttons">
 
@@ -107,9 +108,7 @@
                             <!-- 
                                 中间的显示，内容根据左边的选择进行变动
                             -->
-
-                            中间，我觉得左右两边的夹缝可以再窄一点，这里的 height 被重新设置为400，之后填充时取消
-
+                            <!-- 中间，我觉得左右两边的夹缝可以再窄一点，这里的 height 被重新设置为400，之后填充时取消 -->
 							<div id="content" class="content">
 								<div class="subcontent">
 									<div class="subcon_photo">
@@ -153,9 +152,6 @@
 								<ul id="example"></ul>
 								
 							</div>
-
-
-
                         </div>
                         <div class = "col-md-3 right_info_panel">
                             <!--  
@@ -220,41 +216,48 @@
                 Copyright © 2019.Company name All rights reserved.More Templates 模板之家 - Collect from 网页模板(没错我故意的，嘿嘿)
             </div>
         </div>
+        
+        <div id="login_window">
+            <div id="login_window_container">
+                <div class="login_input">
+                    <input type="text" id="logInput1" onfocus="this.value='';" onblur="inputInfo1(this.id)" name="account" value="account">
+                </div>
+                <div class="login_input">
+                    <input type="password" id="logInput2" 
+                    onfocus="this.value='';" onblur="inputInfo2(this.id)" 
+                    name="passwd" value="password">
+                </div>
+                <div id="btns">
+                    <button onclick="login()">Login</button>
+                    <button onclick="register()">Register</button>
+                </div>
+            </div>
+        </div>
     </body>
+
 	<script>
-
-
-
-$(document).ready(function(){
-	
-	
-	
-	
-	var options={
-	    bootstrapMajorVersion:3,
-		currentPage: 4,
-		totalPages: 10,
-		numberOfPages: 5,
-		itemTexts : function(type, page, current) {
-			switch (type) {
-				case "first":
-					return "首页";
-				case "prev":
-					return "上一页";
-				case "next":
-					return "下一页";
-				case "last":
-					return "末页";
-				case "page":
-					return page;
-			}
-		},
-	};
-	$("#example").bootstrapPaginator(options);		
-});
-	 
-
-
-
+    $(document).ready(function(){
+        var options={
+            bootstrapMajorVersion:3,
+            currentPage: 4,
+            totalPages: 10,
+            numberOfPages: 5,
+            itemTexts : function(type, page, current) {
+                switch (type) {
+                    case "first":
+                        return "首页";
+                    case "prev":
+                        return "上一页";
+                    case "next":
+                        return "下一页";
+                    case "last":
+                        return "末页";
+                    case "page":
+                        return page;
+                }
+            },
+        };
+        $("#example").bootstrapPaginator(options);		
+    });
 	</script>
 </html>
