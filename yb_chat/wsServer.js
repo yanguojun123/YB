@@ -9,20 +9,6 @@
 
 var ws = require("nodejs-websocket");
 var PORT = 3000;
-//访问数据库
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '123456',
-  database : 'second'
-});
-connection.connect();
- 
-connection.query('SELECT * from  student', function (error, results, fields) {
-  if (error) throw error;
-  console.log(results);
-});
 
 // 不只有一个客户端连接
 var clientCount = 0;

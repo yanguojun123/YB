@@ -27,8 +27,13 @@ npm install nodejs-websocket
 <body class="chatbody">
     <!-- 导航 -->
     <div class="navigation">
-        <h1>聊天界面</h1>
+        <h1 id="title">聊天界面</h1>
         <a href="javascript:history.go(-1);" id="back">返回</a>
+<script type="text/javascript">//修改文章题目
+   var usernickname=window.location.href.split('to=')[1];
+   var h1=document.getElementById('title');
+   h1.innerHTML=usernickname;
+</script>
     </div>
     <!-- 会话列表 -->
     <div class="chatDiv">
@@ -47,7 +52,8 @@ npm install nodejs-websocket
     var user = {};
 
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://localhost:3000/");
+        //websocket = new WebSocket("ws://62.234.18.202:3000/");
+        websocket = new WebSocket("ws://62.234.18.202:3000/");
     } else {
         alert('当前浏览器不支持websocket')
     }
@@ -55,7 +61,11 @@ npm install nodejs-websocket
     // 创建节点
     function createChatNode(obj, ismine) {
         var $li = '';
+        var $d='';
         $li = document.createElement('li');
+        $d=document.createElement('div');
+        //$d.className='reply';
+        //$d.setAttribute("class","speech-bubble");
         if (ismine == true) {
             $li.setAttribute("class", "mine");
         } else {
@@ -67,14 +77,17 @@ npm install nodejs-websocket
         var $namespan = document.createElement('span');
         var $name = '';
         if (ismine == true) {
-            $name = document.createTextNode('我：');
+            //$name = document.createTextNode('我：');
+            $d.className="speech-bubble-right";
         } else {
-            $name = document.createTextNode(obj.name + ':');
+           // $name = document.createTextNode(obj.name + ':');
+            $d.className="speech-bubble-left";
         }
-        $namespan.appendChild($name);
+       // $namespan.appendChild($name);
         
-        $li.appendChild($namespan);
-        $li.appendChild($dataspan);
+        $d.appendChild($namespan);
+        $d.appendChild($dataspan);
+        $li.appendChild($d);
         var $list = document.getElementById('chatlist');
         $list.appendChild($li);
     }
@@ -140,7 +153,7 @@ npm install nodejs-websocket
         // 这里是把发起会话的人的信息告诉服务器
         //显示历史消息
          show();
-
+         init();//初始化键盘监听
         // 发送消息
         document.getElementById("sendBtn").onclick = function() {
             var txt = document.getElementById("sendText").value;
@@ -179,7 +192,9 @@ npm install nodejs-websocket
         return obj;
 
     }
-
+    //window.setInterval(function(){
+    //var ping = {"type":"ping"}; 
+   // websocket.send(JSON.stringify(ping)); },5000);//自动连接避免断开
     //接收到消息的回调方法
     websocket.onmessage = function(e) {
         // if (e == '好友在忙碌') {
@@ -239,24 +254,13 @@ npm install nodejs-websocket
          {
            if (xmlhttp.readyState==4 && xmlhttp.status==200)
            {
-            
              var xmlDoc = xmlhttp.responseXML; 
-              //这里把返回的数据以XML的格式存到变量中。
-             //还有一种返回式以字符串的形式返回，responseText，这个可以用下标法逐个输出，但是注意，逐个输出的是字符，
-             //也就是说，你想要的一个字符串会被拆成几份
-            
-             //这里的 getElementsByTagName("time")[0].childNodes[0].nodeValue; 是采用遍历数的方法逐个输出数据
-               //getElementsByTagName 是通有的（"  "）这里写的是你链接的文件里面的标签名，等下介绍再详说，[0]也是要写的
-             //.childNodes[0].nodeValue;  这块也是通有的，意思是获取值
              var number = xmlDoc.getElementsByTagName("number")[0].childNodes[0].nodeValue;
-             //var number1 = xmlDoc.getElementsByTagName("number1")[0].childNodes[0].nodeValue;
-            //进行插入
-            //alert(user.name);
-		     //var time=new Date();
-		    // alert(order1);
-                //var times=order[number]['time'];
-               
-		     for (var i=0;i<number;i++)
+               var messageNumber=20;
+               var startIndex=0;//消息的起始下标
+               if(number>messageNumber)
+                   startIndex=number-messageNumber;  
+		     for (var i=startIndex;i<number;i++)
 		        {   
 		        	var temp=xmlDoc.getElementsByTagName("content")[i].childNodes[0].nodeValue;
                     var times=xmlDoc.getElementsByTagName("time")[i].childNodes[0].nodeValue;
@@ -284,6 +288,29 @@ npm install nodejs-websocket
 	xmlhttp.open("GET","selMessage.php?user="+user.name,true);
 	xmlhttp.send();
 }
+function init(){
+    //页面键盘点击时触发
+    document.onkeydown=showKeyDown;
+}
+
+    function showKeyDown(evt){
+        evt = (evt) ? evt : window.event ;
+
+        if(evt.keyCode==13){
+            var txt = document.getElementById("sendText").value;
+            document.getElementById('sendText').value = '';
+            if (txt) {
+                user.type = "message";
+                user.data = txt;
+                websocket.send(JSON.stringify(user));
+                createChatNode(user,true);
+                //alert('baocun');
+                insert(txt,user.name,user.toname);
+        }
+        
+    }
+}
+
     </script>
 </body>
 

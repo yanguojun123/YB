@@ -17,7 +17,7 @@ echo "选择数据库出错";
 
 //$ttt='1';
 $ttt="'".$_GET['userId']."'";
-$tt="SELECT * FROM friendship inner join user on friendship.friendId=user.userId where friendship.userId=".$ttt;
+$tt="SELECT * FROM user WHERE userId=".$ttt;
 $number=0;
 //$sql = "SELECT content FROM blog where lookNum=43";
 $result1=mysqli_query($conn,$tt);
@@ -31,13 +31,13 @@ echo '<?xml version="1.0" encoding="ISO-8859-1"?><person>';
 while($row=mysqli_fetch_array($result1))
 {
     
-    echo "<friendld>".$row['nickname']."</friendld>";
+    echo "<nickname>".$row['nickname']."</nickname>";
    // echo "<time>".$row['time']."</time>";
     //echo "<br>";
     $number++;
     //echo "<br>";
     //header("location:url地址");
 }
-echo "<number>".$number."</number>";
+
 echo '</person>';
   ?>
