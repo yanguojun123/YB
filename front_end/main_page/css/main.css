@@ -320,7 +320,9 @@ body
 .mid_main_panel
 {	
 	height: 100%;
-	background: rgba(255,0,0,0.5);
+	/* background: rgba(255,0,0,0.5); */
+	/* padding-left: 10px;
+	padding-right: 10px; */
 	height: 400px;
 }
 
@@ -409,10 +411,27 @@ body
 	color: #cbd0d7;
 }
 
-/* 弹出框样式 */
+/* 弹出注册框样式 */
+#register_window
+{
+	display: none;
+	width: 500px;
+	height: 300px;
+	position: absolute;
+	text-align: center;
+	background: url("../image/background2.png");
+	border-color: gray;
+	border-radius: 5px;
+	border-width: 2.5px;
+	border-style: solid;
+
+	box-shadow: black 3px 3px 4px 1px /* 边框阴影 */
+}
+
+/* 弹出登录框样式 */
 #login_window
 {
-	/* display: none; */
+	display: none;
 	width: 200px;
 	height: 150px;
 	position: absolute;
@@ -422,6 +441,13 @@ body
 	border-width: 2.5px;
 	border-style: solid;
 	border-color: rgba(204, 221, 0, 0.5);
+}
+
+/* 灰色背景 */
+#grayBackground
+{
+	display: none;
+	position: absolute;
 }
 
 /* 输入框样式 */
@@ -451,4 +477,64 @@ body
 	-webkit-transition: 0.2s all;
 	background-color: #37474f;
 	color: white;
+}
+
+/* 注册框标题 */
+#registerHeader h2
+{
+	color:rgba(245, 245, 245, 1);
+
+}
+
+/* 注册框 ID */
+#regisSpan h4
+{
+	padding-top: 10px;
+	color:rgba(245, 245, 245, 1);
+}
+
+/* 注册框输入样式 */
+#registerInputs div input
+{
+	margin-top: 15px;
+	width: 55%;
+	height: 40px;
+	border-radius: 20px;
+	border-width: 0;
+	text-align: center;
+	background: rgba(245, 245, 245, 1);
+}
+
+/* 注册框按钮样式 */
+#registerButtons button
+{
+	width: 22%;
+	margin-top: 18px;
+	height: 35px;
+	border-radius: 5px;
+	background: none;
+	color: #7986cb;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(245, 245, 245, 1);
+}
+
+/* 按钮定制样式 */
+#registerButtons button:first-child
+{
+	margin-right: 5px;
+}
+
+/* 按钮定制样式 */
+#registerButtons button:last-child
+{
+	margin-left: 5px;
+}
+
+/* 按钮动画样式 */
+#registerButtons button:hover
+{
+	-webkit-transition: 0.2s all;
+	color: #37474f;
+	background: white;
 }

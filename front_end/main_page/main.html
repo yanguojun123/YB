@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style = "height:100%">
     <head>
         <meta charset="utf-8" />
         <title>易吧，开创新的生活</title>
@@ -38,7 +38,7 @@
                     </a>
                 </div>
                 <div class="nav navbar-nav navbar-right loginandreg"  >
-                    <a style="cursor: pointer"  >
+                    <a id="portrait" style="cursor: pointer"  >
                         <li>
                             <img src="../main_page/image/un_logged.png">
                         </li>
@@ -229,10 +229,43 @@
                 </div>
                 <div id="btns">
                     <button onclick="login()">Login</button>
-                    <button onclick="register()">Register</button>
+                    <button onclick="registerBTN()">Register</button>
                 </div>
             </div>
         </div>
+        <div id="grayBackground">
+
+        </div>
+        <div id="register_window">
+            <div id="register_window_container">
+                <!-- 这里的东西就多了，先写着吧 -->
+                <div id="registerHeader">
+                    <h2>新用户注册</h2>
+                </div>
+                <div id="regisSpan">
+                    <h4>您的注册 ID 为: <span id="registerID">123456789</span></h4>
+                </div>
+                <div id="registerInputs">
+                    <div id="regisNickname">
+                        <input type="text" placeholder="请输入您的昵称">
+                    </div>
+                    <div id="regisEmail">
+                        <input type="text" placeholder="请输入注册邮箱" onblur="verifyEmail(this)">
+                    </div>
+                    <div id="regisPasswd">
+                        <input type="password" placeholder="请输入密码" onblur="verifyPasswd(this)">
+                    </div>
+                    <div id="regisPasswdAgain">
+                        <input type="password" placeholder="请再次确认密码">
+                    </div>
+                </div>
+                <div id="registerButtons">
+                    <button>注册</button>
+                    <button onclick="register_cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+
     </body>
 
 	<script>
