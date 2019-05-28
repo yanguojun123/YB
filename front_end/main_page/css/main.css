@@ -1,3 +1,8 @@
+
+@font-face{
+	font-family: "a";
+	src:url(../fonts/AaMangoBrother.ttf);
+}
 /* 主页背景图片样式 */
 body
 {
@@ -328,10 +333,58 @@ body
 .right_info_panel
 {
 	height: 100%;
-	background: rgba(0,255,0,0.5);
+/*	background: rgba(0,255,0,0.5);*/
+    background-color: #55bb8a;
 	height: 400px;
 }
+.right_info_panel .rightheader
+{
+	weight:100%;
+	height:10%;
+    font-family:"a";
+	background-color: aliceblue;
+    border-radius: 5px;
+    text-align: center;
+    border-style:double;
+}
 
+
+/**/
+.right_info_panel ul
+{
+	margin-left:-3%;
+	margin-top:-3.4%;
+	color:aliceblue;
+/*	background-color:aqua;*/
+}
+.right_info_panel li
+{
+
+	margin-top:1%;
+	margin-left:-10%;
+	list-style:none;
+    background-color:#d0dfe6;
+    border-radius: 5px;
+    text-align: center;
+/*    list-style-type:decimal;*/
+/*	background-color: antiquewhite;*/
+	
+}
+
+.right_info_panel li a
+{
+	font-size:18px;
+    width:100%;
+    height:30px;
+    line-height: 30px;
+	cursor: pointer;
+}
+.right_info_panel li a:hover
+{
+	font-size:22px;
+    transition:0.4s;
+    color:#2bae85;
+}
 /* 脚注 css 样式*/
 .foot
 {

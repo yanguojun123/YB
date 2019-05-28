@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css" type = "text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="css/div.css" type="text/css">
+    <link rel="stylesheet" href="css/fontawsome-alll.min.css" type="text/css">
 	<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css" />
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap-paginator.min.js"></script>
@@ -110,54 +111,67 @@
 
                             中间，我觉得左右两边的夹缝可以再窄一点，这里的 height 被重新设置为400，之后填充时取消
 
-							<div id="content" class="content">
-								<div class="subcontent">
-									<div class="subcon_photo">
-										<a href="#">
-	                                		<img  src="image/book_test/童年.png">
-	                           			</a>
-									<ul class="social">
-	                               		<li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
-	                                	<li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
+        <div id="content" class="content">
+          
+          <div class="subcontent">
+            <div class="subcon_photo">
+              <img  src="image/book_test/童年.png" id="pic">
+      
+            <ul class="social">
+                <li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
 <!--	                                	<li><a href="#" data-tip="Compare"><i class="fas fa-random"></i></a></li>-->
-	                                	<li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
-	                            	</ul>
-									</div>
-									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
-									<div title="高尔基" class="subcon_author">高尔基</div>
-									<div class="subcon_price">￥20</div>
-									<div class="subcon_seller"><a href="#">kaim</a></div>
-								</div>
-								<div class="subcontent">
-									<div class="subcon_photo">
-										<a href="#">
-	                                		<img  src="image/book_test/童年.png">
-	                           			</a>
-									<ul class="social">
-	                               		<li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
-	                                	<li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
+                <li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
+            </ul>
+            </div>
+            <div title="童年" class="subcon_name"><a href="#">童年</a></div>
+            <div title="高尔基" class="subcon_author">高尔基</div>
+            <div class="subcon_price">￥20</div>
+            <div class="subcon_seller"><a href="#">kaim</a></div>
+          </div>
+
+
+          <div class="subcontent">
+            <div class="subcon_photo">
+
+              <a href="#">
+                <img  src="image/book_test/童年.png">
+              </a>
+
+              <ul class="social">
+                <li><a href="#" data-tip="Add to Cart" onclick="test(this)"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
 <!--	                                	<li><a href="#" data-tip="Compare"><i class="fas fa-random"></i></a></li>-->
-	                                	<li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
-	                            	</ul>
-									</div>
-									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
-									<div title="高尔基" class="subcon_author">高尔基</div>
-									<div class="subcon_price">￥20</div>
-									<div class="subcon_seller"><a href="#">kaim</a></div>
-								</div>
+                <li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
+            </ul>
+            </div>
+            <div title="童年" class="subcon_name"><a href="#">童年</a></div>
+            <div title="高尔基" class="subcon_author">高尔基</div>
+            <div class="subcon_price">￥20</div>
+            <div class="subcon_seller"><a href="#">kaim</a></div>
+          </div>
+          
 								
 
-							</div>
-							<div style="text-align: center">
-<!--							<ul class="pagination"></ul>-->
-								<ul id="example"></ul>
-								
-							</div>
+         </div>
+                <div style="text-align: center">
+  <!--							<ul class="pagination"></ul>-->
+                  <ul id="example"></ul>
+
+                </div>
 
 
 
                         </div>
+						
                         <div class = "col-md-3 right_info_panel">
+                          
+                          
+							<h2 class="rightheader">热度最高</h2>
+							<ul id="heat">
+								<li><span id="first"></span><a>东野圭吾</a></li>
+								<li><span id="second"></span><a>三体</a></li>
+							</ul>
                             <!--  
                             右边的显示，内容根据左边的选择进行变动；
                             当左侧选择的是二手书相关，右侧显示最火热的二手书；
@@ -165,6 +179,7 @@
                             -->
                             右边可以直接使用bootstrap中的panel样式，但是注意宽度，这里的 height 被重新设置为400，之后填充时取消
                         </div> 
+						
                     </div>
                 </div>
             </div>
@@ -223,13 +238,24 @@
     </body>
 	<script>
 
-
+function test(a){
+  var p = a.parentNode.parentNode.parentNode.parentNode.children[1];
+  var q = p.innerHTML;
+  alert(p.title)
+  alert(p.getAttribute("title"))
+  alert(q)
+  
+}
 
 $(document).ready(function(){
 	
-	
-	
-	
+  //rightget();//右侧面板的展示
+  //middleget();
+$("#pic").on("click",function(){
+
+  $(this).parent().empty();     
+});
+	//分页用
 	var options={
 	    bootstrapMajorVersion:3,
 		currentPage: 4,
@@ -252,9 +278,20 @@ $(document).ready(function(){
 	};
 	$("#example").bootstrapPaginator(options);		
 });
-	 
+//从数据库异步获取最新热度的内容展示到右侧面板
+function rightget(){
+  $("#heat").empty();
+  $("#heat").append("<li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li>");
+}	 
 
-
+function middleget(){
+  $("#content").empty();
+  $("#content").append(" <div class='subcontent'><div class='subcon_photo'><img  src='image/book_test/童年.png' onclick='newPage(this)'><ul class='social'><li title='收藏'><a href='#' data-tip='Add to Cart'><i class='fas fa-shopping-cart'></i></a></li><li><a href='#' data-tip='Wishlist'><i class='far fa-heart'></i></a></li><li><a href='#' data-tip='Quick View'><i class='fas fa-search'></i></a></li></ul></div><div title='童年' class='subcon_name'><a href='#'>童年</a></div><div title='高尔基' class='subcon_author'>高尔</div><div class='subcon_price'>￥20</div><div class='subcon_seller'><a href='#'>kaim</a></div></div>");
+}
+function newPage(str){
+  var parent=str.parent
+  
+}
 
 	</script>
 </html>
