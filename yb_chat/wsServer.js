@@ -27,6 +27,7 @@ groups = [{
     }
 ];
 
+
 // 在线人员的表 group在线
 var onlines = [];
 // 单聊在线
@@ -69,11 +70,13 @@ var server = ws.createServer(function(conn) {
     clientCount++;
 
     var user; 
-     for(var i=0;i<tempMessage.length;i++)
+    //发送历史消息
+     /*for(var i=0;i<tempMessage.length;i++)
                 {
                     broadcast(JSON.stringify(tempMessage[i]));
+                    tempMessage[i]=null;
                 }
-
+    */
     conn.on("text", function(str) {
         // 接收到客户端的消息时的处理
         // 这里的打印会在终端显示出来
@@ -137,6 +140,7 @@ var server = ws.createServer(function(conn) {
         } else {
             mes.data = user.data;
         }
+        //mes.data=user.data;
         mes.num = user.count;
         mes.name = user.name; //发起会话的人的姓名  这里最好使用id
         mes.toname = user.toname; //只会在单聊的时候存在，要发送给谁，也最好用id
@@ -152,13 +156,15 @@ var server = ws.createServer(function(conn) {
                  broadcast(JSON.stringify("好友在忙碌"));
             } else {
                 broadcast(JSON.stringify(mes));
+                
             }
         } else {
             // 你要单独给好友聊天，这里检测好友是否在和别人聊天
-            if (signallines.contains(mes.toname) && signallines.contains(mes.name)) {
-                
+            if (signallines.contains(mes.toname) && signallines.contains(mes.name)&&mes.type!="enter") 
+            {
                 broadcast(JSON.stringify(mes));
             } else {
+                if(mes.type!="enter")//判断一下是不是为刚进入的消息，如果是则不保存
                    tempMessage.push(mes);
                 console.log('我要发送的---对象不在线')
                 broadcast(JSON.stringify("好友在忙碌"));

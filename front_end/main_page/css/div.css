@@ -8,18 +8,35 @@
 }
 .content{
 	font-family: "a";
-	margin-top:1%;
+	/* margin-top:1%; */
 	height: 82%;
-	width:100%;
-	background-color:antiquewhite;
+    width:100%;
+    /* 修改于 2019.5.25 */
+    /* background-color:antiquewhite; */
+    background-color: rgb(250, 250, 250);
+    border-color: rgba(204, 221, 0,0.5);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
 }
+
 .content .subcontent{
 	margin-top:2%;
-	margin-left:1.5%;
+    margin-left:1.5%;
+    padding-top: 8px;
 	height: 60%;
 	width:23%;	
 	float:left;
-	background-color: aliceblue;
+    background-color: aliceblue;
+    /* 修改于 2019.5.25 */
+    -webkit-transition: 0.2s all;
+    box-shadow: darkgrey 1px 1px 2px 1px /* 边框阴影 */
+}
+
+.content .subcontent:hover{
+    /* 修改于 2019.5.25 */
+    -webkit-transition: 0.2s all;
+    box-shadow: darkgrey 3px 3px 4px 1px /* 边框阴影 */
 }
 .content .subcon_photo{
 	text-align: center;
@@ -33,16 +50,14 @@
 	display:none;
 }
 
-
 .subcon_photo .social {
-    width:15%;
     padding: 0;
     margin: 0;
 	margin-top:10%;
     list-style: none;
  	transform: translateY(-150%);
 /*   position: absolute;
-    top: 50%;
+   top: 50%;
     left: 10px;*/
 	
     z-index: 4;
@@ -52,14 +67,13 @@
 
     margin:0;
 	margin-right:80%;
-	transform:translate(-20%,0%);
     opacity: 0;
     transition: transform .3s ease-out 0s;
 
 }
 .subcon_photo:hover .social li {
     opacity: 1;
-    transform: translateX(10%);
+    transform: translateX(50%);
 }
 .subcon_photo:hover .social li:nth-child(2){ transition-delay: 0.1s; }
 .subcon_photo:hover .social li:nth-child(3){ transition-delay: 0.2s; }
@@ -85,7 +99,7 @@
     top: 50%;
     transition: all 0.3s;
 }
-/*.subcon_photo .social li a:after{
+.subcon_photo .social li a:after{
     content: '';
     background: linear-gradient(-45deg, #fff 49%, transparent 50%);
     width: 10px;
@@ -96,7 +110,7 @@
 .subcon_photo .social li a:hover:before,
 .subcon_photo .social li a:hover:after{
       display: block;
-}*/
+}
 
 
 

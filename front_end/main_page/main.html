@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style = "height:100%">
     <head>
         <meta charset="utf-8" />
         <title>易吧，开创新的生活</title>
@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="css/main.css" type = "text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="css/div.css" type="text/css">
-    <link rel="stylesheet" href="css/fontawsome-alll.min.css" type="text/css">
 	<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css" />
-	<script src="js/jquery-1.9.1.min.js"></script>
-	<script src="js/bootstrap-paginator.min.js"></script>
-	
-
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquerysession.js"></script>
+    <script src="js/bootstrap-paginator.min.js"></script>
     <script src="js/main.js"></script>
 
     <body style = "height:100%">
@@ -25,12 +23,12 @@
                     </li>
                     <li class="phone_append">不知道写啥，二手书今天半价？</li>
                 </ul>
-                <ul class="media">
+                <!-- <ul class="media">
                     <li><a href="#"><i class="github"></i></a></li>
                     <li><a href="#"><i class="weibo"></i></a></li>
                     <li><a href="#"><i class="twitter"></i></a></li>
                     <li><a href="#"><i class="google"></i></a></li>
-                </ul>
+                </ul> -->
             </div>
             <!-- 导航栏样式 bootstrap 实现-->
             <div class = "container-fluid" style="margin-top: 20px;">
@@ -39,14 +37,16 @@
                         <img class = "logo" alt="Brand" src="image/logo_main.png" height="20">
                     </a>
                 </div>
-                <div class="nav navbar-nav navbar-right loginandreg">
-                    <a href="#">
+                <div class="nav navbar-nav navbar-right loginandreg"  >
+                    <a id="portrait" style="cursor: pointer"  >
                         <li>
                             <img src="../main_page/image/un_logged.png">
                         </li>
-                        <p>登录</p>
+                        <p id="loginandreg_pos">登录</p>
                     </a>
                 </div>
+                <!-- 这里添加登录的弹出框 -->
+                
                 <div class="nav navbar-nav navbar-right button_menu">
                     <ul class="nav navbar-nav buttons">
 
@@ -108,70 +108,52 @@
                             <!-- 
                                 中间的显示，内容根据左边的选择进行变动
                             -->
-
-                            中间，我觉得左右两边的夹缝可以再窄一点，这里的 height 被重新设置为400，之后填充时取消
-
-        <div id="content" class="content">
-          
-          <div class="subcontent">
-            <div class="subcon_photo">
-              <img  src="image/book_test/童年.png" id="pic">
-      
-            <ul class="social">
-                <li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
+                            <!-- 中间，我觉得左右两边的夹缝可以再窄一点，这里的 height 被重新设置为400，之后填充时取消 -->
+							<div id="content" class="content">
+								<div class="subcontent">
+									<div class="subcon_photo">
+										<a href="#">
+	                                		<img  src="image/book_test/童年.png">
+	                           			</a>
+									<ul class="social">
+	                               		<li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+	                                	<li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
 <!--	                                	<li><a href="#" data-tip="Compare"><i class="fas fa-random"></i></a></li>-->
-                <li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
-            </ul>
-            </div>
-            <div title="童年" class="subcon_name"><a href="#">童年</a></div>
-            <div title="高尔基" class="subcon_author">高尔基</div>
-            <div class="subcon_price">￥20</div>
-            <div class="subcon_seller"><a href="#">kaim</a></div>
-          </div>
-
-
-          <div class="subcontent">
-            <div class="subcon_photo">
-
-              <a href="#">
-                <img  src="image/book_test/童年.png">
-              </a>
-
-              <ul class="social">
-                <li><a href="#" data-tip="Add to Cart" onclick="test(this)"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
+	                                	<li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
+	                            	</ul>
+									</div>
+									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
+									<div title="高尔基" class="subcon_author">高尔基</div>
+									<div class="subcon_price">￥20</div>
+									<div class="subcon_seller"><a href="#">kaim</a></div>
+								</div>
+								<div class="subcontent">
+									<div class="subcon_photo">
+										<a href="#">
+	                                		<img  src="image/book_test/童年.png">
+	                           			</a>
+									<ul class="social">
+	                               		<li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+	                                	<li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
 <!--	                                	<li><a href="#" data-tip="Compare"><i class="fas fa-random"></i></a></li>-->
-                <li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
-            </ul>
-            </div>
-            <div title="童年" class="subcon_name"><a href="#">童年</a></div>
-            <div title="高尔基" class="subcon_author">高尔基</div>
-            <div class="subcon_price">￥20</div>
-            <div class="subcon_seller"><a href="#">kaim</a></div>
-          </div>
-          
+	                                	<li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
+	                            	</ul>
+									</div>
+									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
+									<div title="高尔基" class="subcon_author">高尔基</div>
+									<div class="subcon_price">￥20</div>
+									<div class="subcon_seller"><a href="#">kaim</a></div>
+								</div>
 								
 
-         </div>
-                <div style="text-align: center">
-  <!--							<ul class="pagination"></ul>-->
-                  <ul id="example"></ul>
-
-                </div>
-
-
-
+							</div>
+							<div style="text-align: center">
+<!--							<ul class="pagination"></ul>-->
+								<ul id="example"></ul>
+								
+							</div>
                         </div>
-						
                         <div class = "col-md-3 right_info_panel">
-                          
-                          
-							<h2 class="rightheader">热度最高</h2>
-							<ul id="heat">
-								<li><span id="first"></span><a>东野圭吾</a></li>
-								<li><span id="second"></span><a>三体</a></li>
-							</ul>
                             <!--  
                             右边的显示，内容根据左边的选择进行变动；
                             当左侧选择的是二手书相关，右侧显示最火热的二手书；
@@ -179,7 +161,6 @@
                             -->
                             右边可以直接使用bootstrap中的panel样式，但是注意宽度，这里的 height 被重新设置为400，之后填充时取消
                         </div> 
-						
                     </div>
                 </div>
             </div>
@@ -235,63 +216,81 @@
                 Copyright © 2019.Company name All rights reserved.More Templates 模板之家 - Collect from 网页模板(没错我故意的，嘿嘿)
             </div>
         </div>
+        
+        <div id="login_window">
+            <div id="login_window_container">
+                <div class="login_input">
+                    <input type="text" id="logInput1" onfocus="this.value='';" onblur="inputInfo1(this.id)" name="account" value="account">
+                </div>
+                <div class="login_input">
+                    <input type="password" id="logInput2" 
+                    onfocus="this.value='';" onblur="inputInfo2(this.id)" 
+                    name="passwd" value="password">
+                </div>
+                <div id="btns">
+                    <button onclick="login()">Login</button>
+                    <button onclick="registerBTN()">Register</button>
+                </div>
+            </div>
+        </div>
+        <div id="grayBackground">
+
+        </div>
+        <div id="register_window">
+            <div id="register_window_container">
+                <!-- 这里的东西就多了，先写着吧 -->
+                <div id="registerHeader">
+                    <h2>新用户注册</h2>
+                </div>
+                <div id="regisSpan">
+                    <h4>您的注册 ID 为: <span id="registerID">123456789</span></h4>
+                </div>
+                <div id="registerInputs">
+                    <div id="regisNickname">
+                        <input type="text" placeholder="请输入您的昵称">
+                    </div>
+                    <div id="regisEmail">
+                        <input type="text" placeholder="请输入注册邮箱" onblur="verifyEmail(this)">
+                    </div>
+                    <div id="regisPasswd">
+                        <input type="password" placeholder="请输入密码" onblur="verifyPasswd(this)">
+                    </div>
+                    <div id="regisPasswdAgain">
+                        <input type="password" placeholder="请再次确认密码">
+                    </div>
+                </div>
+                <div id="registerButtons">
+                    <button>注册</button>
+                    <button onclick="register_cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+
     </body>
+
 	<script>
-
-function test(a){
-  var p = a.parentNode.parentNode.parentNode.parentNode.children[1];
-  var q = p.innerHTML;
-  alert(p.title)
-  alert(p.getAttribute("title"))
-  alert(q)
-  
-}
-
-$(document).ready(function(){
-	
-  //rightget();//右侧面板的展示
-  //middleget();
-$("#pic").on("click",function(){
-
-  $(this).parent().empty();     
-});
-	//分页用
-	var options={
-	    bootstrapMajorVersion:3,
-		currentPage: 4,
-		totalPages: 10,
-		numberOfPages: 5,
-		itemTexts : function(type, page, current) {
-			switch (type) {
-				case "first":
-					return "首页";
-				case "prev":
-					return "上一页";
-				case "next":
-					return "下一页";
-				case "last":
-					return "末页";
-				case "page":
-					return page;
-			}
-		},
-	};
-	$("#example").bootstrapPaginator(options);		
-});
-//从数据库异步获取最新热度的内容展示到右侧面板
-function rightget(){
-  $("#heat").empty();
-  $("#heat").append("<li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li>");
-}	 
-
-function middleget(){
-  $("#content").empty();
-  $("#content").append(" <div class='subcontent'><div class='subcon_photo'><img  src='image/book_test/童年.png' onclick='newPage(this)'><ul class='social'><li title='收藏'><a href='#' data-tip='Add to Cart'><i class='fas fa-shopping-cart'></i></a></li><li><a href='#' data-tip='Wishlist'><i class='far fa-heart'></i></a></li><li><a href='#' data-tip='Quick View'><i class='fas fa-search'></i></a></li></ul></div><div title='童年' class='subcon_name'><a href='#'>童年</a></div><div title='高尔基' class='subcon_author'>高尔</div><div class='subcon_price'>￥20</div><div class='subcon_seller'><a href='#'>kaim</a></div></div>");
-}
-function newPage(str){
-  var parent=str.parent
-  
-}
-
+    $(document).ready(function(){
+        var options={
+            bootstrapMajorVersion:3,
+            currentPage: 4,
+            totalPages: 10,
+            numberOfPages: 5,
+            itemTexts : function(type, page, current) {
+                switch (type) {
+                    case "first":
+                        return "首页";
+                    case "prev":
+                        return "上一页";
+                    case "next":
+                        return "下一页";
+                    case "last":
+                        return "末页";
+                    case "page":
+                        return page;
+                }
+            },
+        };
+        $("#example").bootstrapPaginator(options);		
+    });
 	</script>
 </html>
