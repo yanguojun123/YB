@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>童年</title>
+</head>
+<link rel="stylesheet" href="css/main.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="css/magnifier.css" type="text/css">
+<link rel="stylesheet" href="css/bookPage.css" type="text/css">
+<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css" />
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/magnifier.js"></script>
+<script src="js/bookPage.js"></script>
+<script src="js/main.js"></script>
+
+<body>
+    <nav class="navbar nav_bar" role="navigation">
+        <div class="webset_info">
+            <ul class="contact_phone">
+                <li class="phone_ego">
+                    <i class="phone_icon"></i>
+                    <span>CONTACT: XXX-XXXX-XXXX</span>
+                </li>
+                <li class="phone_append">不知道写啥，二手书今天半价？</li>
+            </ul>
+        </div>
+        <!-- 导航栏样式 bootstrap 实现-->
+        <div class="container-fluid" style="margin-top: 20px;">
+            <div class="navbar-header logo_container">
+                <a class="navbar-left" href="https://github.com/yanguojun123/YB" target="_blank">
+                    <img class="logo" alt="Brand" src="image/logo_main.png" height="20">
+                </a>
+            </div>
+            <div class="nav navbar-nav navbar-right loginandreg">
+                <a  id="portrait" style="cursor: pointer">
+                    <li>
+                        <img src="../main_page/image/un_logged.png">
+                    </li>
+                    <p id="loginandreg_pos">登录</p>
+                </a>
+            </div>
+            <div class="nav navbar-nav navbar-right button_menu">
+                <ul class="nav navbar-nav buttons">
+                    <li class="active"><a href="#">水果蔬菜</a></li>
+                    <li><a href="#">浏览历史</a></li>
+                    <li><a href="#">我的购物车</a></li>
+                    <li><a href="#">个人主页</a></li>
+                    <li><a href="#">聊天记录</a></li>
+                    <li><a href="#">关注我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="input-group col-md-3 search_box">
+        <!-- 搜索框 -->
+        <input type="text" class="search_input" value="请输入想要查询的内容" onfocus="this.value = '';"
+            onblur="if(this.value == ''){this.value = '请输入想要查询的内容';}">
+        <input type="submit" class="search_btn" value="搜索">
+    </div>
+    <div class="main_disp">
+        <div class="mid_main_panel col-md-9">
+            <div class="mid_container container-fluid">
+                <div class="book_pic_container col-md-3">
+                    <div class="magnifier" id="magnifier1">
+                        <div class="magnifier-container">
+                            <div class="images-cover"></div>
+                            <!--当前图片显示容器-->
+                            <div class="move-view"></div>
+                            <!--跟随鼠标移动的盒子-->
+                        </div>
+                        <div class="magnifier-assembly">
+                            <div class="magnifier-btn">
+                                <span class="magnifier-btn-left">&lt;</span>
+                                <span class="magnifier-btn-right">&gt;</span>
+                            </div>
+                            <!--按钮组-->
+                            <div class="magnifier-line">
+                                <ul class="clearfix animation03">
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png" />
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png" />
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png" />
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png" />
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="magnifier-view"></div>
+                    </div>
+                </div>
+                <div class="book_info_container">
+                    <div class="book_info_tab">
+                        <div class="book_info_header container-fluid">
+                            <div class="col-md-5">
+                                <h3 id="bookname">书的名称（版次）</h3>
+                            </div>
+                            <div class="col-md-5">
+                                <h4 id="bookauthor">书的作者</h4>
+                            </div>
+                        </div>
+                        <div class="book_info_basic">
+                            <div class="book_info_basic_left col-md-6">
+                                <ul>
+                                    <li>
+                                        <p><span class="info_item">出版社：</span>某某某某出版社</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="info_item">ISBN：</span>9001-XXX-XXXX-XX</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="info_item">出版日期：</span>XXXX-XX-XX</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="book_info_basic_right col-md-6">
+                                <ul>
+                                    <li>
+                                        <p><span class="info_item">开本：</span>XXX 开</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="info_item">纸张：</span>胶装</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="info_item">分类：</span>XXXX 类</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book_info_description col-md-12">
+                            <div class="info_item">内容简介:</div>
+                            <p id="bookdescript">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阿廖沙三岁时，失去了父亲，母亲瓦尔瓦拉把他寄养在外祖父卡什林家。外祖父家住在尼日尼——诺弗哥罗德城。外祖父年轻时，是一个纤夫，后来开染坊，成了小业主。阿廖沙来到外祖父家时，外祖父家业已经开始衰落，由于家业不景气，外祖父变得也愈加专横暴躁。阿廖沙的两个舅舅米哈伊尔和雅科夫为了分家和侵吞阿廖沙母亲的嫁妆而不断地争吵、斗殴...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bookPriceTab">
+                        <div class="container-fluid">
+                            <div class="info_item priceText">价格：</div>
+                            <div class="col-md-2" id="bookPrice">¥39.5</div>
+                            <div class="col-md-4 container-fluid">
+                                <button id="addCartBtn">
+                                    <div id="addCartIcon">
+                                        <img src="image/shopping_car_16.png">
+                                    </div>加入购物车
+                                </button>
+                            </div>
+                            <div class="col-md-4 container-fluid paddingShrink">
+                                <button id="addCartBtn" style="background: steelblue;">联系店家
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="right_info_panel col-md-3">
+            <div class="shopInfo_container">
+                <div class="shopInfo_header">
+                    <div class="col-md-5 shopHeaderPic">
+                        <img src="image/register_head_portrait.png">
+                    </div>
+                    <div class="col-md-5 paddingShrink">
+                        <h4 id="shopName">用户名称</h4>
+                    </div>
+                    <div class="container-fluid col-md-7 paddingShrink">
+                        <div class="shopQuality_text col-md-3">信誉&nbsp;</div>
+                        <div id="shopQuality" class="col-md-9 paddingShrink">
+                            <ul>
+                                <li class="star">
+                                    <img src="image/star_yellow.png">
+                                </li>
+                                <li class="star">
+                                    <img src="image/star_yellow.png">
+                                </li>
+                                <li class="star">
+                                    <img src="image/star_yellow.png">
+                                </li>
+                                <li class="star">
+                                    <img src="image/star_yellow.png">
+                                </li>
+                                <li class="star">
+                                    <img src="image/star_gray.png">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container-fluid col-md-7 paddingShrink">
+                        <p id="shopDescript">这里可以显示发布该二手书店家的信息，店铺里有哪些书啥的</p>
+                    </div>
+                </div>
+                <div class="shopInfo_main col-md-12">
+                    <div class="shopInfo_main_header">
+                        <h4 style="margin-bottom: 5px; margin-top:5px;">用户推荐</h4>
+                    </div>
+                    <div>
+                        <div class="col-sm-12 col-md-12 paddingShrink">
+                            <div class="thumbnail_img col-md-5"><img src="image/book_test/1.png"></div>
+                            <div class="caption col-md-7 paddingShrink">
+                                <h4>还是童年</h4>
+                                <p>还是童年还是童年还是童年还是童年简介最好两行</p>
+                                <p>
+                                    <a class="btn btn-default" role="button" onclick="loadBook(this)">加载</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 paddingShrink">
+                            <div class="thumbnail_img col-md-5"><img src="image/book_test/2.png"></div>
+                            <div class="caption col-md-7 paddingShrink">
+                                <h4>还是童年</h4>
+                                <p>还是童年还是童年还是童年还是童年简介最好两行</p>
+                                <p>
+                                    <a class="btn btn-default" role="button" onclick="loadBook(this)">加载</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 paddingShrink">
+                            <div class="thumbnail_img col-md-5"><img src="image/book_test/3.png"></div>
+                            <div class="caption col-md-7 paddingShrink">
+                                <h4>还是童年</h4>
+                                <p>还是童年还是童年还是童年还是童年简介最好两行</p>
+                                <p>
+                                    <a class="btn btn-default" role="button" onclick="loadBook(this)">加载</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="main_next">
+        <!-- 这里填装额外的信息 -->
+    </div>
+    <div class="foot">
+        <!-- 角注，呈现版权信息、公司团队信息等 -->
+        <div class="container-fluid foot_container">
+            <div class="footer-grid foot_panel_1 shrink">
+                <h3>完全不知道应该写什么</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                    <li><a href="#">项目三</a></li>
+                    <li><a href="#">项目四</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid foot_panel_2 shrink">
+                <h3>第二栏的标题</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                    <li><a href="#">项目三</a></li>
+                    <li><a href="#">项目四</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid foot_panel_3 shrink">
+                <h3>第三栏的标题</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                    <li><a href="#">项目三</a></li>
+                    <li><a href="#">项目四</a></li>
+                    <li><a href="#">项目五</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid foot_panel_4 shrink">
+                <h3>第四栏的标题</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid foot_panel_5 shrink">
+                <h3>第五栏的标题</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                    <li><a href="#">项目三</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot_license">
+            Copyright © 2019.Company name All rights reserved.More Templates 模板之家 - Collect from 网页模板(没错我故意的，嘿嘿)
+        </div>
+    </div>
+    <div id="login_window">
+        <div id="login_window_container">
+            <div class="login_input">
+                <input type="text" id="logInput1" onfocus="this.value='';" onblur="inputInfo1(this.id)" name="account"
+                    value="account">
+            </div>
+            <div class="login_input">
+                <input type="password" id="logInput2" onfocus="this.value='';" onblur="inputInfo2(this.id)"
+                    name="passwd" value="password">
+            </div>
+            <div id="btns">
+                <button onclick="login()">Login</button>
+                <button onclick="registerBTN()">Register</button>
+            </div>
+        </div>
+    </div>
+    <div id="grayBackground">
+
+    </div>
+    <div id="register_window">
+        <div id="register_window_container">
+            <!-- 这里的东西就多了，先写着吧 -->
+            <div id="registerHeader">
+                <h2>新用户注册</h2>
+            </div>
+            <div id="regisSpan">
+                <h4>您的注册 ID 为: <span id="registerID">123456789</span></h4>
+            </div>
+            <div id="registerInputs">
+                <div id="regisNickname">
+                    <input type="text" placeholder="请输入您的昵称">
+                </div>
+                <div id="regisEmail">
+                    <input type="text" placeholder="请输入注册邮箱" onblur="verifyEmail(this)">
+                </div>
+                <div id="regisPasswd">
+                    <input type="password" placeholder="请输入密码" onblur="verifyPasswd(this)">
+                </div>
+                <div id="regisPasswdAgain">
+                    <input type="password" placeholder="请再次确认密码">
+                </div>
+            </div>
+            <div id="registerButtons">
+                <button>注册</button>
+                <button onclick="register_cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
