@@ -59,66 +59,172 @@
         <input type="submit" class="search_btn" value="搜索">
     </div>
     <div class="main_disp">
-        <!-- <div class="left_select_panel col-md-2">
-        </div> -->
         <div class="mid_main_panel col-md-9">
-            <div class="mid_container">
-                <div class="magnifier" id="magnifier1">
-                    <div class="magnifier-container">
-                        <div class="images-cover"></div>
-                        <!--当前图片显示容器-->
-                        <div class="move-view"></div>
-                        <!--跟随鼠标移动的盒子-->
-                    </div>
-                    <div class="magnifier-assembly">
-                        <div class="magnifier-btn">
-                            <span class="magnifier-btn-left">&lt;</span>
-                            <span class="magnifier-btn-right">&gt;</span>
+            <div class="mid_container container-fluid">
+                <div class="book_pic_container col-md-3">
+                    <div class="magnifier" id="magnifier1">
+                        <div class="magnifier-container">
+                            <div class="images-cover"></div>
+                            <!--当前图片显示容器-->
+                            <div class="move-view"></div>
+                            <!--跟随鼠标移动的盒子-->
                         </div>
-                        <!--按钮组-->
-                        <div class="magnifier-line">
-                            <ul class="clearfix animation03">
-                                <li>
-                                    <div class="small-img">
-                                        <img src="image/book_test/童年.png"/>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="small-img">
-                                        <img src="image/book_test/童年.png"/>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="small-img">
-                                        <img src="image/book_test/童年.png"/>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="small-img">
-                                        <img src="image/book_test/童年.png"/>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="small-img">
-                                        <img src="image/book_test/童年.png"/>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="magnifier-assembly">
+                            <div class="magnifier-btn">
+                                <span class="magnifier-btn-left">&lt;</span>
+                                <span class="magnifier-btn-right">&gt;</span>
+                            </div>
+                            <!--按钮组-->
+                            <div class="magnifier-line">
+                                <ul class="clearfix animation03">
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png"/>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png"/>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png"/>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png"/>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="small-img">
+                                            <img src="image/book_test/童年.png"/>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="magnifier-view">
-            
+                        <div class="magnifier-view"></div>
                     </div>
                 </div>
-                <div class="book_info_container col-md-3">
+                <div class="book_info_container">
                     <div class="book_info_tab">
-                        
+                        <div class="book_info_header container-fluid">
+                            <div class="col-md-5">
+                                <h3 id="bookname">书的名称（版次）</h3>
+                            </div>
+                            <div class="col-md-5">
+                                <h4 id="bookauthor">书的作者</h4>
+                            </div>
+                        </div>
+                        <div class="book_info_basic">
+                            <div class="book_info_basic_left col-md-6">
+                                <ul>
+                                    <li>
+                                        <p><span class="info_item">出版社：</span>某某某某出版社</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="info_item">ISBN：</span>9001-XXX-XXXX-XX</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="info_item">出版日期：</span>XXXX-XX-XX</p>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="book_info_basic_right col-md-6">
+                                <ul>
+                                    <li>
+                                        <p><span class="info_item">开本：</span>XXX 开</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="info_item">纸张：</span>胶装</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="info_item">分类：</span>XXXX 类</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book_info_description col-md-12">
+                            <div class="info_item">内容简介:</div>
+                            <p id="bookdescript">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阿廖沙三岁时，失去了父亲，母亲瓦尔瓦拉把他寄养在外祖父卡什林家。外祖父家住在尼日尼——诺弗哥罗德城。外祖父年轻时，是一个纤夫，后来开染坊，成了小业主。阿廖沙来到外祖父家时，外祖父家业已经开始衰落，由于家业不景气，外祖父变得也愈加专横暴躁。阿廖沙的两个舅舅米哈伊尔和雅科夫为了分家和侵吞阿廖沙母亲的嫁妆而不断地争吵、斗殴...</p>
+                        </div>
                     </div>
+                    <div class="bookPriceTab">
+                        <div class="container-fluid">
+                            <div class="info_item priceText">价格：</div>
+                            <div class="col-md-2" id="bookPrice">¥39.5</div>
+                            <div class="col-md-4 container-fluid" >
+                                <button id="addCartBtn">                    <div id="addCartIcon">
+                                        <img src="image/shopping_car_16.png">
+                                    </div>加入购物车
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
         <div class="right_info_panel col-md-3">
-
+            这里可以显示发布该二手书店家的信息，店铺里有哪些书啥的
+        </div>
+    </div>
+    <div class="main_next">
+        <!-- 这里填装额外的信息 -->
+    </div>
+    <div class = "foot">
+        <!-- 角注，呈现版权信息、公司团队信息等 -->
+        <div class="container-fluid foot_container">
+            <div class="footer-grid foot_panel_1 shrink">
+                <h3>完全不知道应该写什么</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                    <li><a href="#">项目三</a></li>
+                    <li><a href="#">项目四</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid foot_panel_2 shrink">
+                <h3>第二栏的标题</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                    <li><a href="#">项目三</a></li>
+                    <li><a href="#">项目四</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid foot_panel_3 shrink">
+                <h3>第三栏的标题</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                    <li><a href="#">项目三</a></li>
+                    <li><a href="#">项目四</a></li>
+                    <li><a href="#">项目五</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid foot_panel_4 shrink">
+                <h3>第四栏的标题</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid foot_panel_5 shrink">
+                <h3>第五栏的标题</h3>
+                <ul class="foot_list">
+                    <li><a href="#">项目一</a></li>
+                    <li><a href="#">项目二</a></li>
+                    <li><a href="#">项目三</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot_license">
+            Copyright © 2019.Company name All rights reserved.More Templates 模板之家 - Collect from 网页模板(没错我故意的，嘿嘿)
         </div>
     </div>
 </body>

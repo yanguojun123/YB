@@ -25,18 +25,18 @@ function hhh() {
     var registerWindow = $('#register_window');
     var regisWindowWidth = 500;
     var regisWindowHeight = 400;
-    registerWindow.css('width',regisWindowWidth + 'px');
-    registerWindow.css('height',regisWindowHeight + 'px');
-    registerWindow.css('left',(WIDTH/2 - regisWindowWidth/2) + 'px');
-    registerWindow.css('top',(HEIGHT/2 - regisWindowHeight/2) + 'px');
+    registerWindow.css('width', regisWindowWidth + 'px');
+    registerWindow.css('height', regisWindowHeight + 'px');
+    registerWindow.css('left', (WIDTH / 2 - regisWindowWidth / 2) + 'px');
+    registerWindow.css('top', (HEIGHT / 2 - regisWindowHeight / 2) + 'px');
 
     var grayBackground = $('#grayBackground');
-    grayBackground.css('width',WIDTH);
-    grayBackground.css('height',HEIGHT);
-    grayBackground.css('background','black');
-    grayBackground.css('opacity','0.5');
-    grayBackground.css('top',0);
-    grayBackground.css('left',0);
+    grayBackground.css('width', WIDTH);
+    grayBackground.css('height', HEIGHT);
+    grayBackground.css('background', 'black');
+    grayBackground.css('opacity', '0.5');
+    grayBackground.css('top', 0);
+    grayBackground.css('left', 0);
 }
 
 //显示输入框
@@ -76,66 +76,71 @@ function inputInfo2(id) {
 function login() {
     var account = $('#logInput1')[0].value;
     var password = $('#logInput2')[0].value;
-    //这里将账号密码发送到服务器
+    
+    var xmlhttp = getHTTPObject();
+    xmlhttp.open('POST', 'http://localhost/YiBa/Controller/user_controller.php', true);
+    xmlhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
+    xmlhttp.send({"userId": account, "password": password, "purpose":0});
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            console.log("进来了吗")
+            console.log(xmlhttp.responseText);
+        } else {
+            // console.log(xmlhttp.readyState + ":" + xmlhttp.status)
+        }
+    }
 
-    // var xhr = new XMLHttpRequest;
-    // xhr.open('post', 'C:/xampp/htdocs/get_secondhand_book_data.php');
-    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // xhr.send();
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 304)) {
-    //         //响应完成并且响应码为200或304
-    //         JSON_data = JSON.parse(xhr.responseText);
-    //         console.log(JSON_data);
-    //         var length = getJsonlength(JSON_data);
-    //         alert("出问题了")
-    //         var father = document.getElementById('content');
-    //         document.getElementById("content").innerHTML = "";
-
-    //         for (var i = 0; i < items; i++) {
-    //             var newdiv = document.createElement('div');
-    //             newdiv.innerHTML = JSON_data[i].bookName;
-    //             newdiv.className = 'message';
-    //             father.appendChild(newdiv);
+    // $.ajax({
+    //     type: "POST",
+    //     url: "http://localhost/YiBa/Controller/user_controller.php",
+    //     data: {"userId": account, "password": password, "purpose":0},
+    //     dataType: "text",
+    //     success: function(data)
+    //     {   //返回值
+    //         console.log(data)
+    //         var response = data['status'];
+    //         if(response == "1")
+    //         {   //登录成功
+    //             console.log("success log in!!");
     //         }
-    //         for (var i = 0; i < (length / items + 1); i++) {
-    //             var newbutton = document.createElement('button');
-    //             newbutton.className = "page_button";
-    //             newbutton.innerHTML = "第" + (i + 1) + "页";
-    //             newbutton.value = i;
-    //             father.appendChild(newbutton);
+    //         else
+    //         {   //登录失败
+    //             console.log("failed log in!!");
     //         }
+    //     },
+    //     error: function(jqXHR,textStatus,errorThrown)
+    //     {
+    //         console.log(jqXHR);
+    //         console.log(textStatus);
+    //         console.log(errorThrown)
     //     }
-    // };
-
+    // })
 
     //登录成功返回 true
-    // var condition = true;
-    // if (condition) {
-    //     $.session.set(account, password);
-    //     var input = getForm(account, password);
-    // } else {
-    //     $.session.remove(account);
-    // }
+    var condition = true;
+    if (condition) {
+        // $.session.set(account, password);
+        var input = getForm(account, password);
+
+    } else {
+        $.session.remove(account);
+    }
 }
 
 //注册按钮点击函数
 function registerBTN() {
     regisWindow = $('#register_window');
-    if (regisWindow.css('display') == 'none')
-    {
-        $('#grayBackground').css('display','block');
+    if (regisWindow.css('display') == 'none') {
+        $('#grayBackground').css('display', 'block');
         regisWindow.css('display', "block");
-        $('#login_window').css('display','none');
-    }
-    else
+        $('#login_window').css('display', 'none');
+    } else
         regisWindow.css('display', "none");
 }
 
-function register_cancel()
-{
-    $('#register_window').css('display','none');
-    $('#grayBackground').css('display','none');
+function register_cancel() {
+    $('#register_window').css('display', 'none');
+    $('#grayBackground').css('display', 'none');
 }
 
 function getForm(account, password) { //这里可以引入 md5 加密
@@ -144,4 +149,14 @@ function getForm(account, password) { //这里可以引入 md5 加密
     tempInput.name = account;
     tempInput.value = password;
     return tempInput;
+}
+
+function getHTTPObject() {
+    var xhr = false;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return xhr;
 }
