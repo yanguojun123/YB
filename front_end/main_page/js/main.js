@@ -84,7 +84,8 @@ function login() {
     xmlhttp.send({"userId": account, "password": password, "purpose":0});
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            console.log("进来了吗")
+            console.log("进来了吗");
+            //alert("收到");  
             console.log(xmlhttp.responseText);
         } else {
             // console.log(xmlhttp.readyState + ":" + xmlhttp.status)
