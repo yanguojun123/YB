@@ -28,7 +28,8 @@ function hhh() {
     registerWindow.css('width', regisWindowWidth + 'px');
     registerWindow.css('height', regisWindowHeight + 'px');
     registerWindow.css('left', (WIDTH / 2 - regisWindowWidth / 2) + 'px');
-    registerWindow.css('top', (HEIGHT / 2 - regisWindowHeight / 2) + 'px');
+    // registerWindow.css('top', (HEIGHT / 2 - regisWindowHeight / 2) + 'px');
+    registerWindow.css('top', 150 + 'px');
 
     var grayBackground = $('#grayBackground');
     grayBackground.css('width', WIDTH);
