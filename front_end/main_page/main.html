@@ -11,7 +11,9 @@
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquerysession.js"></script>
     <script src="js/bootstrap-paginator.min.js"></script>
+    <script src="js/pagination.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/xs.js"></script>
 
     <body style = "height:100%">
         <nav class = "navbar nav_bar" role = "navigation">
@@ -113,14 +115,14 @@
 								<div class="subcontent">
 									<div class="subcon_photo">
 										<a href="#">
-	                                		<img  src="image/book_test/童年.png">
-	                           			</a>
-									<ul class="social">
-	                               		<li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
-	                                	<li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
+                        <img  src="image/book_test/童年.png">
+                    </a>
+									  <ul class="social">
+                        <li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
 <!--	                                	<li><a href="#" data-tip="Compare"><i class="fas fa-random"></i></a></li>-->
-	                                	<li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
-	                            	</ul>
+                        <li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
+                    </ul>
 									</div>
 									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
 									<div title="高尔基" class="subcon_author">高尔基</div>
@@ -147,13 +149,21 @@
 								
 
 							</div>
-							<div style="text-align: center">
+							<div id="page" style="margin-left:15%;height:20%;float:left">
 <!--							<ul class="pagination"></ul>-->
-								<ul id="example"></ul>
-								
+								<ul id="example"></ul>	
 							</div>
+              <div id="pageinput"><input type="text" id="pinput" autofocus class="form-control"></div>
+              <div id="pagebutton"><button id="pbutton"type="button" class="btn btn-info btn-sm">go</button></div>       
+                      
                         </div>
                         <div class = "col-md-3 right_info_panel">
+                          
+                          <h2 class="rightheader">热度最高</h2>
+                          <ul id="heat">
+                            <li><span id="right1"></span><a>三体</a></li>
+                          </ul>
+
                             <!--  
                             右边的显示，内容根据左边的选择进行变动；
                             当左侧选择的是二手书相关，右侧显示最火热的二手书；
@@ -269,13 +279,84 @@
     </body>
 
 	<script>
-    $(document).ready(function(){
-        var options={
+var total=20;
+//从数据库异步获取最新热度的内容展示到右侧面板
+function rightget(){
+  $("#heat").empty();
+  for(let i=0;i<10;i++){
+    $("#heat").append("<li id='right"+i+"'><span></span><a>信</a></li>");
+    $("#right"+i+"").xs999(Math.round(Math.random()*30));
+  }
+
+  
+//  $("#heat").append("<li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li><li><span></span><a>fff</a></li>");
+}	 
+
+function middleget(page){
+//  	$.ajax({  //ajax显示发帖
+//		  url:'test.jsp',
+//		  type:'POST',
+//	      data: {"page":page},
+//		  async:true,
+//		  success:function(response,status,xhr){ 
+//			  alert(response);
+//		     var json=$.parseJSON(response);
+//		     var html='';
+//		     for(var i=0;i<json.length;i++){ 
+//		         html+='<h4>'+json[i].id+'发表于'+json[i].salary+'</h4>';
+//		      }
+//		     $('.content').text("");
+//		     $('.content').append(html);
+//		  }
+//		});
+  $("#content").empty();
+  $("#content").append(" <div class='subcontent'><div class='subcon_photo'><img  src='image/book_test/童年.png'><ul class='social'><li title='收藏'><a href='#' data-tip='Add to Cart'  onclick='addtocart(this)'><i class='fas fa-shopping-cart'></i></a></li><li><a href='#' data-tip='Wishlist'  onclick='purchase(this)'><i class='far fa-heart'></i></a></li><li><a href='#' data-tip='Quick View'  onclick='view(this)'><i class='fas fa-search'></i></a></li></ul></div><div title='童年' class='subcon_name'><a href='#'>童年</a></div><div title='高尔基' class='subcon_author'>高尔</div><div class='subcon_price'>￥20</div><div class='subcon_seller'><a href='#'>kaim</a></div></div>");
+  
+}
+
+
+//收藏按钮点击
+function addtocart(a){
+  var p = a.parentNode.parentNode.parentNode.parentNode.children[1];
+  var q = p.innerHTML;
+  alert(p.title)
+  alert(p.getAttribute("title"))
+  
+}
+function purchase(a){
+  var p = a.parentNode.parentNode.parentNode.parentNode.children[1];
+  var q = p.innerHTML;
+  alert(p.title)
+  alert(p.getAttribute("title"))
+}
+function view(a){
+  var p = a.parentNode.parentNode.parentNode.parentNode.children[1];
+  var q = p.innerHTML;
+  alert(p.title)
+  alert(p.getAttribute("title"))
+} 
+
+ function setoptions(totalpages,currentpage,data){
+          var options={
             bootstrapMajorVersion:3,
-            currentPage: 4,
-            totalPages: 10,
+            currentPage: currentpage,
+            totalPages: totalpages,
             numberOfPages: 5,
-            itemTexts : function(type, page, current) {
+            shouldShowPage:function(type, page, current){
+                switch (type) {
+                    case "first":
+                        return true;
+                    case "prev":
+                        return true;
+                    case "next":
+                        return true;
+                    case "last":
+                        return true;
+                    case "page":
+                        return true;
+                }
+            },
+            tooltipTitles: function(type, page, current) {//设置操作按钮的title属性。
                 switch (type) {
                     case "first":
                         return "首页";
@@ -289,8 +370,80 @@
                         return page;
                 }
             },
+            itemTexts : function(type, page, current) {//控制每个操作按钮的显示文字。
+                switch (type) {
+                    case "first":
+                        return "首页";
+                    case "prev":
+                        return "上一页";
+                    case "next":
+                        return "下一页";
+                    case "last":
+                        return "末页";
+                    case "page":
+                        return page;
+                }
+            },
+            onPageChanged: function (event, oldPage, newPage){
+              alert(newPage)
+              if(newPage==5){
+                total=11;
+                $('#example').bootstrapPaginator("setOptions",setoptions(11,newPage,""))
+              }
+                
+
+              //middleget(newPage);
+              
+//              $.ajax({
+//                url: '../../interface/xw_zxdt_list.php',
+//                type: 'post',
+//                data: {page: page},
+//                dataType: 'json',
+//                success: function (data) {
+//                 //tplData(data);//处理成功返回的数据
+//                  //传过来一页的数据，总页数
+//                  //如果总页数不变则不调用setpages
+//                  //否则调用setpages
+//              }
+              
+            }
         };
-        $("#example").bootstrapPaginator(options);		
+          return options;
+      }
+    
+    
+    
+    
+    $(document).ready(function(){
+      rightget();
+      middleget();
+      $("#example").bootstrapPaginator(setoptions(total,1,""));    
+      //middleget(1);
+      
+      $("#pbutton").click("on",function(){
+        let page=$("#pinput").val();
+        let reg=/^[0-9]*$/;
+        if(page){
+          //如果获取到了非空
+          if(reg.test(page)){
+            if(page>total)
+              alert("页数过大")
+            else
+              $('#example').bootstrapPaginator("show",page)// 调用show命令
+          }
+          else
+            alert("输入不合法")
+        }
+        else
+          alert("你没有输入")
+        $("#pinput").val("");
+        
+      })
+
+     
+      
+
+        		
     });
 	</script>
 </html>

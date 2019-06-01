@@ -325,14 +325,100 @@ body
 	padding-right: 10px; */
 	height: 400px;
 }
+/*分页输入框样式*/
+#pageinput{
+  margin-left:2%;
+  float:left;
+  width:8%;
+  height:20%;
 
+}
+#pageinput input{
+  margin-top:39%;
+  width:100%;
+  height:35%;
+}
+#pagebutton{
+  margin-left:1%;
+  float:left;
+  width:6%;
+  height:20%;
+
+}
+#pagebutton button{
+  
+  margin-top:50%;
+  width:100%;
+  height:35%;
+}
 /* 右侧绿色为产品显示界面 */
 .right_info_panel
 {
 	height: 100%;
-	background: rgba(0,255,0,0.5);
+/*	background: rgba(0,255,0,0.5);*/
+    background-color: #55bb8a;
 	height: 400px;
+  border-radius: 5px;
 }
+.right_info_panel .rightheader
+{
+	weight:100%;
+	height:10%;
+    font-family:"a";
+	background-color: aliceblue;
+    border-radius: 5px;
+    text-align: center;
+    border-style:double;
+}
+
+
+/**/
+.right_info_panel ul
+{
+	margin-left:-3%;
+	margin-top:-3.4%;
+	color:aliceblue;
+/*  background-color:aqua;*/
+}
+.right_info_panel li
+{
+
+	margin-top:1%;
+	margin-left:-10%;
+	list-style:none;
+/*    background-color:#d0dfe6;*/
+    border-radius: 5px;
+    text-align: center;
+/*    list-style-type:decimal;*/
+/*	background-color: antiquewhite;*/
+  background-color:#626255;
+  cursor: pointer;
+	
+}
+.right_info_panel li:hover{
+  
+}
+
+.right_info_panel li a
+{
+  
+/*  background-color:#d0dfe6;*/
+  color:white;
+	font-size:18px;
+    width:100%;
+    height:30px;
+    line-height: 30px;
+	cursor: pointer;
+}
+.right_info_panel li a:hover
+{
+	font-size:28px;
+    transition:0.2s;
+    color:#2bae85;
+  
+}
+
+
 
 /* 脚注 css 样式*/
 .foot
