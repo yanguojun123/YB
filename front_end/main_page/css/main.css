@@ -1,12 +1,10 @@
 /* 主页背景图片样式 */
-body
-{
-    background: url("../image/body_bg.jpg");
+body {
+	background: url("../image/body_bg.jpg");
 }
 
 /* 网站信息容器 */
-.webset_info
-{
+.webset_info {
 	height: 3em;
 	margin-top: -30px;
 	padding: 0 6% 0 6%;
@@ -14,14 +12,12 @@ body
 }
 
 /* 网站信息列表 */
-.webset_info ul li
-{
+.webset_info ul li {
 	list-style: none;
 }
 
 /* 联系方式 */
-.contact_phone
-{
+.contact_phone {
 	float: left;
 	margin-top: 5px;
 	color: #f8f5c6;
@@ -29,14 +25,12 @@ body
 }
 
 /* 电话列表 */
-.contact_phone li
-{
+.contact_phone li {
 	display: inline-block;
 }
 
 /* 电话图标 */
-.phone_icon
-{
+.phone_icon {
 	width: 20px;
 	height: 25px;
 	background: url(../image/img-sprite.png)no-repeat -5px -7px;
@@ -46,8 +40,7 @@ body
 }
 
 /* 打折说明？ */
-.phone_append
-{
+.phone_append {
 	color: #B7C9E0;
 	text-shadow: -1px 0px 1px #073E7F;
 	font-size: 0.85em;
@@ -56,8 +49,7 @@ body
 }
 
 /* 社交媒体 */
-.media
-{
+.media {
 	padding-left: 0;
 	float: left;
 	margin-left: 100px;
@@ -65,13 +57,11 @@ body
 	text-align: center;
 }
 
-.media li
-{
+.media li {
 	display: inline-block;
 }
 
-.media li a i
-{
+.media li a i {
 	float: left;
 	width: 30px;
 	height: 30px;
@@ -80,8 +70,7 @@ body
 }
 
 /* 导航栏 css 样式*/
-.nav_bar
-{
+.nav_bar {
 	background: url(../image/header_bg.jpg) no-repeat;
 	background-size: 100% 100%;
 	padding-top: 3em;
@@ -91,50 +80,43 @@ body
 }
 
 /* 图片容器样式 */
-.logo_container
-{
+.logo_container {
 	margin-left: 50px !important;
 	margin-top: 8px;
 	margin-bottom: 15px;
 }
 
 /* 对图片做出的限制 */
-.logo
-{
+.logo {
 	width: 130px;
 	height: 100%;
 }
 
 /* logo 容器样式 */
-.navbar-left
-{
+.navbar-left {
 	padding-bottom: 0px !important;
 	line-height: 50px;
 	margin-left: 15px;
 }
 
 /* 登录注册容器 css 样式*/
-.navbar-right
-{
+.navbar-right {
 	padding-right: 6%;
 }
 
 /* 登录注册图片 */
-.loginandreg img
-{
+.loginandreg img {
 	height: 40px;
 }
 
 /* 登录注册 css 样式*/
-.loginandreg a
-{
+.loginandreg a {
 	text-align: center;
 	color: black;
 }
 
 /* 登录注册 css 样式*/
-.loginandreg a:hover
-{
+.loginandreg a:hover {
 	-webkit-transition: 0.2s all;
 	text-transform: uppercase;
 	color: #fff !important;
@@ -142,76 +124,73 @@ body
 }
 
 /* 菜单栏浮动样式 */
-.button_menu li
-{
+.button_menu li {
 	margin-top: 6px;
 }
 
 /* 导航栏按钮样式 */
-.button_menu li a
-{
+.button_menu li a {
 	color: #fff;
 	padding: 8px 8px;
 	font-size: 1em;
-	margin:0 10px;
+	margin: 0 10px;
 }
 
 /* 导航栏按钮悬停样式 */
-.buttons > li > a:hover, .buttons > li > a:focus {
+.buttons>li>a:hover,
+.buttons>li>a:focus {
 	-webkit-transition: 0.2s all;
 	background: rgba(2, 113, 113, 0.35) !important;
 	color: #FFF !important;
 	border-radius: .5em;
-	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2), 
+	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2),
 		0 0 4px rgba(0, 0, 0, 0);
 }
 
 /* 导航栏按钮初始化样式 */
-.buttons > .active > a, .buttons > .active > a:hover, .buttons > .active > a:focus {
-	background:rgba(2, 113, 113, 0.35) !important;
-	color:#fff !important;
+.buttons>.active>a,
+.buttons>.active>a:hover,
+.buttons>.active>a:focus {
+	background: rgba(2, 113, 113, 0.35) !important;
+	color: #fff !important;
 	border-radius: .5em;
-	box-shadow: 
-    inset 0 2px 0 rgba(0, 0, 0, 0.2), 
-    0 0 4px rgba(0, 0, 0, 0.1);
+	box-shadow:
+		inset 0 2px 0 rgba(0, 0, 0, 0.2),
+		0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 主页面 css 样式*/
-.main .main_disp
-{
+.main .main_disp {
 	margin-top: 20px;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0, 0, 0, 0.5);
 }
 
 /* 扯皮占位 */
-.main_disp_header
-{
+.main_disp_header {
 	text-align: center;
 	font-size: 2em;
 }
 
 /* 搜索框样式 */
-.search_box
-{
+.search_box {
 	float: right !important;
 	margin-right: 3% !important;
 	margin-top: -72px;
 	height: 40px;
 	background: url('../image/body_bg.jpg');
 	text-align: center;
-	border-radius: 5px 5px 0 0 ;
-	box-shadow: inset 0 2px 0 rgba(4, 52, 212, 0.486), 
-	0 0 4px rgba(0, 0, 0, 0.1);
+	border-radius: 5px 5px 0 0;
+	box-shadow: inset 0 2px 0 rgba(4, 52, 212, 0.486),
+		0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 搜索框输入文本样式 */
-.search_input
-{
+.search_input {
 	width: 80%;
 	height: 35px;
 	margin-top: 7.5px;
 	margin-bottom: 8px;
-	border-color:white;
+	border-color: white;
 	border-style: solid;
 	border-width: 2px;
 	font-size: 15px;
@@ -219,12 +198,11 @@ body
 }
 
 /* 搜索框按钮样式 */
-.search_btn
-{
+.search_btn {
 	width: 15%;
 	height: 35px;
 	margin-top: 7.5px;
-	background: rgba(255,69,0, 0.5);
+	background: rgba(255, 69, 0, 0.5);
 	border-color: white;
 	border-style: solid;
 	border-width: 2px;
@@ -235,8 +213,7 @@ body
 	搜索款按钮悬停动画
 	样式之后再加
 */
-.search_btn:hover
-{
+.search_btn:hover {
 	-webkit-transition: 0.2s all;
 	font-size: 18px;
 	border-style: dashed;
@@ -246,15 +223,13 @@ body
 }
 
 /* 主显示界面样式 */
-.main_disp
-{
+.main_disp {
 	margin-left: 3%;
 	margin-right: 3%;
 }
 
 /* 左端白色背景为竖直导航栏 */
-.left_select_panel
-{
+.left_select_panel {
 	height: 100%;
 	background: rgb(250, 250, 250);
 	border-radius: 10px;
@@ -262,13 +237,12 @@ body
 	border-style: solid;
 	border-color: rgba(204, 221, 0, 0.5);
 
-	padding-left: 0 !important; 
+	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
 
 /* 二手书导航栏 */
-.bookClassHeader
-{
+.bookClassHeader {
 	background: url('../image/category_bg.png');
 	background-size: cover;
 
@@ -281,8 +255,7 @@ body
 }
 
 /* 失物招领导航栏 */
-.swapClassHeader
-{
+.swapClassHeader {
 	background: url('../image/category_bg.png');
 	background-size: cover;
 
@@ -295,30 +268,26 @@ body
 }
 
 /* 设置 list 样式 */
-.left_select_panel li
-{
+.left_select_panel li {
 	list-style-image: url('../image/marker.gif');
 	margin: auto 0 auto 10%;
 }
 
 /* 设置链接样式 */
-.left_select_panel li a
-{
+.left_select_panel li a {
 	text-decoration: none;
 	color: black;
 }
 
 /* 设置悬停样式 */
-.left_select_panel li a:hover
-{
+.left_select_panel li a:hover {
 	cursor: pointer;
 	-webkit-transition: 0.2s all;
 	color: orangered;
 }
 
 /* 中间红色背景为产品显示界面 */
-.mid_main_panel
-{	
+.mid_main_panel {
 	height: 100%;
 	/* background: rgba(255,0,0,0.5); */
 	/* padding-left: 10px;
@@ -353,8 +322,7 @@ body
   height:35%;
 }
 /* 右侧绿色为产品显示界面 */
-.right_info_panel
-{
+.right_info_panel {
 	height: 100%;
     background-color: #55bb8a;
 	height: 400px;
@@ -380,6 +348,7 @@ body
 	margin-top:-3.4%;
 	color:aliceblue;
 /*  background-color:aqua;*/
+
 }
 /*侧绿色显示界面ul li*/
 .right_info_panel li
@@ -414,8 +383,7 @@ body
 
 
 /* 脚注 css 样式*/
-.foot
-{
+.foot {
 	width: 100%;
 	padding: 1em 0 2em 0;
 	margin-top: 20px;
@@ -424,57 +392,50 @@ body
 }
 
 /* 脚注栏目容器 */
-.foot_container
-{
+.foot_container {
 	margin-left: 3% !important;
 	margin-right: 3% !important;
-	padding-left: 0 !important; 
+	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
 
 /* 脚注栏目样式 */
-.shrink
-{
+.shrink {
 	width: 17%;
 	float: left;
-	padding-left: 0 !important; 
+	padding-left: 0 !important;
 	padding-right: 0 !important;
 	margin-left: 2.5%;
 }
 
 /* 脚注栏目标题样式 */
-.shrink h3
-{
+.shrink h3 {
 	color: #f8f5c6;
 	margin-bottom: 0.8em;
 	font-size: 1.3em;
 }
 
 /* 脚注栏目条目 */
-.foot_list
-{
+.foot_list {
 	color: white;
 	padding-left: 0;
 }
 
 /* 脚注栏目条目自定义样式 */
-.foot_list li
-{
+.foot_list li {
 	line-height: 1.6em;
 	list-style: none;
 }
 
 /* 脚注栏目条目链接样式 */
-.foot_list li a
-{
+.foot_list li a {
 	color: #cbd0d7;
 	text-decoration: none;
 }
 
 /* 脚注栏目条目鼠标悬停 */
-.foot_list li a:hover
-{
-	
+.foot_list li a:hover {
+
 	-webkit-transition: 0.2s all;
 	cursor: pointer;
 	color: #1B242F;
@@ -482,8 +443,7 @@ body
 }
 
 /* 脚注许可 */
-.foot_license
-{
+.foot_license {
 	margin-left: 5.2%;
 	margin-right: 3%;
 	margin-top: 10px;
@@ -491,8 +451,7 @@ body
 }
 
 /* 弹出注册框样式 */
-#register_window
-{
+#register_window {
 	display: none;
 	width: 500px;
 	height: 300px;
@@ -504,12 +463,12 @@ body
 	border-width: 2.5px;
 	border-style: solid;
 
-	box-shadow: black 3px 3px 4px 1px /* 边框阴影 */
+	box-shadow: black 3px 3px 4px 1px
+		/* 边框阴影 */
 }
 
 /* 弹出登录框样式 */
-#login_window
-{
+#login_window {
 	display: none;
 	width: 200px;
 	height: 150px;
@@ -523,23 +482,21 @@ body
 }
 
 /* 灰色背景 */
-#grayBackground
-{
+#grayBackground {
 	display: none;
 	position: absolute;
 }
 
 /* 输入框样式 */
-.login_input input
-{
+.login_input input {
 	width: 80%;
 	height: 30px;
 	margin-top: 15px;
+	outline: none;
 }
 
 /* 按钮样式 */
-#btns button
-{
+#btns button {
 	width: 35%;
 	height: 30px;
 	margin-top: 15px;
@@ -551,30 +508,26 @@ body
 }
 
 /* 按钮动画样式 */
-#btns button:hover
-{
+#btns button:hover {
 	-webkit-transition: 0.2s all;
 	background-color: #37474f;
 	color: white;
 }
 
 /* 注册框标题 */
-#registerHeader h2
-{
-	color:rgba(245, 245, 245, 1);
+#registerHeader h2 {
+	color: rgba(245, 245, 245, 1);
 
 }
 
 /* 注册框 ID */
-#regisSpan h4
-{
+#regisSpan h4 {
 	padding-top: 10px;
-	color:rgba(245, 245, 245, 1);
+	color: rgba(245, 245, 245, 1);
 }
 
 /* 注册框输入样式 */
-#registerInputs div input
-{
+#registerInputs div input {
 	margin-top: 15px;
 	width: 55%;
 	height: 40px;
@@ -582,11 +535,11 @@ body
 	border-width: 0;
 	text-align: center;
 	background: rgba(245, 245, 245, 1);
+	outline: none;
 }
 
 /* 注册框按钮样式 */
-#registerButtons button
-{
+#registerButtons button {
 	width: 22%;
 	margin-top: 18px;
 	height: 35px;
@@ -599,20 +552,17 @@ body
 }
 
 /* 按钮定制样式 */
-#registerButtons button:first-child
-{
+#registerButtons button:first-child {
 	margin-right: 5px;
 }
 
 /* 按钮定制样式 */
-#registerButtons button:last-child
-{
+#registerButtons button:last-child {
 	margin-left: 5px;
 }
 
 /* 按钮动画样式 */
-#registerButtons button:hover
-{
+#registerButtons button:hover {
 	-webkit-transition: 0.2s all;
 	color: #37474f;
 	background: white;
