@@ -11,7 +11,9 @@
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquerysession.js"></script>
     <script src="js/bootstrap-paginator.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/pagination.js"></script>
+<!--    <script src="js/main.js"></script>-->
+    <script src="js/xs.js"></script>
 
     <body style = "height:100%">
         <nav class = "navbar nav_bar" role = "navigation">
@@ -103,14 +105,14 @@
 								<div class="subcontent">
 									<div class="subcon_photo">
 										<a href="#">
-	                                		<img  src="image/book_test/童年.png">
-	                           			</a>
-									<ul class="social">
-	                               		<li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
-	                                	<li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
+                        <img  src="image/book_test/童年.png">
+                    </a>
+									  <ul class="social">
+                        <li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
 <!--	                                	<li><a href="#" data-tip="Compare"><i class="fas fa-random"></i></a></li>-->
-	                                	<li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
-	                            	</ul>
+                        <li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
+                    </ul>
 									</div>
 									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
 									<div title="高尔基" class="subcon_author">高尔基</div>
@@ -137,13 +139,21 @@
 								
 
 							</div>
-							<div style="text-align: center">
+							<div id="page" style="margin-left:15%;height:20%;float:left">
 <!--							<ul class="pagination"></ul>-->
-								<ul id="example"></ul>
-								
+								<ul id="example"></ul>	
 							</div>
+              <div id="pageinput"><input type="text" id="pinput" autofocus class="form-control"></div>
+              <div id="pagebutton"><button id="pbutton"type="button" class="btn btn-info btn-sm">go</button></div>       
+                      
                         </div>
                         <div class = "col-md-3 right_info_panel">
+                          
+                          <h2 class="rightheader">热度最高</h2>
+                          <ul id="heat">
+                            <li><span id="right1"></span><a>三体</a></li>
+                          </ul>
+
                             <!--  
                             右边的显示，内容根据左边的选择进行变动；
                             当左侧选择的是二手书相关，右侧显示最火热的二手书；
@@ -258,29 +268,5 @@
 
     </body>
 
-	<script>
-    $(document).ready(function(){
-        var options={
-            bootstrapMajorVersion:3,
-            currentPage: 4,
-            totalPages: 10,
-            numberOfPages: 5,
-            itemTexts : function(type, page, current) {
-                switch (type) {
-                    case "first":
-                        return "首页";
-                    case "prev":
-                        return "上一页";
-                    case "next":
-                        return "下一页";
-                    case "last":
-                        return "末页";
-                    case "page":
-                        return page;
-                }
-            },
-        };
-        $("#example").bootstrapPaginator(options);		
-    });
-	</script>
+    <script src="js/main.js"></script>
 </html>
