@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html style = "height:100%">
+    <head>
+        <meta charset="utf-8" />
+        <title>易吧，开创新的生活</title>
+    </head>
+    <link rel="stylesheet" href="css/main.css" type = "text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+	  <link rel="stylesheet" href="css/div.css" type="text/css">
+	  <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquerysession.js"></script>
+    <script src="js/bootstrap-paginator.min.js"></script>
+    <script src="js/xs.js"></script>
+
+  <style>
+    .content{
+      overflow:auto;
+    }
+    .content::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+    .content::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 10px;
+         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background:#27ACBC;
+    }
+    .content::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        background: #EDEDED;
+    }
+  </style>
+<link rel="stylesheet"  href="kindeditor/themes/default/default.css" />
+<script charset="utf-8" src="kindeditor/kindeditor-all.js"></script>
+<script charset="utf-8" src="kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="kindeditor/lang/zh-CN.js"></script>
+<script charset="utf-8" src="js/city.js"></script>
+<script charset="utf-8" src="js/date.js"></script>
+<script type="text/javascript">
+    var editor;//富文本编辑器的设置
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="miaoshu1"]', {
+            resizeType : 1,
+            items : [
+                'source', '|', 'undo', 'redo', '|', 'cut', 'copy', 'paste',
+                'plainpaste', 'wordpaste', '|',
+                'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+                'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+                'hr', 'emoticons'
+            ],
+            allowPreviewEmoticons : true,
+            allowImageUpload : true
+        });
+        K('input[name=queding]').click(function(e) {
+            document.getElementById("miaoshu").value=editor.html();
+            alert(document.getElementById("miaoshu").value);
+        });
+        K('input[name=clear]').click(function(e) {
+            editor.html('');
+        });
+    });
+    function biaoticheck(){//验证标题
+        var biaoti = document.getElementById("biaoti").value;
+        if(biaoti.length <= 0) {
+            alert("标题不能为空！");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>
+    <body style = "height:100%">
+        <nav class = "navbar nav_bar" role = "navigation">
+            <div class="webset_info">
+                <ul class="contact_phone">
+                    <li class="phone_ego">
+                        <i class="phone_icon"></i>
+                        <span>CONTACT: XXX-XXXX-XXXX</span>
+                    </li>
+                    <li class="phone_append">不知道写啥，二手书今天半价？</li>
+                </ul>
+            </div>
+            <!-- 导航栏样式 bootstrap 实现-->
+            <div class = "container-fluid" style="margin-top: 20px;">
+                <div class="navbar-header logo_container">
+                    <a class="navbar-left" href="https://github.com/yanguojun123/YB" target="_blank">
+                        <img class = "logo" alt="Brand" src="image/logo_main.png" height="20">
+                    </a>
+                </div>
+                <div class="nav navbar-nav navbar-right loginandreg"  >
+                    <a id="portrait" style="cursor: pointer"  >
+                        <li>
+                            <img src="../main_page/image/un_logged.png">
+                        </li>
+                        <p id="loginandreg_pos">登录</p>
+                    </a>
+                </div>
+                <div class="nav navbar-nav navbar-right button_menu">
+                    <ul class="nav navbar-nav buttons">
+                        <li class="active"><a href="#">水果蔬菜</a></li>
+                        <li><a href="#">浏览历史</a></li>
+                        <li><a href="#">我的购物车</a></li>
+                        <li><a href="#">个人主页</a></li>
+                        <li><a href="#">聊天记录</a></li>
+                        <li><a href="#">关注我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>            
+        <div class = "input-group col-md-3 search_box">
+            <!-- 搜索框 -->
+            <input type = "text" class="search_input" value="请输入想要查询的内容" onfocus="this.value = '';" onblur="if(this.value == ''){this.value = '请输入想要查询的内容';}" style="outline: none;">
+            <input type="submit" class="search_btn" value="搜索">
+        </div>
+        <div class = "main">
+            <div class = "container-fluid contain">
+                <!-- 容器，用于承载所有需要显示的元件 -->
+                <div class="row main_disp_below">
+                    <!-- 主窗体 -->
+                    <div class="main_disp_header">
+                        就是想在这里扯皮，填坑占位
+                    </div>
+                    <div class = "main_disp">
+                        <!-- 界面显示的主体，分为左中右三个 -->
+                        <div class = "col-md-2 left_select_panel">
+                            <!-- 
+                                左边的导航栏，用于显示二手书和失物招领
+                            -->
+                            <!--
+                                左边，这里采用模板的样式，尽量与背景和主体契合，不要选择太深的颜色和太扁平化的侧边栏
+                            -->
+                            <h3 class="bookClassHeader">二手书相关信息</h3>
+                            <ul class="bookCatogries">
+                                <li><a id="b1" href="main.html">购买二手书</a></li>
+                                <li><a id="b2" href="mainadd.html">发布二手书</a></li>
+                                <li><a id="b3" href="mainsearch.html">搜索二手书</a></li>
+                            </ul>
+                            <h3 class="swapClassHeader">失物招领信息</h3>
+                            <ul class="swapCatogries">
+                                <li><a id="s1" href="ShiWuZhaoling.html?lost_or_pick=lost" >失物信息</a></li>
+                                <li><a id="s2" href="ShiWuZhaoling.html?lost_or_pick=pick" >招领信息</a></li>
+                                <li><a id="s3" href="AddXinxi.html">免费发布信息</a></li>
+                                <li><a id="s4" href="Search.html">搜索信息</a></li>
+                            </ul>
+                            <div class="moreInfo">
+                                额外的信息，目前没有什么用处，先占个坑，可以使用 js 填充
+                            </div>
+                        </div>
+                        <div class = "col-md-7 mid_main_panel" style="height:800px;"> 
+                            <!-- 
+                                中间的显示，内容根据左边的选择进行变动
+                            -->
+                            <!-- 中间，我觉得左右两边的夹缝可以再窄一点，这里的 height 被重新设置为400，之后填充时取消 -->
+							<div class="content" >
+
+
+
+              
+<form role="form" class="form-horizontal" id="form" action="http://localhost/YiBa/Controller/test.php" method="post" style="margin-top:20px;margin-left:15%;margin-right:15%;">
+  <div class="form-group" >
+    <label class="col-sm-2 control-label">体裁</label>
+    <div class="col-sm-10">
+      <select class="form-control" style="width:40%;">
+        <option>期刊/报纸</option>
+        <option>小说/文学/语言文字</option>
+        <option>历史/地理/艺术</option>
+        <option>政治/法律/军事</option>
+        <option>哲学/心理/宗教</option>
+        <option>经济/社科/综合</option>
+        <option>童书/生活/体育</option>
+        <option>工程技术/互联网</option>
+        <option>自然科学/医药卫生</option>
+        <option>教材/教辅</option>
+      </select>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="inputbookname" class="col-sm-2 control-label">书名</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="请输入书名">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputbookauthor" class="col-sm-2 control-label">作者</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="请输入作者">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputbookpublish" class="col-sm-2 control-label">出版社</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="请输入出版社">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputbookprice" class="col-sm-2 control-label">价格</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="请按照定价规则定价">
+    </div>
+  </div>
+    
+
+    
+  <div class="form-group">
+    <label for="inputbookinstruction" class="col-sm-2 control-label">选择图片</label>
+    <div class="col-sm-10">
+      <div class="input-group">
+         <input id='location' class="form-control" onclick="$('#i-file').click();">
+         <label class="input-group-btn">
+            <input type="button" id="i-check" value="浏览图片" class="btn btn-info" onclick="$('#i-file').click();">
+         </label>
+        </div>
+      <input type="file" name="image" id='i-file'  accept="" onchange="$('#location').val($('#i-file').val());" style="display: none">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputbookinstruction" class="col-sm-2 control-label">选择图片</label>
+    <div class="col-sm-10">
+      <div class="input-group">
+         <input id='location1' class="form-control" onclick="$('#i-file1').click();">
+         <label class="input-group-btn">
+            <input type="button" id="i-check1" value="浏览图片" class="btn btn-info" onclick="$('#i-file1').click();">
+         </label>
+        </div>
+      <input type="file" name="image1" id='i-file1'  accept="" onchange="$('#location1').val($('#i-file1').val());" style="display: none">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputbookinstruction" class="col-sm-2 control-label">选择图片</label>
+    <div class="col-sm-10">
+      <div class="input-group">
+         <input id='location2' class="form-control" onclick="$('#i-file2').click();">
+         <label class="input-group-btn">
+            <input type="button" id="i-check2" value="浏览图片" class="btn btn-info" onclick="$('#i-file2').click();">
+         </label>
+        </div>
+      <input type="file" name="image2" id='i-file2'  accept="" onchange="$('#location2').val($('#i-file2').val());" style="display: none">
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+    <label for="inputbookinstruction" class="col-sm-2 control-label">详细说明</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows="3" placeholder="请输入丢失物品的详细描述信息以及物品的丢失过程！实践证明，信息描述越详细找回的几率更大。"></textarea>
+    </div>
+    
+  </div>
+  
+	<div class="form-group">
+		<div class="col-sm-offset-5 col-sm-2">
+			<button type="submit" class="btn btn-info">登录</button>
+		</div>
+	</div>
+
+<!--
+  <div class="form-group" >
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon">体裁</span>
+            <select class="form-control" style="width:40%;">
+              <option>期刊/报纸</option>
+              <option>小说/文学/语言文字</option>
+              <option>历史/地理/艺术</option>
+              <option>政治/法律/军事</option>
+              <option>哲学/心理/宗教</option>
+              <option>经济/社科/综合</option>
+              <option>童书/生活/体育</option>
+              <option>工程技术/互联网</option>
+              <option>自然科学/医药卫生</option>
+              <option>教材/教辅</option>
+            </select>
+        </div>
+  </div>
+  
+   <div class="form-group">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon">书名</span>
+            <input type="text" class="form-control"  placeholder="">
+        </div>
+  </div>
+  <div class="form-group">
+       <div class="input-group input-group-sm">
+            <span class="input-group-addon">作者</span>
+            <input type="text" class="form-control" placeholder="">
+        </div>
+    </div>
+    
+  <div class="form-group">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon">出版社</span>
+            <input type="text" class="form-control" placeholder="">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon">价格</span>
+            <input type="text" class="form-control" placeholder="请按照定价规则定价">
+        </div>
+      </div>
+    
+    
+    <div class="form-group">
+      <div class="input-group">
+           <input id='location' class="form-control" onclick="$('#i-file').click();">
+           <label class="input-group-btn">
+              <input type="button" id="i-check" value="浏览图片" class="btn btn-info" onclick="$('#i-file').click();">
+           </label>
+       </div>
+       <input type="file" name="file" id='i-file'  accept=".jpg .jpeg .png .bmp" onchange="$('#location').val($('#i-file').val());" style="display: none">
+      </div>
+    
+    
+    <div class="form-group">
+      <div class="input-group">
+           <input id='location' class="form-control" onclick="$('#i-file').click();">
+           <label class="input-group-btn">
+              <input type="button" id="i-check" value="浏览图片" class="btn btn-info" onclick="$('#i-file').click();">
+           </label>
+       </div>
+       <input type="file" name="file" id='i-file'  accept=".jpg .jpeg .png .bmp" onchange="$('#location').val($('#i-file').val());" style="display: none">
+      </div>
+
+
+   <div class="form-group">
+        <div align="center">
+             <textarea name="miaoshu1" style="width:100%;height:300px;visibility:hidden;" id="miaoshu1">
+                请输入丢失物品的详细描述信息以及物品的丢失过程！
+                实践证明，信息描述越详细找回的几率更大。
+        </textarea>
+        </div>
+  </div>
+        <div class="btndiv" align="center">
+            <button type="submit" name="queding" class="btn btn-info">确定</button>
+            <button type="button" name="clear" class="btn btn-info">清空</button>
+        </div>
+        <input name="miaoshu" id="miaoshu" type="hidden" >
+-->
+
+    
+</form>
+								
+
+							</div>
+    
+                      
+                        </div>
+                        <div class = "col-md-3 right_info_panel">
+                          
+                          <h2 class="rightheader">热度最高</h2>
+                          <ul id="heat">
+                            <li><span id="right1"></span><a>三体</a></li>
+                          </ul>
+
+                            <!--  
+                            右边的显示，内容根据左边的选择进行变动；
+                            当左侧选择的是二手书相关，右侧显示最火热的二手书；
+                            当左侧选择的是失物招领相关，右侧显示（不知道显示什么，说不定可以关掉？估计关掉很难看）
+                            -->
+                            右边可以直接使用bootstrap中的panel样式，但是注意宽度，这里的 height 被重新设置为400，之后填充时取消
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "foot">
+            <!-- 角注，呈现版权信息、公司团队信息等 -->
+            <div class="container-fluid foot_container">
+                <div class="footer-grid foot_panel_1 shrink">
+                    <h3>完全不知道应该写什么</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                        <li><a href="#">项目三</a></li>
+                        <li><a href="#">项目四</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid foot_panel_2 shrink">
+                    <h3>第二栏的标题</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                        <li><a href="#">项目三</a></li>
+                        <li><a href="#">项目四</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid foot_panel_3 shrink">
+                    <h3>第三栏的标题</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                        <li><a href="#">项目三</a></li>
+                        <li><a href="#">项目四</a></li>
+                        <li><a href="#">项目五</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid foot_panel_4 shrink">
+                    <h3>第四栏的标题</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid foot_panel_5 shrink">
+                    <h3>第五栏的标题</h3>
+                    <ul class="foot_list">
+                        <li><a href="#">项目一</a></li>
+                        <li><a href="#">项目二</a></li>
+                        <li><a href="#">项目三</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot_license">
+                Copyright © 2019.Company name All rights reserved.More Templates 模板之家 - Collect from 网页模板(没错我故意的，嘿嘿)
+            </div>
+        </div>
+        
+        <div id="login_window">
+            <div id="login_window_container">
+                <div class="login_input">
+                    <input type="text" id="logInput1" onfocus="this.value='';" onblur="inputInfo1(this.id)" name="account" value="account">
+                </div>
+                <div class="login_input">
+                    <input type="password" id="logInput2" 
+                    onfocus="this.value='';" onblur="inputInfo2(this.id)" 
+                    name="passwd" value="password">
+                </div>
+                <div id="btns">
+                    <button onclick="login()">Login</button>
+                    <button onclick="registerBTN()">Register</button>
+                </div>
+            </div>
+        </div>
+        <div id="grayBackground">
+
+        </div>
+        <div id="register_window">
+            <div id="register_window_container">
+                <!-- 这里的东西就多了，先写着吧 -->
+                <div id="registerHeader">
+                    <h2>新用户注册</h2>
+                </div>
+                <div id="regisSpan">
+                    <h4>您的注册 ID 为: <span id="registerID">123456789</span></h4>
+                </div>
+                <div id="registerInputs">
+                    <div id="regisNickname">
+                        <input type="text" placeholder="请输入您的昵称">
+                    </div>
+                    <div id="regisEmail">
+                        <input type="text" placeholder="请输入注册邮箱" onblur="verifyEmail(this)">
+                    </div>
+                    <div id="regisPasswd">
+                        <input type="password" placeholder="请输入密码" onblur="verifyPasswd(this)">
+                    </div>
+                    <div id="regisPasswdAgain">
+                        <input type="password" placeholder="请再次确认密码">
+                    </div>
+                </div>
+                <div id="registerButtons">
+                    <button>注册</button>
+                    <button onclick="register_cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+
+    </body>
+<script>
+
+//从数据库异步获取最新热度的内容展示到右侧面板
+function rightget(){
+  $("#heat").empty();
+  for(let i=0;i<6;i++){
+    $("#heat").append("<li id='right"+i+"'><span><a>信"+i+"</a></span></li>");
+    $("#right"+i+"").xs999(Math.round(Math.random()*30));
+    $("#right"+i+"").hover(function(){
+      $(this).children().children().css({"font-size":"28px","color":"#2bae85","transition":"0.2s"});
+    },function(){
+      $(this).children().children().css({"font-size":"18px","color":"#ffffff"});
+    });
+    $("#right"+i+"").click(function(){
+      alert($(this).children().children().text())
+    });
+  }
+
+  
+}	 
+
+
+
+    
+
+
+for(let i=1;i<=3;i++)
+  $("#b"+i).css({"font-size":"10px","color":"black"});
+for(let i=1;i<=4;i++)
+  $("#s"+i).css({"font-size":"10px","color":"black"});
+$("#b2").css({"font-size":"20px","color":"red"});
+rightget();
+middleget();
+
+
+
+
+
+
+
+
+  
+</script>
+<script src="js/main.js"></script>
+</html>

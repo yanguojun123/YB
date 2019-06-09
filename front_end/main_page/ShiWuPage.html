@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--即使单个失物显示页面，也是单个招领信息显示界面-->
+<html style = "height:100%">
+<head>
+    <meta charset="utf-8" />
+    <title>易吧，开创新的生活</title>
+</head>
+<link rel="stylesheet" href="css/main.css" type = "text/css">
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="css/div.css" type="text/css">
+<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css" />
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquerysession.js"></script>
+<script src="js/bootstrap-paginator.min.js"></script>
+<?php
+include('Server/ConnectMysql.php');
+mysqli_query($connect,'SET names UTF8');
+
+$id = $_GET["id"];
+$lost_or_pick=$_GET["lost_or_pick"];
+if($lost_or_pick=="lost"){//失物
+    $query="select *
+                from lostproperty  natural join (select userID,nickname,portraitPicture,
+                        phoneNumber,QQ,WeChat from user)as loser
+                where lostPropertyId='$id'";
+}
+else{//捡拾物
+    $query="select *
+                from pickedproperty  natural join (select userID,nickname,portraitPicture,
+                        phoneNumber,QQ,WeChat from user)as picker
+                where pickedPropertyId='$id'";
+}
+$result=mysqli_query($connect,$query)or die ('查询失败！');
+$row=mysqli_fetch_row($result);
+?>
+
+<style>
+    body, h1, h3 {
+        padding: 0;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    .zhanshika {
+        width: 640px;
+        float: center;
+    }
+    .kj {
+        border: 5px solid #eaeaea;
+        margin-top: 10px;
+    }
+    .kjtitle {
+        padding: 10px;
+    }
+    #foundlist .list {
+        display: block;
+        overflow: hidden;
+        border-top: 1px dotted #ccc;
+        padding: 10px;
+    }
+    .w500 {
+        width: 470px;
+        display: block;
+        overflow: hidden;
+    }
+    #foundlist .list_cont {
+        margin-left: 10px;
+        display: block;
+        overflow: hidden;
+    }
+    .table {
+        font-size: 12px;
+    }
+    .table td {
+        border: solid #ccc 1px;
+        height: 30px;
+        padding: 5px;
+        color: #333;
+    }
+    .table .tit {
+        font-weight: bold;
+    }
+    h3 {
+        padding-bottom: 0px;
+        margin: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        font-size: 100%;
+    }
+</style>
+<body style = "height:100%">
+<nav class = "navbar nav_bar" role = "navigation">
+    <div class="webset_info">
+        <ul class="contact_phone">
+            <li class="phone_ego">
+                <i class="phone_icon"></i>
+                <span>CONTACT: XXX-XXXX-XXXX</span>
+            </li>
+            <li class="phone_append">不知道写啥，二手书今天半价？</li>
+        </ul>
+    </div>
+    <!-- 导航栏样式 bootstrap 实现-->
+    <div class = "container-fluid" style="margin-top: 20px;">
+        <div class="navbar-header logo_container">
+            <a class="navbar-left" href="https://github.com/yanguojun123/YB" target="_blank">
+                <img class = "logo" alt="Brand" src="image/logo_main.png" height="20">
+            </a>
+        </div>
+        <div class="nav navbar-nav navbar-right loginandreg"  >
+            <a id="portrait" style="cursor: pointer"  >
+                <li>
+                    <img src="../main_page/image/un_logged.png">
+                </li>
+                <p id="loginandreg_pos">登录</p>
+            </a>
+        </div>
+        <!-- 这里添加登录的弹出框 -->
+
+        <div class="nav navbar-nav navbar-right button_menu">
+            <ul class="nav navbar-nav buttons">
+
+                <li class="active"><a href="#">水果蔬菜</a></li>
+                <li><a href="#">浏览历史</a></li>
+                <li><a href="#">我的购物车</a></li>
+                <li><a href="#">个人主页</a></li>
+                <li><a href="#">聊天记录</a></li>
+                <li><a href="#">关注我们</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+</nav>
+<div class = "input-group col-md-3 search_box">
+    <!-- 搜索框 -->
+    <input type = "text" class="search_input" value="请输入想要查询的内容" onfocus="this.value = '';" onblur="if(this.value == ''){this.value = '请输入想要查询的内容';}">
+    <input type="submit" class="search_btn" value="搜索">
+</div>
+<div style=" width:960px; margin:0 auto;" align="center">
+    <div class="zhanshika kj" style="background:#FFFAF0">
+        <div class="kjtitle"><?php echo $row[2];?>
+            <font style=" color:#FA6005; font-size:12px;">[无人认领]</font>
+        </div>
+
+        <div class="list">
+            <div class=" w500 list_cont" style="margin-left:0; width:615px;">
+                <table width="100%" class="table" style="border-collapse: collapse;" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tit" style="font-size:14px;color:#FA6005;" colspan="3">
+                            <div style="float:left;margin-top:8px">基本信息</div>
+                    </tr>
+                    <tr>
+                        <td width="14%" class="tit">物品种类</td>
+                        <td width="20%"><?php echo $row[5];?></td>
+                        <td width="66%" rowspan="2" >
+                            <?php
+                            if($row[8])
+                                echo '<img width="130px" height="130px" 
+                                 src="data:image/jpg;base64,'.base64_encode($row[8]) .'"/>';
+                            if($row[9])
+                                echo '<img width="130px" height="130px" 
+                                 src="data:image/jpg;base64,'.base64_encode($row[9]) .'"/>';
+                            if($row[10])
+                                echo '<img width="130px" height="130px" 
+                                src="data:image/jpg;base64,'.base64_encode($row[10]) .'"/>';
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tit">详细描述</td>
+                        <td><?php echo $row[7];?></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table width="100%" class="table" style="border-collapse: collapse; margin-top:5px;" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tit" style="font-size:14px;color:#FA6005;" colspan="4">时间地点</td>
+                    </tr>
+                    <tr>
+                        <td width="14%" class="tit">拾到时间</td>
+                        <td width="36%"><?php echo $row[3];?></td>
+                        <td width="14%" class="tit">拾到地点</td>
+                        <td width="36%"><?php echo $row[4];?></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table width="100%" class="table" style="border-collapse: collapse; margin-top:5px;" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tit" style="font-size:14px;color:#FA6005;" colspan="4">联系方式</td>
+                    </tr>
+                    <tr>
+                        <td class="tit">联系人</td>
+                        <td width="36%"><?php echo $row[12];?></td>
+                        <td width="14%" class="tit">手机</td>
+                        <td width="36%"><?php echo $row[14];?></td>
+                    </tr>
+                    <tr>
+                        <td class="tit">QQ</td>
+                        <td><?php echo $row[15];?></td>
+                        <td class="tit">微信</td>
+                        <td><?php echo $row[16];?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+<script>
+</script>
+<script src="js/main.js"></script>
+</html>

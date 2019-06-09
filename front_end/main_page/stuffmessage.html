@@ -13,7 +13,8 @@
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/magnifier.js"></script>
 <script src="js/bookPage.js"></script>
-<script src="js/main.js"></script>
+<script src="js/xs.js"></script>
+<!--<script src="js/main.js"></script>-->
 
 <body>
     <nav class="navbar nav_bar" role="navigation">
@@ -123,13 +124,13 @@
                             <div class="book_info_basic_left col-md-6">
                                 <ul>
                                     <li>
-                                        <p><span class="info_item">出版社：</span>某某某某出版社</p>
+                                        <p><span class="info_item">出版社：</span><span id="bookpublishhouse">某某某某出版社</span></p>
                                     </li>
                                     <li>
-                                        <p><span class="info_item">ISBN：</span>9001-XXX-XXXX-XX</p>
+                                        <p ><span class="info_item">ISBN：</span><span id="bookisbn">9001-XXX-XXXX-XX</span></p>
                                     </li>
                                     <li>
-                                        <p><span class="info_item">出版日期：</span>XXXX-XX-XX</p>
+                                        <p><span class="info_item">出版日期：</span><span id="bookpublishdate">XXXX-XX-XX</span></p>
                                     </li>
 
                                 </ul>
@@ -137,13 +138,13 @@
                             <div class="book_info_basic_right col-md-6">
                                 <ul>
                                     <li>
-                                        <p><span class="info_item">开本：</span>XXX 开</p>
+                                        <p><span class="info_item">开本：</span><span id="bookformat">XXX 开</span></p>
                                     </li>
                                     <li>
-                                        <p><span class="info_item">纸张：</span>胶装</p>
+                                        <p><span class="info_item">纸张：</span><span id="bookpaper">胶装</span></p>
                                     </li>
                                     <li>
-                                        <p><span class="info_item">分类：</span>XXXX 类</p>
+                                        <p><span class="info_item">分类：</span><span id="bookcategory">XXXX 类</span></p>
                                     </li>
                                 </ul>
                             </div>
@@ -355,5 +356,23 @@
         </div>
     </div>
 </body>
+<script>
+  // 取值时：把获取到的Json字符串转换回对象
+  var prebook = sessionStorage.getItem('testKey');
+  var book = JSON.parse(prebook);
 
+  
+  sessionStorage.removeItem('testKey')
+  console.log(book); 
+  $("#bookname").html(book.bookName);
+  $("#bookauthor").html(book.author);
+  $("#bookPrice").html(book.price);
+  $("#bookpublishhouse").html(book.publishingHouse);
+  $("#bookpublishdate").html(book.publishingDate);
+  $("#bookisbn").html(book.ISBN);
+  $("#bookcategory").html(book.classification);
+  $("#bookformat").html(book.format);
+  $("#bookpaper").html(book.paper);
+</script>
+<script src="js/main.js"></script>
 </html>
