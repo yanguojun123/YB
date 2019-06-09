@@ -2,6 +2,20 @@
 body {
 	background: url("../image/body_bg.jpg");
 }
+body::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background:#27ACBC;
+}
+body::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
 
 /* 网站信息容器 */
 .webset_info {
@@ -294,13 +308,93 @@ body {
 	padding-right: 10px; */
 	height: 400px;
 }
+/*分页输入框框样式*/
+#pageinput{
+  margin-left:2%;
+  float:left;
+  width:8%;
+  height:20%;
 
+}
+#pageinput input{
+  margin-top:39%;
+  width:100%;
+  height:35%;
+}
+/*分页输入框按钮样式*/
+#pagebutton{
+  margin-left:1%;
+  float:left;
+  width:6%;
+  height:20%;
+
+}
+#pagebutton button{
+  
+  margin-top:50%;
+  width:100%;
+  height:35%;
+}
 /* 右侧绿色为产品显示界面 */
 .right_info_panel {
 	height: 100%;
-	background: rgba(0, 255, 0, 0.5);
-	min-height: 400px;
+/*    background-color: #55bb8a;*/
+	height: 400px;
+  border-radius: 5px;
 }
+/*右侧绿色显示界面头部*/
+.right_info_panel .rightheader
+{
+	weight:100%;
+	height:10%;
+    font-family:"a";
+	background-color: aliceblue;
+    border-radius: 5px;
+    text-align: center;
+    border-style:double;
+}
+
+
+/*侧绿色显示界面ul*/
+.right_info_panel ul
+{
+	margin-left:-3%;
+	margin-top:-3.4%;
+	color:aliceblue;
+/*  background-color:aqua;*/
+
+}
+/*侧绿色显示界面ul li*/
+.right_info_panel li
+{
+
+	margin-top:1%;
+	margin-left:-10%;
+	list-style:none;
+/*    background-color:#d0dfe6;*/
+    border-radius: 5px;
+    text-align: center;
+/*    list-style-type:decimal;*/
+/*	background-color: antiquewhite;*/
+  background-color:#626255;
+  cursor: pointer;
+	
+}
+
+/*侧绿色显示界面ul li a*/
+.right_info_panel li a
+{
+  
+/*  background-color:#d0dfe6;*/
+  color:white;
+	font-size:18px;
+    width:100%;
+    height:30px;
+    line-height: 30px;
+	cursor: pointer;
+}
+
+
 
 /* 脚注 css 样式*/
 .foot {

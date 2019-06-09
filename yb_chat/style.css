@@ -46,9 +46,9 @@
     position: fixed;
     height: 1.066667rem;
     background-color: #fff;
-    width: 90%;
+    width: 70%;
     left: 50%;
-    margin-left: -45%;
+    margin-left: -35%;
     border-radius: 5px;
     bottom: 10px;
 }
@@ -68,6 +68,8 @@
 #sendBtn {
     width: 12%;
     height: 0.8rem;
+    float:right;
+    margin-top: 4px;
     border-radius: 0.133333rem;
     font-size: 0.4rem;
     color: #fff;
@@ -96,4 +98,104 @@
     text-align: right;
 }
 
+    .speech-bubble-left{
 
+        display: inline-block;
+        width: auto;
+
+        height: auto;
+
+        background: #5ac4ed;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 4px;
+        padding-right: 4px;
+
+        left:20px;
+
+        -moz-border-radius: 10px;
+
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+        /*margin-top:20px;
+        margin-bottom: 20px;position: absolute;*/
+
+    }
+    .speech-bubble-right{
+
+        display: inline-block;
+        width: auto;
+
+        height: auto;
+
+        background: #39d624;
+
+        
+        margin-right:1%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 4px;
+        padding-right: 4px;
+        -moz-border-radius: 10px;
+
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+       /* margin-top:20px;
+        margin-bottom: 20px;position: absolute;*/
+
+    }
+
+    .speech-bubble-left:before {
+
+        content:"";
+
+        position: absolute;
+
+        width: 0;
+
+        height: 0;
+
+        border-top: 10px solid transparent;
+
+        border-right: 26px solid #5ac4ed;
+
+        border-bottom: 10px solid transparent;
+
+        margin: 5px 0px 0px -25px;
+
+    }
+    .speech-bubble-right:after {
+
+        content:"";
+
+        position: absolute;
+
+        width: 0;
+
+        height: 0;
+
+        border-top: 10px solid transparent;
+
+        border-left: 26px solid #39d624;
+
+        border-bottom: 10px solid transparent;
+
+        margin: 5px 0px 0px -0px;
+
+    }
+    .bubbleTail
+    {position:absolute;
+        left:90%;
+        bottom:0px;
+        width:16px;
+        height:16px;
+        border-width:0;
+        border-style:solid;
+        border-color:transparent;
+        border-top-width:10px;
+        border-top-color:currentColor;
+        border-radius:0 32px 0 0;
+        color:#3c6c80;
+    }

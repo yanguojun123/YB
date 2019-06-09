@@ -1,3 +1,4 @@
+
 //在这里实现登录注册功能
 WIDTH = 0;
 HEIGHT = 0;
@@ -5,9 +6,15 @@ HEIGHT = 0;
 posx = 0;
 posy = 0;
 
+    
+/////////////////////////////////////////////////////
+
 window.onload = function () {
     WIDTH = document.body.clientWidth;
     HEIGHT = document.body.clientHeight;
+  
+    console.log("hhh")
+    
 
     hhh();
     showLoginWindow();
@@ -76,47 +83,50 @@ function inputInfo2(id) {
 //如果服务器判断成功则计入 session 否则刷新
 function login() {
     var account = $('#logInput1')[0].value;
-    var password = $('#logInput2')[0].value;
-    
-    var xmlhttp = getHTTPObject();
-    xmlhttp.open('POST', 'http://localhost/YiBa/Controller/user_controller.php', true);
-    xmlhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
-    xmlhttp.send({"userId": account, "password": password, "purpose":0});
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            console.log("进来了吗");
-            //alert("收到");  
-            console.log(xmlhttp.responseText);
-        } else {
-            // console.log(xmlhttp.readyState + ":" + xmlhttp.status)
-        }
-    }
-
-    // $.ajax({
-    //     type: "POST",
-    //     url: "http://localhost/YiBa/Controller/user_controller.php",
-    //     data: {"userId": account, "password": password, "purpose":0},
-    //     dataType: "text",
-    //     success: function(data)
-    //     {   //返回值
-    //         console.log(data)
-    //         var response = data['status'];
-    //         if(response == "1")
-    //         {   //登录成功
-    //             console.log("success log in!!");
-    //         }
-    //         else
-    //         {   //登录失败
-    //             console.log("failed log in!!");
-    //         }
-    //     },
-    //     error: function(jqXHR,textStatus,errorThrown)
-    //     {
-    //         console.log(jqXHR);
-    //         console.log(textStatus);
-    //         console.log(errorThrown)
-    //     }
-    // })
+    var password = $('#logInput2')[0].value;  
+//    var xmlhttp = getHTTPObject();
+//    xmlhttp.open('POST', 'http://localhost/YiBa/Controller/user_controller.php', true);
+//    xmlhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
+//    xmlhttp.send({"userId": account, "password": password, "purpose":0});
+//    xmlhttp.onreadystatechange = function () {
+//        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//            console.log("进来了吗");
+//            //alert("收到");  
+//            console.log(xmlhttp.responseText);
+//        } else {
+//            // console.log(xmlhttp.readyState + ":" + xmlhttp.status)
+//        }
+//    }
+     $.ajax({
+         type: "POST",
+         url: "http://localhost/YiBa/Controller/user_controller.php",
+         data: {"userId": account, "password": password, "purpose":0},
+         dataType: "text",
+         success: function(data)
+         {   //返回值
+             console.log("data",data)
+              var obj = JSON.parse(data);
+              var response = obj.status;
+             //var response = data['status'];
+             console.log("response",response);
+             if(response == "1")
+             {   //登录成功
+                 alert("success")
+                 console.log("success log in!!");
+             }
+             else
+             {   //登录失败
+                 alert("fail")
+                 console.log("failed log in!!");
+             }
+         },
+         error: function(jqXHR,textStatus,errorThrown)
+         {
+             console.log(jqXHR);
+             console.log(textStatus);
+             console.log(errorThrown)
+         }
+     })
 
     //登录成功返回 true
     var condition = true;

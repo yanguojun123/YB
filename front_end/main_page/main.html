@@ -6,13 +6,13 @@
     </head>
     <link rel="stylesheet" href="css/main.css" type = "text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="css/div.css" type="text/css">
-	<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css" />
+	  <link rel="stylesheet" href="css/div.css" type="text/css">
+	  <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css" />
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquerysession.js"></script>
     <script src="js/bootstrap-paginator.min.js"></script>
-    <script src="js/main.js"></script>
-
+    <script src="js/xs.js"></script>
+  
     <body style = "height:100%">
         <nav class = "navbar nav_bar" role = "navigation">
             <div class="webset_info">
@@ -41,7 +41,6 @@
                 </div>
                 <div class="nav navbar-nav navbar-right button_menu">
                     <ul class="nav navbar-nav buttons">
-
                         <li class="active"><a href="#">水果蔬菜</a></li>
                         <li><a href="#">浏览历史</a></li>
                         <li><a href="#">我的购物车</a></li>
@@ -76,19 +75,16 @@
                             -->
                             <h3 class="bookClassHeader">二手书相关信息</h3>
                             <ul class="bookCatogries">
-                                <li><a href="#">第一个标签</a></li>
-                                <li><a href="#">第二个标签</a></li>
-                                <li><a href="#">第三个标签</a></li>
-                                <li><a href="#">第四个标签</a></li>
-                                <li><a href="#">第五个标签</a></li>
-                                <li><a href="#">第六个标签</a></li>
+                                <li><a id="b1" href="main.html">购买二手书</a></li>
+                                <li><a id="b2" href="mainadd.html">发布二手书</a></li>
+                                <li><a id="b3" href="mainsearch.html">搜索二手书</a></li>
                             </ul>
                             <h3 class="swapClassHeader">失物招领信息</h3>
                             <ul class="swapCatogries">
-                                <li><a href="#">第一个标签</a></li>
-                                <li><a href="#">第二个标签</a></li>
-                                <li><a href="#">第三个标签</a></li>
-                                <li><a href="#">第四个标签</a></li>
+                                <li><a id="s1" href="ShiWuZhaoling.html?lost_or_pick=lost" >失物信息</a></li>
+                                <li><a id="s2" href="ShiWuZhaoling.html?lost_or_pick=pick" >招领信息</a></li>
+                                <li><a id="s3" href="AddXinxi.html">免费发布信息</a></li>
+                                <li><a id="s4" href="Search.html">搜索信息</a></li>
                             </ul>
                             <div class="moreInfo">
                                 额外的信息，目前没有什么用处，先占个坑，可以使用 js 填充
@@ -103,47 +99,38 @@
 								<div class="subcontent">
 									<div class="subcon_photo">
 										<a href="#">
-	                                		<img  src="image/book_test/童年.png">
-	                           			</a>
-									<ul class="social">
-	                               		<li title="收藏"><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
-	                                	<li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
-<!--	                                	<li><a href="#" data-tip="Compare"><i class="fas fa-random"></i></a></li>-->
-	                                	<li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
-	                            	</ul>
+                        <img  src="image/book_test/童年.png">
+                    </a>
+                    <ul class='social'>
+                      <li title='收藏'><a href='#' data-tip='Add to Cart'  onclick='addtocart(this)'><i class='fas fa-shopping-cart'></i></a></li>
+                      <li><a href='#' data-tip='Wishlist'  onclick='purchase(this)'><i class='far fa-heart'></i></a></li>
+                      <li><a href='#' data-tip='Quick View'  onclick='view(this)'><i class='fas fa-search'></i></a></li></ul>
 									</div>
 									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
 									<div title="高尔基" class="subcon_author">高尔基</div>
 									<div class="subcon_price">￥20</div>
 									<div class="subcon_seller"><a href="#">kaim</a></div>
+                  <span style='opacity:0.0;'>1</span>
 								</div>
-								<div class="subcontent">
-									<div class="subcon_photo">
-										<a href="#">
-	                                		<img  src="image/book_test/童年.png">
-	                           			</a>
-									<ul class="social">
-	                               		<li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
-	                                	<li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
-<!--	                                	<li><a href="#" data-tip="Compare"><i class="fas fa-random"></i></a></li>-->
-	                                	<li><a href="#" data-tip="Quick View"><i class="fas fa-search"></i></a></li>
-	                            	</ul>
-									</div>
-									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
-									<div title="高尔基" class="subcon_author">高尔基</div>
-									<div class="subcon_price">￥20</div>
-									<div class="subcon_seller"><a href="#">kaim</a></div>
-								</div>
+
 								
 
 							</div>
-							<div style="text-align: center">
+							<div id="page" style="margin-left:15%;height:20%;float:left">
 <!--							<ul class="pagination"></ul>-->
-								<ul id="example"></ul>
-								
+								<ul id="example"></ul>	
 							</div>
+              <div id="pageinput"><input type="text" id="pinput" autofocus class="form-control"></div>
+              <div id="pagebutton"><button id="pbutton"type="button" class="btn btn-info btn-sm">go</button></div>       
+                      
                         </div>
                         <div class = "col-md-3 right_info_panel">
+                          
+                          <h2 class="rightheader">热度最高</h2>
+                          <ul id="heat">
+                            <li><span id="right1"></span><a>三体</a></li>
+                          </ul>
+
                             <!--  
                             右边的显示，内容根据左边的选择进行变动；
                             当左侧选择的是二手书相关，右侧显示最火热的二手书；
@@ -257,30 +244,193 @@
         </div>
 
     </body>
+<script>
+var total=-1;//初始测试总页数
+var bookss=[];
+//分页参数设置函数
+ function setoptions(totalpages,currentpage){
+      var options={
+        bootstrapMajorVersion:3,
+        currentPage: currentpage,
+        totalPages: totalpages,
+        numberOfPages: 5,
+        shouldShowPage:function(type, page, current){
+            switch (type) {
+                case "first":
+                    return true;
+                case "prev":
+                    return true;
+                case "next":
+                    return true;
+                case "last":
+                    return true;
+                case "page":
+                    return true;
+            }
+        },
+        tooltipTitles: function(type, page, current) {//设置操作按钮的title属性。
+            switch (type) {
+                case "first":
+                    return "首页";
+                case "prev":
+                    return "上一页";
+                case "next":
+                    return "下一页";
+                case "last":
+                    return "末页";
+                case "page":
+                    return page;
+            }
+        },
+        itemTexts : function(type, page, current) {//控制每个操作按钮的显示文字。
+            switch (type) {
+                case "first":
+                    return "首页";
+                case "prev":
+                    return "上一页";
+                case "next":
+                    return "下一页";
+                case "last":
+                    return "末页";
+                case "page":
+                    return page;
+            }
+        },
+        onPageChanged: function (event, oldPage, newPage){
+          middleget(newPage);
 
-	<script>
-    $(document).ready(function(){
-        var options={
-            bootstrapMajorVersion:3,
-            currentPage: 4,
-            totalPages: 10,
-            numberOfPages: 5,
-            itemTexts : function(type, page, current) {
-                switch (type) {
-                    case "first":
-                        return "首页";
-                    case "prev":
-                        return "上一页";
-                    case "next":
-                        return "下一页";
-                    case "last":
-                        return "末页";
-                    case "page":
-                        return page;
-                }
-            },
-        };
-        $("#example").bootstrapPaginator(options);		
+        }
+    };
+    return options;
+}
+//从数据库异步获取最新热度的内容展示到右侧面板
+function rightget(){
+  $("#heat").empty();
+  for(let i=0;i<6;i++){
+    $("#heat").append("<li id='right"+i+"'><span><a>信"+i+"</a></span></li>");
+    $("#right"+i+"").xs999(Math.round(Math.random()*30));
+    $("#right"+i+"").hover(function(){
+      $(this).children().children().css({"font-size":"28px","color":"#2bae85","transition":"0.2s"});
+    },function(){
+      $(this).children().children().css({"font-size":"18px","color":"#ffffff"});
     });
-	</script>
+    $("#right"+i+"").click(function(){
+      alert($(this).children().children().text())
+    });
+  }
+
+  
+}	 
+//从数据库异步获取最新热度的内容展示到右侧面板
+function middleget(page){
+  //console.log("page",page);
+  $.ajax({
+    url: "http://localhost/YiBa/Controller/control.php",
+    type: 'post',
+    data: {"page": parseInt(page),"code":1},
+    dataType: 'json',
+    success: function (data) {
+     //tplData(data);//处理成功返回的数据
+      //传过来一页的数据，总页数
+      //如果总页数不变则不调用setpages
+      //否则调用setpages
+      //console.log("data",data);   
+      
+      
+      let books=data.table;
+      bookss=books;
+      $("#content").empty();
+      for(let i=0;i<books.length;i++){
+        
+        $("#content").append(" <div class='subcontent'><div class='subcon_photo'><img  src='image/book_test/童年.png'><ul class='social'><li title='收藏'><a href='#' data-tip='Add to Cart'  onclick='addtocart(this)'><i class='fas fa-shopping-cart'></i></a></li><li><a href='#' data-tip='Wishlist'  onclick='purchase(this)'><i class='far fa-heart'></i></a></li><li><a href='#' data-tip='Quick View'  onclick='view(this)'><i class='fas fa-search'></i></a></li></ul></div><div title='"+books[i].bookName+"' class='subcon_name'><a href='#'>"+books[i].bookName+"</a></div><div title='"+books[i].author+"+' class='subcon_author'>"+books[i].author+"</div><div class='subcon_price'>￥"+books[i].price+"</div><div class='subcon_seller'><a href='#'>kaim</a></div><span style='opacity:0.0;'>"+i+"</span></div>");
+      }
+      
+      if(total==-1||data.number!=total){
+        total=data.number;
+        $("#example").bootstrapPaginator(setoptions(total,page)); 
+      }
+        
+
+      
+
+   }
+  });
+
+  
+}
+
+
+//收藏按钮点击事件函数
+function addtocart(a){
+  var p = a.parentNode.parentNode.parentNode.parentNode.children[1];
+  var q = p.innerHTML;
+  //alert(p.title)
+  alert(p.getAttribute("title"))
+  
+}
+//购买按钮点击事件函数
+function purchase(a){
+  var p = a.parentNode.parentNode.parentNode.parentNode.children[1];
+  var q = p.innerHTML;
+  alert(p.title)
+  //alert(p.getAttribute("title"))
+}
+//查看按钮点击事件函数
+function view(a){
+  var p = a.parentNode.parentNode.parentNode.parentNode.children[5];
+  var q = p.innerHTML;
+  
+  // 存储值：将对象转换为Json字符串
+  sessionStorage.setItem('testKey', JSON.stringify(bookss[q]));
+  window.location.href="stuffmessage.html";
+//  var p = a.parentNode.parentNode.parentNode.parentNode.children[1];
+//  var q = p.innerHTML;
+//  alert(p.title)
+//  alert(p.getAttribute("title"))
+
+} 
+
+
+    
+function setpage(){
+    middleget(1);
+    
+    $("#pbutton").click(function(){
+      let page=$("#pinput").val();
+      let reg=/^[0-9]*$/;
+      if(page){
+        //如果获取到了非空
+        if(reg.test(page)){
+          if(page>total)
+            alert("页数过大")
+          else
+            $('#example').bootstrapPaginator("show",page)// 调用show命令
+        }
+        else
+          alert("输入不合法")
+      }
+      else
+        alert("你没有输入")
+      $("#pinput").val("");
+
+    })
+}
+
+for(let i=1;i<=3;i++)
+  $("#b"+i).css({"font-size":"10px","color":"black"});
+for(let i=1;i<=4;i++)
+  $("#s"+i).css({"font-size":"10px","color":"black"});
+$("#b1").css({"font-size":"20px","color":"red"});
+rightget();
+setpage();
+
+
+console.log("bookss",bookss);
+
+
+
+
+  
+</script>
+<script src="js/main.js"></script>
 </html>

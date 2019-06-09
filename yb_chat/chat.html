@@ -19,6 +19,7 @@ npm install nodejs-websocket
     <meta charset="utf-8" />
     <title>Webscoket</title>
     <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <!-- echo 把接受到的数据返回过去 -->
@@ -26,8 +27,13 @@ npm install nodejs-websocket
 <body class="chatbody">
     <!-- 导航 -->
     <div class="navigation">
-        <h1>聊天界面</h1>
+        <h1 id="title">聊天界面</h1>
         <a href="javascript:history.go(-1);" id="back">返回</a>
+<script type="text/javascript">//修改文章题目
+   var usernickname=window.location.href.split('to=')[1];
+   var h1=document.getElementById('title');
+   h1.innerHTML=usernickname;
+</script>
     </div>
     <!-- 会话列表 -->
     <div class="chatDiv">
@@ -46,7 +52,8 @@ npm install nodejs-websocket
     var user = {};
 
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://localhost:3000/");
+        //websocket = new WebSocket("ws://62.234.18.202:3000/");
+        websocket = new WebSocket("ws://62.234.18.202:3000/");
     } else {
         alert('当前浏览器不支持websocket')
     }
@@ -54,7 +61,11 @@ npm install nodejs-websocket
     // 创建节点
     function createChatNode(obj, ismine) {
         var $li = '';
+        var $d='';
         $li = document.createElement('li');
+        $d=document.createElement('div');
+        //$d.className='reply';
+        //$d.setAttribute("class","speech-bubble");
         if (ismine == true) {
             $li.setAttribute("class", "mine");
         } else {
@@ -66,14 +77,17 @@ npm install nodejs-websocket
         var $namespan = document.createElement('span');
         var $name = '';
         if (ismine == true) {
-            $name = document.createTextNode('我：');
+            //$name = document.createTextNode('我：');
+            $d.className="speech-bubble-right";
         } else {
-            $name = document.createTextNode(obj.name + ':');
+           // $name = document.createTextNode(obj.name + ':');
+            $d.className="speech-bubble-left";
         }
-        $namespan.appendChild($name);
+       // $namespan.appendChild($name);
         
-        $li.appendChild($namespan);
-        $li.appendChild($dataspan);
+        $d.appendChild($namespan);
+        $d.appendChild($dataspan);
+        $li.appendChild($d);
         var $list = document.getElementById('chatlist');
         $list.appendChild($li);
     }
@@ -137,7 +151,9 @@ npm install nodejs-websocket
   
         websocket.send(JSON.stringify(user));
         // 这里是把发起会话的人的信息告诉服务器
-
+        //显示历史消息
+         show();
+         init();//初始化键盘监听
         // 发送消息
         document.getElementById("sendBtn").onclick = function() {
             var txt = document.getElementById("sendText").value;
@@ -147,6 +163,9 @@ npm install nodejs-websocket
                 user.data = txt;
                 websocket.send(JSON.stringify(user));
                 createChatNode(user,true);
+                //alert('baocun');
+                insert(txt,user.name,user.toname);
+                
             }
         }
     }
@@ -173,7 +192,9 @@ npm install nodejs-websocket
         return obj;
 
     }
-
+    //window.setInterval(function(){
+    //var ping = {"type":"ping"}; 
+   // websocket.send(JSON.stringify(ping)); },5000);//自动连接避免断开
     //接收到消息的回调方法
     websocket.onmessage = function(e) {
         // if (e == '好友在忙碌') {
@@ -201,6 +222,95 @@ npm install nodejs-websocket
     window.onbeforeunload = function() {
         websocket.close();
     }
+
+    function insert(contents,users,toUsers)
+{
+	var time=new Date();
+    var times=time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+    //alert(times);
+	$.ajax({ url: 'insert.php',
+		type: 'post',
+		data:{"content":contents,"time":times,"user":users,"toUser":toUsers}, 
+		dataType:'text',
+		success: function()
+		{	
+			///alert('保存成功');										  
+					}});
+}
+
+  //显示历史信息
+  function show(){
+      
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		     xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+        xmlhttp.onreadystatechange=function ff()
+         {
+           if (xmlhttp.readyState==4 && xmlhttp.status==200)
+           {
+             var xmlDoc = xmlhttp.responseXML; 
+             var number = xmlDoc.getElementsByTagName("number")[0].childNodes[0].nodeValue;
+               var messageNumber=20;
+               var startIndex=0;//消息的起始下标
+               if(number>messageNumber)
+                   startIndex=number-messageNumber;  
+		     for (var i=startIndex;i<number;i++)
+		        {   
+		        	var temp=xmlDoc.getElementsByTagName("content")[i].childNodes[0].nodeValue;
+                    var times=xmlDoc.getElementsByTagName("time")[i].childNodes[0].nodeValue;
+                    var users=xmlDoc.getElementsByTagName("user")[i].childNodes[0].nodeValue;
+                    var toUsers=xmlDoc.getElementsByTagName("touser")[i].childNodes[0].nodeValue;
+                    var userTemp={};
+                    userTemp.type="message";
+                    userTemp.data=temp;
+                    userTemp.name=users;
+                    userTemp.toname=toUsers;
+                    if(users==user.name)
+                    {
+                        createChatNode(userTemp,true);
+                    }
+                    else
+                    {
+                        createChatNode(userTemp,false);
+                    }
+			      
+				    
+                }
+                
+            }
+         }
+	xmlhttp.open("GET","selMessage.php?user="+user.name,true);
+	xmlhttp.send();
+}
+function init(){
+    //页面键盘点击时触发
+    document.onkeydown=showKeyDown;
+}
+
+    function showKeyDown(evt){
+        evt = (evt) ? evt : window.event ;
+
+        if(evt.keyCode==13){
+            var txt = document.getElementById("sendText").value;
+            document.getElementById('sendText').value = '';
+            if (txt) {
+                user.type = "message";
+                user.data = txt;
+                websocket.send(JSON.stringify(user));
+                createChatNode(user,true);
+                //alert('baocun');
+                insert(txt,user.name,user.toname);
+        }
+        
+    }
+}
+
     </script>
 </body>
 
