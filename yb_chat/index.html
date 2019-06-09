@@ -75,11 +75,12 @@ window.onload=function(){//显示好友列表
                var number = xmlDoc.getElementsByTagName("number")[0].childNodes[0].nodeValue;
 		     for (var i=0;i<4;i++)
 		        {   
-		        	var temp=xmlDoc.getElementsByTagName("friendld")[i].childNodes[0].nodeValue;
+                 var temp=xmlDoc.getElementsByTagName("friendld")[i].childNodes[0].nodeValue;
+                 var temp1=xmlDoc.getElementsByTagName("fid")[i].childNodes[0].nodeValue;
 		        	//var times=xmlDoc.getElementsByTagName("time")[i].childNodes[0].nodeValue;
 			        //var times=time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
 				    var li=document.createElement("li");
-				    li.innerHTML='<a href="chat.html?name='+user+'&to='+temp+'">'+temp+'</a>';
+				    li.innerHTML='<a href="chat.php?name='+user+'&to='+temp1+'">'+temp+'</a>';
 				    uu.append(li); 
 			    }
             }

@@ -11,7 +11,7 @@ $conn = mysqli_connect($servername, $username, $password);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$res=mysqli_select_db($conn,"test");
+$res=mysqli_select_db($conn,"yb");
 if ($res==0)
 echo "选择数据库出错";
 
@@ -43,4 +43,6 @@ while($row=mysqli_fetch_array($result1))
 }
 echo "<number>".$number."</number>";
 echo '</person>';
+
+$conn->close($conn);
   ?>
