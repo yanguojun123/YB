@@ -9,7 +9,7 @@ include('ConnectMysql.php');
 mysqli_query($connect,'SET names UTF8');
 $title=$_POST['biaoti'];
 /*$userId=$_POST['userID'];*/
-$userId='20190001';
+$userId='178062283';
 $lostTimeStart=$_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
 $lostRange= $_POST['s_province'].$_POST['s_city'];//.$_POST['s_country'];
 $keyword=$_POST['biaoqian'];
@@ -64,7 +64,7 @@ if($_POST['leibie']=="zhaoling"){
 
     $query="insert into pickedproperty values('$count','$title', '$userId','$lostTimeStart','$lostRange',
     '$keyword','$releaseTime','$propertyDescribe','$picture1','$picture2','$picture3','$color')";
-    $result=mysqli_query($connect,$query);
+    $result=mysqli_query($connect,$query) or die("查询失败!");;
     header("Location:../ShiWuZhaoLing.html?lost_or_pick=pick");
 }
 ?>

@@ -325,7 +325,7 @@ function rightget(){
 function middleget(page){
   //console.log("page",page);
   $.ajax({
-    url: "http://localhost/YiBa/Controller/control.php",
+    url: "Server/Controller/control.php",
     type: 'post',
     data: {"page": parseInt(page),"code":1},
     dataType: 'json',

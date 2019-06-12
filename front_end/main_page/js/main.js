@@ -78,28 +78,36 @@ function inputInfo2(id) {
             target[0].value = 'password';
     });
 }
-
+function testNum(str){
+   var reg = new RegExp("^[^0-9]*$");//从头到尾都不是数字
+    if(reg.test(str)){
+     alert("没有数字!");
+    }else{//有数字
+        var reg = new RegExp("^[0-9]*$");//从头到尾都是数字
+        if(reg.test(str)){                //从头到尾都是数字
+            alert("全是数字");
+        }else{                            //有数字但是不全是
+            alert("有但是不全是数字");
+        }
+    };
+};
 //将账号密码发送到服务器进行验证并判断返回消息
 //如果服务器判断成功则计入 session 否则刷新
 function login() {
     var account = $('#logInput1')[0].value;
     var password = $('#logInput2')[0].value;  
-//    var xmlhttp = getHTTPObject();
-//    xmlhttp.open('POST', 'http://localhost/YiBa/Controller/user_controller.php', true);
-//    xmlhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
-//    xmlhttp.send({"userId": account, "password": password, "purpose":0});
-//    xmlhttp.onreadystatechange = function () {
-//        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-//            console.log("进来了吗");
-//            //alert("收到");  
-//            console.log(xmlhttp.responseText);
-//        } else {
-//            // console.log(xmlhttp.readyState + ":" + xmlhttp.status)
-//        }
-//    }
+
+    //testNum(account)
+    var reg=new RegExp("^[0-9]+$")
+    if(reg.test(account)){
+     
+    }
+    else{
+      alert("账户需全为数字")
+    }
      $.ajax({
          type: "POST",
-         url: "http://localhost/YiBa/Controller/user_controller.php",
+         url: "http://localhost/YB/front_end/main_page/Server/Controller/user_controller.php",
          data: {"userId": account, "password": password, "purpose":0},
          dataType: "text",
          success: function(data)

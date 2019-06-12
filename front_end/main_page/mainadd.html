@@ -159,46 +159,46 @@
 
 
               
-<form role="form" class="form-horizontal" id="form" action="http://localhost/YiBa/Controller/test.php" method="post" style="margin-top:20px;margin-left:15%;margin-right:15%;">
+<form role="form" class="form-horizontal" id="form" action="Server/Controller/control.php" method="post" style="margin-top:20px;margin-left:15%;margin-right:15%;">
   <div class="form-group" >
     <label class="col-sm-2 control-label">体裁</label>
     <div class="col-sm-10">
-      <select class="form-control" style="width:40%;">
-        <option>期刊/报纸</option>
-        <option>小说/文学/语言文字</option>
-        <option>历史/地理/艺术</option>
-        <option>政治/法律/军事</option>
-        <option>哲学/心理/宗教</option>
-        <option>经济/社科/综合</option>
-        <option>童书/生活/体育</option>
-        <option>工程技术/互联网</option>
-        <option>自然科学/医药卫生</option>
-        <option>教材/教辅</option>
+      <select class="form-control" style="width:40%;" name="booktheme">
+        <option value="newspaper">期刊/报纸</option>
+        <option value="novel">小说/文学/语言文字</option>
+        <option value="history">历史/地理/艺术</option>
+        <option value="politic">政治/法律/军事</option>
+        <option value="religion">哲学/心理/宗教</option>
+        <option value="economy">经济/社科/综合</option>
+        <option value="sport">童书/生活/体育</option>
+        <option value="internet">工程技术/互联网</option>
+        <option value="medicine">自然科学/医药卫生</option>
+        <option value="tution">教材/教辅</option>
       </select>
       </div>
   </div>
   <div class="form-group">
     <label for="inputbookname" class="col-sm-2 control-label">书名</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="请输入书名">
+      <input type="text" name="bookname" class="form-control" id="input1" placeholder="请输入书名">
     </div>
   </div>
   <div class="form-group">
     <label for="inputbookauthor" class="col-sm-2 control-label">作者</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="请输入作者">
+      <input type="text" name="bookauthor"class="form-control" id="input2" placeholder="请输入作者">
     </div>
   </div>
   <div class="form-group">
     <label for="inputbookpublish" class="col-sm-2 control-label">出版社</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="请输入出版社">
+      <input type="text" name="bookpublishhouse" class="form-control" id="input3" placeholder="请输入出版社">
     </div>
   </div>
   <div class="form-group">
     <label for="inputbookprice" class="col-sm-2 control-label">价格</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="请按照定价规则定价">
+      <input type="text" name="bookprice" class="form-control" id="input4" placeholder="请按照定价规则定价">
     </div>
   </div>
     
@@ -247,17 +247,17 @@
   <div class="form-group">
     <label for="inputbookinstruction" class="col-sm-2 control-label">详细说明</label>
     <div class="col-sm-10">
-      <textarea class="form-control" rows="3" placeholder="请输入丢失物品的详细描述信息以及物品的丢失过程！实践证明，信息描述越详细找回的几率更大。"></textarea>
+      <textarea name="bookinstruction" class="form-control" rows="3" placeholder="请输入丢失物品的详细描述信息以及物品的丢失过程！实践证明，信息描述越详细找回的几率更大。"></textarea>
     </div>
     
   </div>
   
 	<div class="form-group">
 		<div class="col-sm-offset-5 col-sm-2">
-			<button type="submit" class="btn btn-info">登录</button>
+			<button type="submit" name="certify" class="btn btn-info">确定</button>
 		</div>
 	</div>
-
+      <input type="text" name="code" value=2 style="display: none">
 <!--
   <div class="form-group" >
         <div class="input-group input-group-sm">
@@ -502,7 +502,6 @@ for(let i=1;i<=4;i++)
   $("#s"+i).css({"font-size":"10px","color":"black"});
 $("#b2").css({"font-size":"20px","color":"red"});
 rightget();
-middleget();
 
 
 

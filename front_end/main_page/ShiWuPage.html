@@ -32,6 +32,9 @@ else{//捡拾物
 }
 $result=mysqli_query($connect,$query)or die ('查询失败！');
 $row=mysqli_fetch_row($result);
+
+echo $id;
+echo "hh".$row[0];
 ?>
 
 <style>
