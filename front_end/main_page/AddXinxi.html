@@ -155,105 +155,188 @@
                         中间的显示，和主页相比只修改了这一部分
                     -->
                     <div id="content" class="content">
-                        <div class="fabuxinxi">
-                            <form method="post" onsubmit="return biaoticheck()"
-                                  action="Server/AddXinXi.php" enctype="multipart/form-data">
-                                <div class="title-box" align="center" style="margin-top:10px;">
-                                    <input name="biaoti" class="form-control" id="biaoti" style="display: block;width: 60%;
-                                    height: 30px;line-height: 40px;text-align:center;"   maxlength="100"
-                                           placeholder="请输入标题">
-                                </div>
-                                <br/>
+<div class="fabuxinxi" style="margin-left:20px;margin-right:20px;margin-top:20px;">
+  <form method="post" onsubmit="return biaoticheck()" action="Server/AddXinXi.php" enctype="multipart/form-data" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputtheme" class="col-sm-2 control-label">标题</label>
+      <div class="col-sm-10 title-box">
+          <input name="biaoti" class="form-control" id="biaoti" placeholder="请输入标题">
 
-                                <div align="center">
-                                    添加类别：
-                                    <input type="checkbox" name="leibie" value="shiwu">找寻失物
-                                    <input type="checkbox" name="leibie" value="zhaoling">招领启事
-                                </div>
-                                <br>
-                                <div align="center">
-                                    添加标签：
-                                    <input type="checkbox" name="biaoqian" value="钱包">钱包
-                                    <input type="checkbox" name="biaoqian" value="证件">证件
-                                    <input type="checkbox" name="biaoqian" value="卡类">卡类
-                                    <input type="checkbox" name="biaoqian" value="印章">印章
-                                    <input type="checkbox" name="biaoqian" value="钥匙">钥匙
-                                    <input type="checkbox" name="biaoqian" value="衣服">衣服
-                                    <input type="checkbox" name="biaoqian" value="手机">手机
-                                    <br>
-                                    <input type="checkbox" name="biaoqian" value="首饰">首饰
-                                    <input type="checkbox" name="biaoqian" value="票据">票据
-                                    <input type="checkbox" name="biaoqian" value="数码">数码
-                                    <input type="checkbox" name="biaoqian" value="电脑">电脑
-                                    <input type="checkbox" name="biaoqian" value="包裹">包裹
-                                    <input type="checkbox" name="biaoqian" value="宠物">宠物
-                                    <input type="checkbox" name="biaoqian" value="其他">其他
-                                </div>
-                                <br>
-                                <div align="center">
-                                    地点：
-                                    <select id="s_province" name="s_province"></select>
-                                    <select id="s_city" name="s_city"></select>
-                                    <!--<select id="s_country" name="s_country"></select>-->
-                                    <script type="text/javascript">_init_area();</script>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputcategory" class="col-sm-2 control-label">类别</label>
+      <div class="col-sm-10 title-box">
+          <label class="radio-inline">
+              <input type="radio" name="leibie" value="shiwu"> 找寻失物
+          </label>
 
-                                </div>
-                                <br>
-                                <div align="center">
-                                    时间：
-                                    <select name="year" id="year" onChange="setDay();">
-                                        <script type="text/javascript">getYear();</script>
-                                    </select>年
-                                    <select name="month" id="month" onChange="setDay()">
-                                        <script type="text/javascript">getMonth();</script>
-                                    </select>月
-                                    <select name="day" id="day">
-                                        <script type="text/javascript">setDay();</script>
-                                    </select>日
-                                </div>
-                                <br/>
-                                <div align="center">
-                                    颜色：
-                                    <select name="color">
-                                        <option value="红色">红色</option>
-                                        <option value="橙色">橙色</option>
-                                        <option value="黄色">黄色</option>
-                                        <option value="绿色">绿色</option>
-                                        <option value="青色">青色</option>
-                                        <option value="蓝色">蓝色</option>
-                                        <option value="紫色">紫色</option>
-                                        <option value="灰色">灰色</option>
-                                        <option value="粉色">粉色</option>
-                                        <option value="黑色">黑色</option>
-                                        <option value="白色">白色</option>
-                                        <option value="棕色">棕色</option>
-                                        <option value="其他">其他</option>
-                                    </select>
-                                </div>
-                                <p align="center" width="100%">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;
-                                    图片描述：
-                                    <input type="file" name="image" />
-                                    <input type="file" name="image1" />
-                                    <input type="file" name="image2" />
-                                </p>
-                                <br/>
-                                <div align="center">
-                                     <textarea name="miaoshu1" style="width:80%;height:300px;visibility:hidden;" id="miaoshu1">
-                                        请输入丢失物品的详细描述信息以及物品的丢失过程！
-                                        实践证明，信息描述越详细找回的几率更大。
-                                </textarea>
-                                </div>
-                                <br/>
-                                <div class="btndiv" align="center">
-                                    <input type="submit" name="queding" class="btn" style="border-color: #CA0C16;"  value="确定" />
-                                    <input type="button" name="clear"   class="btn" style="border-color: #CA0C16;" value="清空" />
-                                </div>
-                                <br/>
-                                <input name="miaoshu" id="miaoshu" type="hidden" >
-                            </form>
-                        </div>
+          <label class="radio-inline">
+              <input type="radio"  name="leibie" value="zhaoling"> 失物招领
+          </label>
+      </div>
+    </div>
+    
+    <div class="form-group" >
+      <label for="inputlabel" class="col-sm-2 control-label">标签</label>
+      <div class="col-sm-10">
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="钱包">钱包
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="证件">证件
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="卡类">卡类
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="印章">印章
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="钥匙">钥匙
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="衣服">衣服
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="手机">手机
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="首饰">首饰
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="票据">票据
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="数码">数码
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="电脑">电脑
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="包裹">包裹
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="宠物">宠物
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="biaoqian" value="其他">其他
+          </label>
+      </div>
+    </div>
+    
+    <div class="form-group form-inline" >
+      <label class="col-sm-2 control-label">地点</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="s_province" name="s_province"></select>
+        <select  class="form-control" id="s_city" name="s_city"></select>
+        <script type="text/javascript">_init_area();</script>
+      </div>
+    </div>
+    
+    <div class="form-group form-inline" >
+      <label class="col-sm-2 control-label">时间</label>
+      <div class="col-sm-10">
+        <select class="form-control" name="year" id="year" onChange="setDay();">
+            <script type="text/javascript">getYear();</script>
+        </select>年
+        <select class="form-control" name="month" id="month" onChange="setDay()">
+            <script type="text/javascript">getMonth();</script>
+        </select>月
+        <select class="form-control" name="day" id="day">
+            <script type="text/javascript">setDay();</script>
+        </select>日
+      </div>
+    </div>
+    <div class="form-group" >
+      <label class="col-sm-2 control-label">颜色</label>
+      <div class="col-sm-10">
+        <select name="color" class="form-control" style="width:40%;">
+            <option value="红色">红色</option>
+            <option value="橙色">橙色</option>
+            <option value="黄色">黄色</option>
+            <option value="绿色">绿色</option>
+            <option value="青色">青色</option>
+            <option value="蓝色">蓝色</option>
+            <option value="紫色">紫色</option>
+            <option value="灰色">灰色</option>
+            <option value="粉色">粉色</option>
+            <option value="黑色">黑色</option>
+            <option value="白色">白色</option>
+            <option value="棕色">棕色</option>
+            <option value="其他">其他</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputbookinstruction" class="col-sm-2 control-label">选择图片</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+           <input id='location' class="form-control" onclick="$('#i-file').click();">
+           <label class="input-group-btn">
+              <input type="button" id="i-check" value="浏览图片" class="btn btn-info" onclick="$('#i-file').click();">
+           </label>
+          </div>
+        <input type="file" name="image" id='i-file'  accept="" onchange="$('#location').val($('#i-file').val());" style="display: none">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputbookinstruction" class="col-sm-2 control-label">选择图片</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+           <input id='location1' class="form-control" onclick="$('#i-file1').click();">
+           <label class="input-group-btn">
+              <input type="button" id="i-check1" value="浏览图片" class="btn btn-info" onclick="$('#i-file1').click();">
+           </label>
+          </div>
+        <input type="file" name="image1" id='i-file1'  accept="" onchange="$('#location1').val($('#i-file1').val());" style="display: none">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputbookinstruction" class="col-sm-2 control-label">选择图片</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+           <input id='location2' class="form-control" onclick="$('#i-file2').click();">
+           <label class="input-group-btn">
+              <input type="button" id="i-check2" value="浏览图片" class="btn btn-info" onclick="$('#i-file2').click();">
+           </label>
+          </div>
+        <input type="file" name="image2" id='i-file2'  accept="" onchange="$('#location2').val($('#i-file2').val());" style="display: none">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputbookinstruction" class="col-sm-2 control-label">详细说明</label>
+      <div class="col-sm-10">
+        <textarea name="miaoshu1" style="width:90%;height:300px;visibility:hidden;" id="miaoshu1">
+                  请输入丢失物品的详细描述信息以及物品的丢失过程！
+                  实践证明，信息描述越详细找回的几率更大。
+        </textarea>
+      </div>
+
+    </div>
+  
+    <div class="form-inline col-sm-offset-5">
+
+      <div class="form-group">
+        <div class="col-sm-2">
+          <input type="submit" name="queding" class="btn btn-info" value="确定" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class=" col-sm-2">
+          <input type="button" name="clear"   class="btn btn-info" value="清空" />
+        </div>
+      </div>
+
+    </div>
+
+    <input name="miaoshu" id="miaoshu" type="hidden" >
+  </form>
+</div>
                     </div>
                 </div>
                 <div class = "col-md-3 right_info_panel">

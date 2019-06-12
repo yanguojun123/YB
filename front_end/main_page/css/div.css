@@ -20,12 +20,12 @@
     border-radius: 10px;
 }
 
-.content .subcontent{
+.subcontent{
 	margin-top:2%;
     margin-left:1.5%;
     padding-top: 8px;
-	height: 60%;
-	width:23%;	
+	height: 160px;
+	width:100px;	
 	float:left;
     background-color: aliceblue;
     /* 修改于 2019.5.25 */
@@ -33,20 +33,20 @@
     box-shadow: darkgrey 1px 1px 2px 1px /* 边框阴影 */
 }
 
-.content .subcontent:hover{
+.subcontent:hover{
     /* 修改于 2019.5.25 */
     -webkit-transition: 0.2s all;
     box-shadow: darkgrey 3px 3px 4px 1px /* 边框阴影 */
 }
-.content .subcon_photo{
+.subcon_photo{
 	text-align: center;
 	height:65%;
 	weight:100%;
 }
-.content .subcon_photo span{
+.subcon_photo span{
 	display:none;
 }
-.content .subcon_photo:hover span{
+.subcon_photo:hover span{
 	display:none;
 }
 
@@ -126,22 +126,22 @@
 	color:black;
     text-decoration: none;
 }
-.content .subcon_name{
+.subcon_name{
 	font-size:20px;
 	font-weight: 1000;
 	weight:100%;
 }
 
-.content .subcon_price{
+.subcon_price{
 	float:left;
 	weight:100%;
 	color:#F5AF00;
 }
-.content .subcon_author{
+.subcon_author{
 	font-size:5px;
 	weight:100%;
 }
-.content .subcon_seller{
+.subcon_seller{
 	margin-left:10%;
 	float:left;
 	weight:100%;

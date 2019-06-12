@@ -23,10 +23,12 @@
 <!-- (Optional) Latest compiled and minified JavaScript translation files -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/i18n/defaults-zh_CN.min.js"></script>
   <style>
+/*
   .content{
     height:100%;
     overflow:auto;
   }
+*/
   </style>
     <body style = "height:100%">
       
@@ -74,7 +76,7 @@
             <input type = "text" class="search_input" value="请输入想要查询的内容" onfocus="this.value = '';" onblur="if(this.value == ''){this.value = '请输入想要查询的内容';}" style="outline: none;">
             <input type="submit" class="search_btn" value="搜索">
         </div>
-        <div class = "main">
+        <div class = "main" style="height:650px">
             <div class = "container-fluid contain">
                 <!-- 容器，用于承载所有需要显示的元件 -->
                 <div class="row main_disp_below">
@@ -114,25 +116,25 @@
                             -->
                             <!-- 中间，我觉得左右两边的夹缝可以再窄一点，这里的 height 被重新设置为400，之后填充时取消 -->
 
-							<div id="content" class="content">
+							<div class="content" style="height:130px;">
                 
       
-<form role="form" class="form-horizontal" id="form" action="http://localhost/YiBa/Controller/test.php" method="post" style="margin-top:20px;margin-left:15%;margin-right:15%;">
+<form role="form" class="form-horizontal" id="form" action="../Server/Controller/test.php" method="post" style="margin-top:20px;margin-left:15%;margin-right:15%;">
 
   <div class="form-group" >
     <label class="col-sm-2 control-label">类别</label>
     <div class="col-sm-10">
-      <select class="form-control input-sm selectpicker" multiple id="theme" data-actions-box="true">
-        <option>期刊/报纸</option>
-        <option>小说/文学/语言文字</option>
-        <option>历史/地理/艺术</option>
-        <option>政治/法律/军事</option>
-        <option>哲学/心理/宗教</option>
-        <option>经济/社科/综合</option>
-        <option>童书/生活/体育</option>
-        <option>工程技术/互联网</option>
-        <option>自然科学/医药卫生</option>
-        <option>教材/教辅</option>
+      <select class="form-control input-sm selectpicker" multiple name="booktheme" id="theme" data-actions-box="true">
+        <option value="newspaper">期刊/报纸</option>
+        <option value="novel">小说/文学/语言文字</option>
+        <option value="history">历史/地理/艺术</option>
+        <option value="politic">政治/法律/军事</option>
+        <option value="religion">哲学/心理/宗教</option>
+        <option value="economy">经济/社科/综合</option>
+        <option value="sport">童书/生活/体育</option>
+        <option value="internet">工程技术/互联网</option>
+        <option value="medicine">自然科学/医药卫生</option>
+        <option value="tution">教材/教辅</option>
       </select> 
     </div>
   </div>
@@ -140,7 +142,7 @@
       <div class="input-group">
          <input type="text" class="form-control" placeholder="书籍名称，出版社，卖家，ISBN号" id="bookvalue"/ >
               <span class="input-group-btn">
-                 <button class="btn btn-info btn-search" id="booksearch">查找</button>
+                 <button class="btn btn-info btn-search" name="booksearch" id="booksearch">查找</button>
               </span>
         </div>
   </div>
@@ -153,7 +155,27 @@
 </form>
 							</div>
                 
- 
+                
+                <div id="content" class="content" style="margin-top:20px;height:400px;;width:100%;">
+                <div class="subcontent">
+									<div class="subcon_photo">
+										<a href="#">
+                        <img  src="image/book_test/童年.png">
+                    </a>
+                    <ul class='social'>
+                      <li title='收藏'><a href='#' data-tip='Add to Cart'  onclick='addtocart(this)'><i class='fas fa-shopping-cart'></i></a></li>
+                      <li><a href='#' data-tip='Wishlist'  onclick='purchase(this)'><i class='far fa-heart'></i></a></li>
+                      <li><a href='#' data-tip='Quick View'  onclick='view(this)'><i class='fas fa-search'></i></a></li></ul>
+									</div>
+									<div title="童年" class="subcon_name"><a href="#">童年</a></div>
+									<div title="高尔基" class="subcon_author">高尔基</div>
+									<div class="subcon_price">￥20</div>
+									<div class="subcon_seller"><a href="#">kaim</a></div>
+                  <span style='opacity:0.0;'>1</span>
+								</div>
+                  
+                </div>            
+                
 <!--
               <div id="content2"></div>
 							<div id="page" style="margin-left:15%;height:20%;float:left">
