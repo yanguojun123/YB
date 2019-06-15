@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>个人主页</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="../js/JquerySession.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/Personal_index.css">
+</head>
+<body>
+    <div id="HEAD"></div>
+    <div id="LEFT">
+        <div id="Portrait"></div>
+        <div id="Form">
+            <p id="Bianji">编辑信息</p>
+            <form id="information">
+                                       昵称：<br>
+               <input type="text" id="nickname"><br>
+                                       性别：<br>
+               <input type="text" id="sex"><br>
+                                       年龄：<br>
+               <input type="text" id="age"><br>
+                                       电话：<br>
+               <input type="text" id="phoneNumber"><br>  
+               QQ：<br>
+               <input type="text" id="QQ"><br>
+               WeChat：<br>
+               <input type="text" id="WeChat"><br>                     
+                                      地址：<br>
+               <input type="text" id="address"><br>    
+               <button id="submit" style="margin-left:60px;margin-top:10px">完成</button>                 
+            </form>
+        </div>
+    </div>
+    <div id="NAVIGATE">
+        <ul class="firstMenu">
+            <li id="messageHistory" style="margin-left: 20px">消息记录</li>
+            <li id="shoppingCar">购物车</li>
+            <li id="translateHistory">交易历史</li>
+            <li id="lostPicked">失物招领
+                <ul id="secondMenu">
+                     <li id="lostLog">丢失记录</li>
+                     <li id="pickedLog">拾物记录</li>
+                </ul>
+            </li>
+			
+        </ul>
+        <ul class=" clear">
+        </ul>
+    </div>
+    <div id="CONTENT">
+        <div id="PAGE_CONTENT">
+            <table id="contentBody" border="0" cellpadding="0" cellspacing="0"></table>
+        </div>
+        <div id="PAGE_BUTTON"></div>
+    </div>
+</body>
+<script>
+window.onload = () => {
+    document.getElementsByTagName("body")[0].style.width  = document.body.scrollWidth;+"px";
+}
+</script>
+<script type="text/javascript" src="../js/Personal_index.js"></script>
+</html>

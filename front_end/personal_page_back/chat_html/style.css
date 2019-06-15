@@ -1,0 +1,201 @@
+.navigation {
+    width: 100%;
+    height: 1.333333rem;
+    font-size: 0.426667rem;
+    background-color: #00BFFF;
+    color: #fff;
+    text-align: center;
+    line-height: 1.33rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.fridenslist{
+	margin-top: 1.333333rem;
+}
+
+
+
+.fridenslist li {
+    border-bottom: 1px solid #f0f0f0;
+    height: 1.333333rem;
+
+}
+
+.fridenslist li a {
+    display: block;
+    height: 100%;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+
+/*聊天界面*/
+
+#back {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0.266667rem;
+    width: 1.2rem;
+    color: #fff;
+}
+
+.sendMessage {
+    position: fixed;
+    height: 1.066667rem;
+    background-color: #fff;
+    width: 70%;
+    left: 50%;
+    margin-left: -35%;
+    border-radius: 5px;
+    bottom: 10px;
+}
+
+#sendText {
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 0.8rem;
+    margin-top: 0.13333rem;
+    margin-left: 0.266667rem;
+    width: 80%;
+    border-radius: 0.133333rem;
+}
+
+#sendBtn {
+    width: 12%;
+    height: 0.8rem;
+    float:right;
+    margin-top: 4px;
+    border-radius: 0.133333rem;
+    font-size: 0.4rem;
+    color: #fff;
+    background-color: #00BFFF;
+    text-align: center;
+}
+
+.chatbody,
+.chathtml {
+    background-color: #ddd;
+    height: 100%;
+}
+
+#entername{
+	margin-top: 2.0rem;
+}
+
+#chatlist .other{
+    padding: 0.266667rem;
+    font-size: 0.4rem;
+}
+
+#chatlist .mine{
+	padding: 0.266667rem;
+	font-size: 0.4rem;
+    text-align: right;
+}
+
+    .speech-bubble-left{
+
+        display: inline-block;
+        width: auto;
+
+        height: auto;
+
+        background: #5ac4ed;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 4px;
+        padding-right: 4px;
+
+        left:20px;
+
+        -moz-border-radius: 10px;
+
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+        /*margin-top:20px;
+        margin-bottom: 20px;position: absolute;*/
+
+    }
+    .speech-bubble-right{
+
+        display: inline-block;
+        width: auto;
+
+        height: auto;
+
+        background: #39d624;
+
+        
+        margin-right:1%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 4px;
+        padding-right: 4px;
+        -moz-border-radius: 10px;
+
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+       /* margin-top:20px;
+        margin-bottom: 20px;position: absolute;*/
+
+    }
+
+    .speech-bubble-left:before {
+
+        content:"";
+
+        position: absolute;
+
+        width: 0;
+
+        height: 0;
+
+        border-top: 10px solid transparent;
+
+        border-right: 26px solid #5ac4ed;
+
+        border-bottom: 10px solid transparent;
+
+        margin: 5px 0px 0px -25px;
+
+    }
+    .speech-bubble-right:after {
+
+        content:"";
+
+        position: absolute;
+
+        width: 0;
+
+        height: 0;
+
+        border-top: 10px solid transparent;
+
+        border-left: 26px solid #39d624;
+
+        border-bottom: 10px solid transparent;
+
+        margin: 5px 0px 0px -0px;
+
+    }
+    .bubbleTail
+    {position:absolute;
+        left:90%;
+        bottom:0px;
+        width:16px;
+        height:16px;
+        border-width:0;
+        border-style:solid;
+        border-color:transparent;
+        border-top-width:10px;
+        border-top-color:currentColor;
+        border-radius:0 32px 0 0;
+        color:#3c6c80;
+    }

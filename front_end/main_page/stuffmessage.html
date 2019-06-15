@@ -43,13 +43,9 @@
                 </a>
             </div>
             <div class="nav navbar-nav navbar-right button_menu">
-                <ul class="nav navbar-nav buttons">
-                    <li class="active"><a href="#">水果蔬菜</a></li>
-                    <li><a href="#">浏览历史</a></li>
-                    <li><a href="#">我的购物车</a></li>
-                    <li><a href="#">个人主页</a></li>
-                    <li><a href="#">聊天记录</a></li>
-                    <li><a href="#">关注我们</a></li>
+                <li class="active"><a href="main.html">功能界面</a></li>
+                <li><a href="javascript:void(0);" onclick="jump()">个人主页</a></li>
+                <li><a href="#">关注我们</a></li>
                 </ul>
             </div>
         </div>
@@ -356,23 +352,63 @@
         </div>
     </div>
 </body>
+
 <script>
   // 取值时：把获取到的Json字符串转换回对象
-  var prebook = sessionStorage.getItem('testKey');
-  var book = JSON.parse(prebook);
+  //var prebook = sessionStorage.getItem('testKey');
+  //var book = JSON.parse(prebook);
 
   
-  sessionStorage.removeItem('testKey')
-  console.log(book); 
-  $("#bookname").html(book.bookName);
-  $("#bookauthor").html(book.author);
-  $("#bookPrice").html(book.price);
-  $("#bookpublishhouse").html(book.publishingHouse);
-  $("#bookpublishdate").html(book.publishingDate);
-  $("#bookisbn").html(book.ISBN);
-  $("#bookcategory").html(book.classification);
-  $("#bookformat").html(book.format);
-  $("#bookpaper").html(book.paper);
+//  sessionStorage.removeItem('testKey')
+//  console.log(book); 
+//  $("#bookname").html(book.bookName);
+//  $("#bookauthor").html(book.author);
+//  $("#bookPrice").html(book.price);
+//  $("#bookpublishhouse").html(book.publishingHouse);
+//  $("#bookpublishdate").html(book.publishingDate);
+//  $("#bookisbn").html(book.ISBN);
+//  $("#bookcategory").html(book.classification);
+//  $("#bookformat").html(book.format);
+//  $("#bookpaper").html(book.paper);
+function jump(){
+  console.log("hh");
+  var user=$.session.get("user");
+  user=JSON.parse(user);
+  //console.log(user.userId)
+  window.location.href=("../personal_page/chat_html/Personal_index.html?userid="+user.userId);
+}
+  let bookid=sessionStorage.getItem('testKey');
+  //console.log("bookid",bookid)
+  $.ajax({
+     type: "POST",
+     url: "Server/getbookbyid.php",
+     data: {"bookId":bookid},
+     dataType: "json",
+     success: function(data)
+     {   //返回值
+        //console.log("data2",data)
+        //var obj = JSON.parse(data);
+        //var response = obj.status;
+        let book=data[0];
+        //console.log(book)
+        $("#bookname").html(book.bookName);
+        $("#bookauthor").html(book.author);
+        $("#bookPrice").html(book.price);
+        $("#bookpublishhouse").html(book.publishingHouse);
+        $("#bookpublishdate").html(book.publishingDate);
+        $("#bookisbn").html(book.ISBN);
+        $("#bookcategory").html(book.classification);
+        $("#bookformat").html(book.format);
+        $("#bookpaper").html(book.paper);
+        $("bookdescript").html(book.paper);
+     },
+     error: function(jqXHR,textStatus,errorThrown)
+     {
+         console.log(jqXHR);
+         console.log(textStatus);
+         console.log(errorThrown)
+     }
+  })
 </script>
 <script src="js/main.js"></script>
 </html>

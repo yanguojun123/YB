@@ -11,5 +11,4 @@ $password="123456";
 $dbname="YiBa";
 $connect=mysqli_connect($hostname,$name,$password,$dbname)
 or die("数据库连接失败!");
-echo "连接"
 ?>

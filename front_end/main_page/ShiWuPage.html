@@ -33,8 +33,6 @@ else{//捡拾物
 $result=mysqli_query($connect,$query)or die ('查询失败！');
 $row=mysqli_fetch_row($result);
 
-echo $id;
-echo "hh".$row[0];
 ?>
 
 <style>
@@ -122,11 +120,8 @@ echo "hh".$row[0];
         <div class="nav navbar-nav navbar-right button_menu">
             <ul class="nav navbar-nav buttons">
 
-                <li class="active"><a href="#">水果蔬菜</a></li>
-                <li><a href="#">浏览历史</a></li>
-                <li><a href="#">我的购物车</a></li>
-                <li><a href="#">个人主页</a></li>
-                <li><a href="#">聊天记录</a></li>
+                <li class="active"><a href="main.html">功能界面</a></li>
+                <li><a href="javascript:void(0);" onclick="jump()">个人主页</a></li>
                 <li><a href="#">关注我们</a></li>
 
             </ul>
@@ -214,6 +209,13 @@ echo "hh".$row[0];
         </div>
 </body>
 <script>
+  function jump(){
+  console.log("hh");
+  var user=$.session.get("user");
+  user=JSON.parse(user);
+  //console.log(user.userId)
+  window.location.href=("../personal_page/chat_html/Personal_index.html?userid="+user.userId);
+}
 </script>
 <script src="js/main.js"></script>
 </html>

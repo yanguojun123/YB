@@ -13,13 +13,30 @@ window.onload = function () {
     WIDTH = document.body.clientWidth;
     HEIGHT = document.body.clientHeight;
   
-    console.log("hhh")
-    
+    console.log("main.js start...")
 
     hhh();
     showLoginWindow();
-}
+    let tuser=$.session.get('user');
+    //let tuser=sessionStorage.getItem("user");//var book = JSON.parse(prebook);
+    if(tuser==null){
+      console.log("未登录")
+    }
+    else{
+      tuser=JSON.parse(tuser);
+      console.log("登录",tuser);
+      $("#loginandreg_pos").text(tuser.nickname);
+      //$.session.remove('user');
+    }
 
+
+  //sessionStorage.removeItem("user");
+  
+}
+$("#loginandreg_pos").click(function(){
+	$.session.remove("user");
+	window.location.href="";
+});
 function hhh() {
     //登录框样式
     var logWindowPos = $('#loginandreg_pos');
@@ -105,14 +122,15 @@ function login() {
     else{
       alert("账户需全为数字")
     }
+  //"http://localhost/YB/front_end/main_page/Server/Controller/user_controller.php",
      $.ajax({
          type: "POST",
-         url: "http://localhost/YB/front_end/main_page/Server/Controller/user_controller.php",
+         url: "Server/Controller/user_controller.php",
          data: {"userId": account, "password": password, "purpose":0},
          dataType: "text",
          success: function(data)
          {   //返回值
-             console.log("data",data)
+             console.log("data2",data)
               var obj = JSON.parse(data);
               var response = obj.status;
              //var response = data['status'];
@@ -121,6 +139,10 @@ function login() {
              {   //登录成功
                  alert("success")
                  console.log("success log in!!");
+                 $("#loginandreg_pos").text(obj.nickname);
+                 sessionStorage.setItem('user', data);
+
+
              }
              else
              {   //登录失败
@@ -157,8 +179,57 @@ function registerBTN() {
     } else
         regisWindow.css('display', "none");
 }
+function register(){
+  //alert(444)
+  let name=$("#regisNickname").children().val();
+  let email=$("#regisEmail").children().val();
+  let passwd=$("#regisPasswd").children().val();
+  let passwd2=$("#regisPasswdAgain").children().val();
+  if(name==""||email==""||passwd==""||passwd2==""){
+    alert("不完整的输入！");
+    return;
+  }
+  else if(passwd!=passwd2){
+    alert("两次密码不一致")
+    $("#regisPasswd").children().val("");
+    $("#regisPasswdAgain").children().val("");
+    return;
+  }
+  else if(!veriEmail(email)){
+    return;
+  }
+  
+  $.ajax({
+     type: "POST",
+     url: "Server/Controller/user_controller.php",
+     data: {"nickname": name,"email":email, "password": passwd, "purpose":1},
+     dataType: "text",
+     success: function(data)
+     {
+       //返回值
+       console.log("data",data);
+       var datas = JSON.parse(data);
+       if(datas.status==1){
+         alert("注册成功！注册id为"+datas.userId);
+         $("#registerID").text(datas.userId);
+       }
+       else{
+         alert("注册失败！");
+       }
+       
 
+     },
+     error: function(jqXHR,textStatus,errorThrown)
+     {
+         console.log(jqXHR);
+         console.log(textStatus);
+         console.log(errorThrown)
+     }
+ })
+  
+}
 function register_cancel() {
+    //alert(555)
     $('#register_window').css('display', 'none');
     $('#grayBackground').css('display', 'none');
 }
@@ -179,4 +250,24 @@ function getHTTPObject() {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
     return xhr;
+}
+function veriEmail(str){
+  var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //正则表达式
+  if(str === ""){ //输入不能为空
+    //alert("输入不能为空!");
+    return false;
+  }else if(!reg.test(str)){ //正则验证不通过，格式不对
+    alert("请输入正确格式的邮箱!");
+    return false;
+  }else{
+    //alert("通过！");
+    return true;
+  }
+}
+function verifyEmail(t){
+  let str=t.value; //要验证的对象
+
+}
+function verifyPasswd(t){
+  let str=t.value;
 }

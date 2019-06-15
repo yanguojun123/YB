@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>个人主页</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+<?php
+require "connect_to_mysql.php";
+
+$sql = "select Picture1  from pickedproperty";
+$result = $conn->query($sql);
+$answer_json;
+if ($result->num_rows > 0){
+    $answer = array();
+    while ($row = $result->fetch_array()){
+        array_push($answer, $row);
+    }
+    //$answer_json = json_encode($answer);
+}
+?>
+    <div id="PAGE_CONTENT">
+       <p>hhhhhh</p>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+var father=document.getElementById("PAGE_CONTENT");
+var img=document.createElement("img");
+img.src="data:image/jpg;base64,<?= base64_encode($answer[0]['Picture1']) ?>";
+father.appendChild(img);
+</script>

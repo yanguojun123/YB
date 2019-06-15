@@ -1,0 +1,343 @@
+body{
+	margin:0;
+	width:100%;
+	height:100%;
+	position:absolute;
+	background: url("../../main_page/image/body_bg.jpg")
+}
+#HEAD{
+	/* width:100%;
+	height:10%;
+	background-color:black;
+	position:relative; */
+}
+
+.navbar
+{
+	margin-bottom: 0px;
+	/* min-height: 180px; */
+}
+
+.navbar_container
+{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.search_box
+{
+	margin-top: -52px;
+	margin-right: 11% !important;
+}
+
+.logo_container {
+	/* margin-left: 50px !important;
+	margin-top: 8px;
+	margin-bottom: 15px; */
+	margin-bottom: 0;
+	margin-top: 0;
+	margin-left: 0 !important;
+	padding-left: 3%;
+	padding-right: 0;
+}
+
+.logo
+{
+	width: 100px;
+	height: 100%;
+}
+
+.loginandreg
+{
+	margin-top: 15px;
+	margin-right: -25px;
+}
+
+
+/*------------------------------------LEFT---------------------------------------------*/
+#LEFT{
+	/* background: rgba(255,0,0,0.5); */
+	/* width:25%; */
+	/* height:90%; */
+	margin-top: -1px;
+	/* float:left; */
+	/* position:relative; */
+	padding-left: 0;
+	padding-right: 15px;
+	padding-top: 12px;
+	padding-left: 12px;
+	border-right: 3px solid rgb(90,116,151);
+	border-top:  3px solid rgba(107, 203, 203, 0.5);
+}
+
+#Portrait
+{
+	width: 180px;
+	height: 180px;
+	float: right;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#Portrait img{
+	width: 100%;
+	height: 100%;
+	box-shadow:2px 2px 4px #000
+}
+
+#Form{
+	/* margin-left:32%; */
+	margin-top: 20px;
+	/* float: right; */
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#Bianji{
+	/* margin-top:-0.5%; */
+	/* margin-left:70%; */
+	font-size:17px;
+	cursor:pointer;
+}
+#information{
+	/* margin-left:30px; */
+	visibility:hidden;
+	/* display: none; */
+}
+#information ul
+{
+	padding-left: 0;
+}
+#information ul li
+{
+	list-style: none;
+	/* line-height: 25px; */
+}
+#information ul li span
+{
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: 8px;
+}
+#information ul li input
+{
+	margin-top: 8px;
+}
+#submit
+{
+	width: 80px;
+	background: none;
+	border-width: 1px;
+	border-color: #37474f;
+	color: #37474f;
+	text-align: center;
+}
+#submit:hover
+{
+	-webkit-transition: 0.2s all;
+	background-color: #37474f;
+	color: rgb(245, 245, 245);
+}
+
+/*-------------------------------------NAVIGATE-------------------------------------------*/
+#NAVIGATE{
+	margin-top: -49px;
+	/* background: rgba(0, 255, 0, 0.5); */
+	background: url("../../main_page/image/body_bg.jpg");
+	z-index: 100;
+	border-radius: 5px 5px 0 0;
+	/* margin-left:25%;
+	width:75%; */
+	height:49px;
+	/* border-bottom:2px solid #000; */
+	border-bottom:2px solid rgba(90,116,151);
+	border-top: 3px solid rgba(107, 203, 203, 0.5);
+	border-left: 3px solid rgba(107, 203, 203, 0.5);
+	border-right: 3px solid rgba(107, 203, 203, 0.5);
+}
+
+#NAVIGATE ul{
+	list-style: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+}
+#NAVIGATE ul li{
+	padding:7px;
+	width:100px !important;
+	display:block;
+	float:left;
+	font-size:18px;
+	font-family: "微软雅黑";
+	font-weight:500;
+	text-align:center;
+	border-top: 3px solid rgba(90,116,151,0);
+	border-bottom: 3px solid rgba(90,116,151,0);
+	position:relative;
+}
+#NAVIGATE ul li:hover{
+	cursor:pointer;
+	-webkit-transition: 0.2s all;
+	border-top:3px solid rgb(90,116,151);
+	border-bottom:3px solid rgb(90,116,151);
+	/* text-shadow:1px 1px 1px rgba(0, 0, 0, 0.2); */
+}
+#secondMenu{
+	left:0px;
+	transform:translate(0px,8px);
+	visibility:hidden;
+	background: url("../../main_page/image/background2.png");
+	color: rgb(248, 248, 248);
+	opacity:0;
+	z-index:200;
+	position: absolute;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 2px 2px 3px #111;
+}
+#lostPicked:hover ul#secondMenu {
+	visibility:visible;
+	opacity:1;	
+}
+#lostLog,#pickedLog
+{
+	font-size: 16px !important;
+	border-top: 1.5px solid rgba(254, 254, 250, 0) !important;
+	border-bottom: 1.5px solid rgba(254, 254, 250, 0) !important;
+}
+#lostLog:hover,#pickedLog:hover
+{
+
+	border-top: 1.5px solid rgba(204, 248, 250, 0.9) !important;
+	border-bottom: 1.5px solid rgba(204, 248, 250, 0.9)   !important;
+}
+/*-------------------------------------CONTENT--------------------------------------------*/
+#CONTENT{
+	/* background: rgba(0, 0,255, 0.5); */
+	/* margin-left:25%;
+	width:75%; */
+	padding-left: 0;
+	padding-right: 0;
+	padding-left: 20px;
+	padding-top: 20px;
+	position:relative;
+}
+/*------------------------------------content内容------------------------------------------*/
+#PAGE_CONTENT{
+	padding:0;
+	width:100%;
+}
+.message,.transMessage,.pickedMessage,.lostMessage
+{
+	width:100%;
+	height:100px;
+	/* background-color:red; */
+}
+
+.messageDiv,.transMessageDiv,.pickedMessageDiv,.lostMessageDiv
+{
+	width: 800px;
+	height: 170px;
+	background: rgb(250,250,250);
+	border-radius: 10px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: rgba(204, 221, 0, 0.5);
+	margin-bottom: 5px;
+}
+.messageDiv:hover,.transMessageDiv:hover,.pickedMessageDiv:hover,.lostMessageDiv:hover
+{
+	-webkit-transition: 0.2s all;
+	box-shadow: 1px 1px 4px #000;
+}
+.message,.transMessage,.pickedMessage,.lostMessage td{
+	/* border-bottom:1px solid #000; */
+	vertical-align:top;
+}
+
+.td1{
+	height:100%;
+	width:130px;
+	padding:8px;
+}
+.td1 img{
+	height:146px;
+	width:100%;
+	box-shadow: 1px 1px 3px 0;
+}
+.td1 img:hover{
+	-webkit-transition: 0.2s all;
+	box-shadow: 2px 2px 3px 0;
+}
+.td2{
+	height:100%;
+	width:400px;
+	padding-left:15px;
+}
+.td2>p:nth-child(1)
+{
+	font-size: 22px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+.td3{
+	width: 150px;
+	padding-top:30px;
+	color: #008180;
+}
+.td3>p:nth-child(1)
+{
+	font-weight: bold;
+}
+.buyButton{
+	width:65px;
+	height:35px;
+	font-size:16px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align:center;
+	display:block;
+	cursor:pointer;
+	color: #FE6847;
+	border-radius:5px;
+	background: linear-gradient(to bottom, #FEFEFA 0%,#F7F6DF 49%,#F3F1CE 100%);
+	border-style: none;
+	box-shadow: 1px 1px 3px #000;
+	/* transform:translate(10px,-10px); */
+}
+.buyButton:hover
+{
+	background: linear-gradient(to top, #FEFEFA 0%,#F7F6DF 49%,#F3F1CE 100%);
+}
+.td4{
+	width:100px;
+}
+.deleteButton
+{
+	width:100px;
+	height:35px;
+	font-size:12px;
+	text-align:center;
+	display:block;
+	cursor:pointer;
+	color:black;
+	background: none;
+	border-style: none;
+	margin-top: 85px;
+	margin-left: -20px;
+}
+.deleteButton:hover
+{
+	text-decoration: underline;
+	-webkit-transition: 0.1s all;
+	color: #FE6847;
+}
+.transMessage tr
+{
+	padding-top: 0;
+}
+/*-------------------------------------分页按钮--------------------------------------------*/
+#PAGE_BUTTON{
+	height:50px;
+	width:100%;
+}

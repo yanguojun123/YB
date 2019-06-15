@@ -100,11 +100,8 @@
                 </div>
                 <div class="nav navbar-nav navbar-right button_menu">
                     <ul class="nav navbar-nav buttons">
-                        <li class="active"><a href="#">水果蔬菜</a></li>
-                        <li><a href="#">浏览历史</a></li>
-                        <li><a href="#">我的购物车</a></li>
-                        <li><a href="#">个人主页</a></li>
-                        <li><a href="#">聊天记录</a></li>
+                        <li class="active"><a href="#">功能界面</a></li>
+                        <li><a href="../personal_page/chat_html/Personal_index.html">个人主页</a></li>
                         <li><a href="#">关注我们</a></li>
                     </ul>
                 </div>
@@ -121,7 +118,6 @@
                 <div class="row main_disp_below">
                     <!-- 主窗体 -->
                     <div class="main_disp_header">
-                        就是想在这里扯皮，填坑占位
                     </div>
                     <div class = "main_disp">
                         <!-- 界面显示的主体，分为左中右三个 -->
@@ -146,7 +142,6 @@
                                 <li><a id="s4" href="Search.html">搜索信息</a></li>
                             </ul>
                             <div class="moreInfo">
-                                额外的信息，目前没有什么用处，先占个坑，可以使用 js 填充
                             </div>
                         </div>
                         <div class = "col-md-7 mid_main_panel" style="height:800px;"> 
@@ -159,7 +154,7 @@
 
 
               
-<form role="form" class="form-horizontal" id="form" action="Server/Controller/control.php" method="post" style="margin-top:20px;margin-left:15%;margin-right:15%;">
+<form role="form" class="form-horizontal" id="form" enctype="multipart/form-data" action="Server/Controller/control.php" method="post" style="margin-top:20px;margin-left:15%;margin-right:15%;">
   <div class="form-group" >
     <label class="col-sm-2 control-label">体裁</label>
     <div class="col-sm-10">
@@ -216,7 +211,6 @@
       <input type="file" name="image" id='i-file'  accept="" onchange="$('#location').val($('#i-file').val());" style="display: none">
     </div>
   </div>
-  
   <div class="form-group">
     <label for="inputbookinstruction" class="col-sm-2 control-label">选择图片</label>
     <div class="col-sm-10">
@@ -258,89 +252,6 @@
 		</div>
 	</div>
       <input type="text" name="code" value=2 style="display: none">
-<!--
-  <div class="form-group" >
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon">体裁</span>
-            <select class="form-control" style="width:40%;">
-              <option>期刊/报纸</option>
-              <option>小说/文学/语言文字</option>
-              <option>历史/地理/艺术</option>
-              <option>政治/法律/军事</option>
-              <option>哲学/心理/宗教</option>
-              <option>经济/社科/综合</option>
-              <option>童书/生活/体育</option>
-              <option>工程技术/互联网</option>
-              <option>自然科学/医药卫生</option>
-              <option>教材/教辅</option>
-            </select>
-        </div>
-  </div>
-  
-   <div class="form-group">
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon">书名</span>
-            <input type="text" class="form-control"  placeholder="">
-        </div>
-  </div>
-  <div class="form-group">
-       <div class="input-group input-group-sm">
-            <span class="input-group-addon">作者</span>
-            <input type="text" class="form-control" placeholder="">
-        </div>
-    </div>
-    
-  <div class="form-group">
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon">出版社</span>
-            <input type="text" class="form-control" placeholder="">
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon">价格</span>
-            <input type="text" class="form-control" placeholder="请按照定价规则定价">
-        </div>
-      </div>
-    
-    
-    <div class="form-group">
-      <div class="input-group">
-           <input id='location' class="form-control" onclick="$('#i-file').click();">
-           <label class="input-group-btn">
-              <input type="button" id="i-check" value="浏览图片" class="btn btn-info" onclick="$('#i-file').click();">
-           </label>
-       </div>
-       <input type="file" name="file" id='i-file'  accept=".jpg .jpeg .png .bmp" onchange="$('#location').val($('#i-file').val());" style="display: none">
-      </div>
-    
-    
-    <div class="form-group">
-      <div class="input-group">
-           <input id='location' class="form-control" onclick="$('#i-file').click();">
-           <label class="input-group-btn">
-              <input type="button" id="i-check" value="浏览图片" class="btn btn-info" onclick="$('#i-file').click();">
-           </label>
-       </div>
-       <input type="file" name="file" id='i-file'  accept=".jpg .jpeg .png .bmp" onchange="$('#location').val($('#i-file').val());" style="display: none">
-      </div>
-
-
-   <div class="form-group">
-        <div align="center">
-             <textarea name="miaoshu1" style="width:100%;height:300px;visibility:hidden;" id="miaoshu1">
-                请输入丢失物品的详细描述信息以及物品的丢失过程！
-                实践证明，信息描述越详细找回的几率更大。
-        </textarea>
-        </div>
-  </div>
-        <div class="btndiv" align="center">
-            <button type="submit" name="queding" class="btn btn-info">确定</button>
-            <button type="button" name="clear" class="btn btn-info">清空</button>
-        </div>
-        <input name="miaoshu" id="miaoshu" type="hidden" >
--->
 
     
 </form>
@@ -362,7 +273,6 @@
                             当左侧选择的是二手书相关，右侧显示最火热的二手书；
                             当左侧选择的是失物招领相关，右侧显示（不知道显示什么，说不定可以关掉？估计关掉很难看）
                             -->
-                            右边可以直接使用bootstrap中的panel样式，但是注意宽度，这里的 height 被重新设置为400，之后填充时取消
                         </div> 
                     </div>
                 </div>
@@ -475,33 +385,69 @@
 //从数据库异步获取最新热度的内容展示到右侧面板
 function rightget(){
   $("#heat").empty();
-  for(let i=0;i<6;i++){
-    $("#heat").append("<li id='right"+i+"'><span><a>信"+i+"</a></span></li>");
-    $("#right"+i+"").xs999(Math.round(Math.random()*30));
-    $("#right"+i+"").hover(function(){
-      $(this).children().children().css({"font-size":"28px","color":"#2bae85","transition":"0.2s"});
-    },function(){
-      $(this).children().children().css({"font-size":"18px","color":"#ffffff"});
-    });
-    $("#right"+i+"").click(function(){
-      alert($(this).children().children().text())
-    });
-  }
+  $.ajax({
+     type: "POST",
+     url: "Server/get_most_popular_book.php",
+     //data: {"userId": account, "password": password, "purpose":0},
+     dataType: "text",
+     success: function(data)
+     {   //返回值
+         var obj = JSON.parse(data);
+         if(obj.state){
+           for(let i=0;i<5;i++){
+              //console.log(obj[i].bookname);
+              $("#heat").append("<li id='right"+i+"'><span><a>"+obj[i].bookname+"</a></span></li>");
+              $("#right"+i+"").xs999(Math.round(Math.random()*30+1));
+              $("#right"+i+"").hover(function(){
+                $(this).children().children().css({"font-size":"28px","color":"#2bae85","transition":"0.2s"});
+              },function(){
+                $(this).children().children().css({"font-size":"18px","color":"#ffffff"});
+              });
+              $("#right"+i+"").click(function(){
+                alert($(this).children().children().text())
+              });
+           }
+         }
+         else{
+           alert("右侧最热查询失败")
+         }
+         
+
+     },
+     error: function(jqXHR,textStatus,errorThrown)
+     {
+         console.log(jqXHR);
+         console.log(textStatus);
+         console.log(errorThrown)
+     }
+ })
+//  for(let i=0;i<6;i++){
+//    $("#heat").append("<li id='right"+i+"'><span><a>信"+i+"</a></span></li>");
+//    $("#right"+i+"").xs999(Math.round(Math.random()*30));
+//    $("#right"+i+"").hover(function(){
+//      $(this).children().children().css({"font-size":"28px","color":"#2bae85","transition":"0.2s"});
+//    },function(){
+//      $(this).children().children().css({"font-size":"18px","color":"#ffffff"});
+//    });
+//    $("#right"+i+"").click(function(){
+//      alert($(this).children().children().text())
+//    });
+//  }
 
   
-}	 
+}	
 
 
 
     
 
 
-for(let i=1;i<=3;i++)
-  $("#b"+i).css({"font-size":"10px","color":"black"});
-for(let i=1;i<=4;i++)
-  $("#s"+i).css({"font-size":"10px","color":"black"});
-$("#b2").css({"font-size":"20px","color":"red"});
-rightget();
+  for(let i=1;i<=3;i++)
+    $("#b"+i).css({"font-size":"10px","color":"black"});
+  for(let i=1;i<=4;i++)
+    $("#s"+i).css({"font-size":"10px","color":"black"});
+  $("#b2").css({"font-size":"20px","color":"red"});
+  rightget();
 
 
 
