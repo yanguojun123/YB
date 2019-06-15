@@ -24,7 +24,7 @@ class UserContoller
 
     function login($userId, $password)
     {
-        $result = $this->userModel->getAllInfor($userId);
+        $result = $this->userModel->getAllInfo($userId);
 		//echo $result[0];
       if ($result != null){
         $row = $result->fetch_array();
@@ -41,20 +41,40 @@ class UserContoller
         }
         echo $response;
       }
-	  else{
+	     else{
 		    $tmp = [];
             $tmp['status'] = ACCOUNT_NOT_EXISTED_ERROR;// 账户不存在
             $response = json_encode($tmp);
             echo $response;
-	  }
-        
+	     }    
+    }
+  
+  function signIn($nickname, $email, $password){
+      
+      $userId = $this->userModel->insertNewUser($nickname, $email, $password);
+      if ($userId > 0){
+        $tmp = [];
+            $tmp['status'] = SUCCESS;
+            $tmp['userId'] = $userId;
+            $response = json_encode($tmp);
+            echo $response;
+      }
+      else{
+        $tmp = [];
+            $tmp['status'] = INSERT_ERROR;
+            $response = json_encode($tmp);
+            echo $response;
+      }
     }
 
     function  businessLogic(){
         switch ($_POST['purpose']){
             case 0: // 登陆
                 $this->login($_POST['userId'], $_POST['password']);
+                break;
+            case 1: // 注册
                 
+                $this->signIn($_POST['nickname'], $_POST['email'], $_POST['password']);
                 break;
             default:
                 break;

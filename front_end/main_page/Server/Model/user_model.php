@@ -45,7 +45,7 @@ class UserModel
         $portraitPicture = null;
     }
 
-    function getAllInfor($userId)
+    function getAllInfo($userId)
     {
         // sql语句
         $sql = "select * from user where userId = $userId";
@@ -66,7 +66,19 @@ class UserModel
 			return null;
         }
     }
+  
+  function insertNewUser($nickname, $email, $password){
+      $sql = "select MAX(userId) as userId from user";
+      $result = $this->conn->query($sql);
+      $row = $result->fetch_array();
+      $t=$row['userId'] + 1;
+      $sql = "insert into user (userId, password, nickname, mail) values ('$t', '$password', '$nickname', '$email')";
+      if ($this->conn->query($sql)){
+          return $t;
+      }
+      else{
+        return -1;
+      }
+  
 }
-
-// $ob = new UserModel();
-// $ob->getAllInfor('178062283');
+}

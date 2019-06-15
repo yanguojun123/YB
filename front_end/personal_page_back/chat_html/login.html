@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>登录</title>
+        <meta charset="utf-8" />
+        <script src="jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        
+            <input id="user" value='' type="text" />
+            <input id="passWord" type="text" />
+            <button id="login" onclick=login()>登录</button>
+            
+        
+        <script type="text/javascript">
+            var t1=document.getElementById("user");
+            var pw=document.getElementById("passWord").value;
+            function login()//登录时
+                {  //console.log(t1.value);
+                    var user1=t1.value;
+                   //alert(user1);
+                    window.location.href=("index.html?userid="+user1);
+                    
+                }
+        </script>
+    </body>
+</html>

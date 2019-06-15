@@ -1,0 +1,143 @@
+body{
+	margin:0;
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+#HEAD{
+	width:100%;
+	height:10%;
+	background-color:black;
+	position:relative;
+}
+/*------------------------------------LFFT---------------------------------------------*/
+#LEFT{
+	width:30%;
+	height:90%;
+	float:left;
+	position:relative;
+}
+#Portrait{
+	width:65%;
+	height:45%;
+	margin-left:32%;
+	margin-top:10%;
+	background-image:url("../picture/jiepin.png");
+}
+#Form{
+	margin-left:32%;
+}
+#Bianji{
+	margin-top:-0.5%;
+	margin-left:70%;
+	font-size:17px;
+	cursor:pointer;
+}
+#information{
+	margin-left:30px;
+	visibility:hidden;
+}
+/*-------------------------------------NAVIGATE-------------------------------------------*/
+#NAVIGATE{
+	margin-left:30%;
+	width:70%;
+	height:8%;
+	border-bottom:2px solid #000;
+}
+.firstMenu{
+	list-style: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+}
+.firstMenu li{
+	height:30px;
+	padding:10px;
+	width:100px;
+	display:block;
+	float:left;
+	font-size:25px;
+	font-family:"微软雅黑";
+	font-weight:500;
+	text-align:center;
+	position: relative;
+}
+.firstMenu li:hover{
+	cursor:pointer;
+	border-bottom:3px solid #000;
+}
+#secondMenu{
+	left:-40px;
+	visibility:hidden;
+	opacity:0;
+	z-index:1;
+	position: absolute;
+	text-align: left;
+}
+#lostPicked:hover ul#secondMenu {
+	visibility:visible;
+	opacity:1;	
+}
+#submenu li {
+	float: none;
+	width: 100%;
+}
+/*-------------------------------------CONTENT--------------------------------------------*/
+#CONTENT{
+	margin-left:30%;
+	width:70%;
+	position:relative;
+}
+/*------------------------------------content内容------------------------------------------*/
+#PAGE_CONTENT{
+	padding:0;
+	width:100%;
+}
+tr{
+	width:100%;
+	background-color:red;
+}
+td{
+	border-bottom:1px solid #000;
+	vertical-align:top;
+}
+.td1{
+	height:100%;
+	width:130px;
+	padding:8px;
+}
+.td1 img{
+	height:146px;
+	width:100%;
+	}
+.message .td2{
+	height:100%;
+	width:500px;
+	padding-left:15px;
+}
+.td3{
+	padding-top:10px;
+}
+.buyButton{
+	border-radius:10px;
+	width:65px;
+	height:35px;
+	font-size:18px;
+	text-align:center;
+	display:block;
+	cursor:pointer;
+	transform:translate(10px,-10px);
+}
+.td4{
+	width:100px;
+}
+.transMessage td2{
+	height:100%;
+	width:300px;
+	padding-left:15px;
+}
+/*-------------------------------------分页按钮--------------------------------------------*/
+#PAGE_BUTTON{
+	height:50px;
+	width:100%;
+}

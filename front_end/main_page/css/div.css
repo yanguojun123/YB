@@ -24,8 +24,8 @@
 	margin-top:2%;
     margin-left:1.5%;
     padding-top: 8px;
-	height: 160px;
-	width:100px;	
+	height: 220px;
+	width:160px;	
 	float:left;
     background-color: aliceblue;
     /* 修改于 2019.5.25 */
@@ -56,6 +56,7 @@
 	margin-top:10%;
     list-style: none;
  	transform: translateY(-150%);
+/*  transform:translateX(-10%);*/
 /*   position: absolute;
    top: 50%;
     left: 10px;*/
@@ -73,7 +74,7 @@
 }
 .subcon_photo:hover .social li {
     opacity: 1;
-    transform: translateX(50%);
+    transform: translateX(0%);
 }
 .subcon_photo:hover .social li:nth-child(2){ transition-delay: 0.1s; }
 .subcon_photo:hover .social li:nth-child(3){ transition-delay: 0.2s; }
@@ -127,7 +128,7 @@
     text-decoration: none;
 }
 .subcon_name{
-	font-size:20px;
+	font-size:15px;
 	font-weight: 1000;
 	weight:100%;
 }
@@ -135,10 +136,10 @@
 .subcon_price{
 	float:left;
 	weight:100%;
-	color:#F5AF00;
+	color:#FB8C00;
 }
 .subcon_author{
-	font-size:5px;
+	font-size:1px;
 	weight:100%;
 }
 .subcon_seller{

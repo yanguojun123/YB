@@ -368,14 +368,14 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 {
 
 	margin-top:1%;
-	margin-left:-10%;
+/*	margin-left:-10%;*/
 	list-style:none;
-/*    background-color:#d0dfe6;*/
+    background-color:#d0dfe6;
     border-radius: 5px;
     text-align: center;
 /*    list-style-type:decimal;*/
 /*	background-color: antiquewhite;*/
-  background-color:#626255;
+/*  background-color:#626255;*/
   cursor: pointer;
 	
 }

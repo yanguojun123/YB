@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="../js/JquerySession.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../main_page/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../main_page/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/Personal_index.css">
+
+</head>
+
+<body>
+    <nav class="navbar nav_bar" role="navigation">
+        <div class="webset_info">
+            <ul class="contact_phone">
+                <li class="phone_ego">
+                    <i class="phone_icon"></i>
+                    <span>CONTACT: XXX-XXXX-XXXX</span>
+                </li>
+                <li class="phone_append">欢迎来到个人主页，今天二手书半价哦</li>
+            </ul>
+        </div>
+        <!-- 导航栏样式 bootstrap 实现-->
+        <div class="container-fluid navbar_container" style="margin-top: 20px;">
+            <div class="navbar-header logo_container col-md-2">
+                <a class="navbar-left" href="https://github.com/yanguojun123/YB" target="_blank">
+                    <img class="logo" alt="Brand" src="../../main_page/image/logo_main.png" height="20">
+                </a>
+            </div>
+            <div class="nav navbar-nav navbar-right loginandreg">
+                <a id="portrait" style="cursor: pointer">
+                    <li>
+                        <img src="../../main_page/image/logout.png">
+                    </li>
+                    <p id="loginandreg_pos">注销</p>
+                </a>
+            </div>
+            <!-- <div class="nav navbar-nav navbar-right button_menu">
+                <ul class="nav navbar-nav buttons">
+                    <li><a href="#">浏览历史</a></li>
+                    <li><a href="#">我的购物车</a></li>
+                    <li><a href="#">个人主页</a></li>
+                    <li><a href="#">聊天记录</a></li>
+                    <li><a href="#">关注我们</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+    <div class="input-group col-md-3 search_box">
+        <input type="text" class="search_input" value="请输入想要查询的内容" onfocus="this.value = '';"
+            onblur="if(this.value == ''){this.value = '请输入想要查询的内容';}">
+        <input type="submit" class="search_btn" value="搜索">
+    </div>
+    <div id="HEAD"></div>
+
+    <div id="LEFT" class="container-fluid col-md-2">
+        <div id="Portrait" class="col-md-6">
+            <img id="Portrait_img" src="../picture/portrait.png">
+        </div>
+        <div id="Form" class="col-md-12">
+            <p id="Bianji">编辑信息</p>
+            <form id="information">
+                <ul>
+                    <li>
+                        <span class="col-md-4">昵称</span>
+                        <input class="col-md-8" type="text" id="nickname">
+                    </li>
+                    <li>
+                        <span class="col-md-4">性别</span><input class="col-md-8" type="text" id="sex">
+                    </li>
+                    <li>
+                        <span class="col-md-4">年龄</span><input class="col-md-8" type="text" id="age">
+                    </li>
+                    <li>
+                        <span class="col-md-4">电话</span><input class="col-md-8" type="text" id="phoneNumber">
+                    </li>
+                    <li>
+                        <span class="col-md-4">QQ</span><input class="col-md-8" type="text" id="QQ">
+                    </li>
+                    <li>
+                        <span class="col-md-4">微信</span><input class="col-md-8" type="text" id="WeChat">
+                    </li>
+                    <li>
+                        <span class="col-md-4">地址</span><input class="col-md-8" type="text" id="address">
+                    </li>
+                    <li>
+                        <button id="submit" style="margin-left:60px;margin-top:10px">完成</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div id="NAVIGATE" class="col-md-5">
+        <ul>
+            <li id="messageHistory" style="margin-left: 20px">消息记录</li>
+            <li id="shoppingCar">购物车</li>
+            <li id="translateHistory">交易历史</li>
+            <li id="lostPicked">失物招领
+                <ul id="secondMenu">
+                    <li id="lostLog">丢失记录</li>
+                    <li id="pickedLog">拾物记录</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class=" clear">
+        </ul>
+    </div>
+    <div id="CONTENT" class="col-md-10">
+        <div id="PAGE_CONTENT">
+            <table id="contentBody" border="0" cellpadding="0" cellspacing="0"></table>
+        </div>
+        <div id="PAGE_BUTTON"></div>
+    </div>
+</body>
+<script>
+    window.onload = () => {
+        document.getElementsByTagName("body")[0].style.width = document.body.scrollWidth; + "px";
+        document.getElementById("PAGE_CONTENT").innerHTML = '<object type="text/html" data="index.html" width="100%" height="800px" scroll:"no"></object>';
+    }
+</script>
+<script src="../js/Personal_index.js"></script>
+</html>
